@@ -1,0 +1,16 @@
+
+.AddButton {
+    border-style: solid;
+    border-color: green;
+    background-color: hsla(52, 100%, 51%, 0.96);
+    border-radius: 500px;
+    color: green;
+    font-size: 15px;
+    margin: 40px;
+    cursor: pointer;
+}
+
+.AddButton:hover {
+    background-color: hsla(108, 31%, 40%, 0.96);
+    color: white;
+}

@@ -1,0 +1,82 @@
+
+.tipBox {
+    border-style: solid;
+    border-color: green;
+    border-radius: 5px;
+    background-color: 	hsl(155, 32%, 48%);
+    max-width: 600px;
+    min-height: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 50px 210px auto;
+    grid-template-areas:
+                        "pic pic adres adres"
+                        "pic pic textDis textDis"
+                        "pic pic butOne butTwo";
+}
+
+
+.tipBoxTwo {
+    display: flex;
+    justify-content: center;
+    margin: 12px;
+    border-radius: 5px;
+    background-color: hsl(159, 32%, 62%);
+    color: white;
+}
+
+
+#pictureDisplay {
+    grid-area: pic;
+    margin-right: 0;
+}
+
+#adressDisplay {
+    grid-area: adres;
+
+    margin-bottom: 0;
+}
+
+#textDisplayTip {
+    grid-area: textDis;
+
+}
+
+#buttonOne {
+    grid-area: butOne;
+    min-width: 100px;
+    height: 30px;
+    color: green;
+    background-color: hsla(52, 100%, 51%, 0.96);
+    border-radius: 15px;
+    border-color: green;
+    border-style: solid;
+    cursor: pointer;
+    margin-top: 0;
+}
+
+#buttonTwo {
+    grid-area: butTwo;
+    min-width: 100px;
+    height: 30px;
+    color: green;
+    background-color: hsla(52, 100%, 51%, 0.96);
+    border-radius: 15px;
+    border-color: green;
+    border-style: solid;
+    cursor: pointer;
+    margin-top: 0;
+}
+
+#buttonOne:hover {
+    background-color: hsla(108, 31%, 40%, 0.96);
+    color: white;
+}
+
+#buttonTwo:hover {
+    background-color: hsla(108, 31%, 40%, 0.96);
+    color: white;
+}
+
+
+

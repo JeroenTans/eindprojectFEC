@@ -1,0 +1,44 @@
+
+
+.navContainer {
+    border-style: solid;
+    border-color: green;
+    margin: 20px;
+    padding: 15px;
+    border-radius: 5px
+}
+
+.navBar {
+    display: flex;
+    justify-content: space-around;
+    padding: -5px;
+}
+
+.buttonContainer {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.navContainer {
+    background-color: hsla(159, 37%, 40%, 0.94);
+}
+
+.pages {
+    color: white;
+    list-style: none;
+    padding: 0;
+    text-align: center;
+}
+
+.textContainer {
+    background-color: hsla(108, 31%, 29%, 0.96);
+    padding: 7px 20px;
+    border-radius: 5px;
+    border-style: solid;
+    border-color: darkgreen;
+    width: 150px;
+}
+
+.textContainer:hover {
+    background-color: hsla(108, 31%, 40%, 0.96);
+}

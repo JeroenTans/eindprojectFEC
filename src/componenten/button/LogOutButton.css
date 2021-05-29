@@ -1,0 +1,16 @@
+
+.LogOutButton {
+    height: 50px;
+    min-width: 50px;
+    color: green;
+    background-color: hsla(52, 100%, 51%, 0.96);
+    border-radius: 5px;
+    border-color: green;
+    border-style: solid;
+    cursor: pointer;
+}
+
+.LogOutButton:hover {
+    background-color: hsla(108, 31%, 40%, 0.96);
+    color: white;
+}

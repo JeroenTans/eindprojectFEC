@@ -1,0 +1,15 @@
+
+#buttonHeartBrokenScreen {
+    grid-area: butOne;
+}
+
+#buttonHeartScreen {
+    grid-area: butTwo;
+}
+
+.heartsScreen {
+    display: flex;
+    background-color: hsl(155, 32%, 48%);
+    border: none;
+    margin: 0 0 12px 12px;
+}

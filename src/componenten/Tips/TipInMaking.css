@@ -1,0 +1,44 @@
+.tipInMakingBox{
+    border-style: solid;
+    border-color: green;
+    border-radius: 5px;
+    background-color: 	hsl(155, 32%, 48%);
+    max-width: 60%;
+    min-height: 500px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 50px auto 40px 40px;
+    grid-template-areas:
+                        "pic pic adres adres"
+                        "pic pic textDis textDis"
+                        "pic pic butOne butTwo"
+                        "plus plus plus plus";
+}
+
+.checkboxTipInMakingOne {
+    color: hsl(304, 99%, 25%);;
+    margin: 0 50px 12px 50px;
+    background-color: hsl(304, 99%, 62%);
+    border-radius: 5px;
+    border: none;
+}
+
+.checkboxTipInMakingTwo {
+    color: hsl(184, 100%, 20%);
+    background-color: hsl(184, 100%, 49%);
+    margin: 0 50px 12px 50px;
+    border-radius: 5px;
+    border: none;
+}
+
+.checkboxTipInMakingTwo:hover {
+    background-color: hsl(184, 100%, 42%);
+}
+
+.checkboxTipInMakingOne:hover {
+    background-color: hsl(304, 99%, 75%);
+}
+
+input:hover {
+    cursor: pointer;
+}

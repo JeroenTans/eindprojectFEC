@@ -1,0 +1,19 @@
+
+.textInfo {
+    max-width: 1300px;
+    border-style: solid;
+    border-color: green;
+    border-radius: 5px;
+    background-color: hsl(123, 28%, 40%);
+    padding: 0 7px 0 7px;
+}
+
+.actualText {
+    color: white;
+}
+
+.boxAround {
+    padding: 10px;
+    background-color: hsl(123, 28%, 50%);
+    max-width: 1310px
+}
