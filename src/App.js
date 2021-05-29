@@ -3,14 +3,14 @@ import './App.css';
 // import NavBar from "./componenten/navBar/NavBar";
 // import AddButton from "./componenten/button/AddButton";
 // import LogOutButton from "./componenten/button/LogOutButton";
-// import LogIn from "./componenten/logIn/LogIn";
+import LogIn from "./componenten/logIn/LogIn";
 // import ExplainText from "./componenten/explainText/ExplainText";
 // import ReusableButton from "./componenten/button/ReusableButton";
 // import CompleteTipFocus from "./componenten/Tips/CompleteTipFocus";
 // import MakeReview from "./componenten/reviewScreen/MakeReview";
 // import ReviewScreen from "./componenten/reviewScreen/ReviewScreen";
 // import TipInMaking from "./componenten/Tips/TipInMaking";
-import TipSmallVersion from "./componenten/Tips/TipSmallVersion";
+// import TipSmallVersion from "./componenten/Tips/TipSmallVersion";
 
 function App() {
   return (
@@ -19,7 +19,8 @@ function App() {
         {/*<ReviewScreen/>*/}
         {/*<CompleteTipFocus/>*/}
         {/*<TipInMaking/>*/}
-        <TipSmallVersion/>
+        {/*<TipSmallVersion/>*/}
+        <LogIn/>
       </div>
   );
 }

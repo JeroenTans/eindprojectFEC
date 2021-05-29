@@ -1,0 +1,76 @@
+
+.formComplete {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.logInForm {
+    margin: 175px 200px 0 0;
+    padding: 0;
+    border-radius: 10px;
+    background-color: hsl(159, 100%, 19%);
+}
+
+.boxLogIn {
+    display: flex;
+    margin: 50px 70px 40px;
+}
+
+.buttonBoxLogIn {
+    display: flex;
+    justify-content: space-between;
+}
+
+.buttonBoxRegister {
+    display: inline-flex;
+}
+
+.change {
+    height: 75px;
+    border: none;
+    cursor: pointer;
+    color: white;
+    font-size: 20px;
+}
+
+#forgotP {
+    font-size: 10px;
+    margin: 10px 0 70px 130px;
+    border: none;
+    background-color: hsl(159, 100%, 19%);
+    cursor: pointer;
+    color: white;
+}
+
+#passwordField {
+    margin-bottom: 0;
+    border-radius: 5px;
+    border: none;
+    height: 20px;
+}
+
+#emailField {
+    border-radius: 5px;
+    border: none;
+    height: 20px;
+}
+
+#logIn {
+    width: 100%;
+    margin-right: 0;
+    border-radius: 10px 0 0 0;
+    background-color: transparent;
+}
+
+#register {
+    width: 100%;
+    margin-right: 0;
+    border-radius: 0 10px 0 0;
+    background-color: hsl(160, 24%, 66%);
+}
+
+#logInButton {
+    cursor: pointer;
+    border-radius: 50px;
+    border: none;
+}
