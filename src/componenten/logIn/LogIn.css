@@ -1,16 +1,4 @@
 
-.formComplete {
-    display: flex;
-    justify-content: flex-end;
-}
-
-.logInForm {
-    margin: 175px 200px 0 0;
-    padding: 0;
-    border-radius: 10px;
-    background-color: hsl(159, 100%, 19%);
-}
-
 .boxLogIn {
     display: flex;
     margin: 50px 70px 40px;
@@ -18,11 +6,13 @@
 
 .buttonBoxLogIn {
     display: flex;
-    justify-content: space-between;
 }
 
-.buttonBoxRegister {
-    display: inline-flex;
+.buttonBoxLogInTwo {
+    background-color: hsl(159, 100%, 19%);
+    display: flex;
+    justify-content: center;
+    border-radius: 0 0 10px 10px;
 }
 
 .change {
@@ -31,15 +21,23 @@
     cursor: pointer;
     color: white;
     font-size: 20px;
+    width: 100%;
+    background-color: hsl(159, 100%, 19%);
+}
+
+.email {
+    background-color: hsl(159, 100%, 19%);
+    padding-top: 30px;
 }
 
 #forgotP {
     font-size: 10px;
-    margin: 10px 0 70px 130px;
+    margin: 10px 0 0 123px;
     border: none;
     background-color: hsl(159, 100%, 19%);
     cursor: pointer;
     color: white;
+    min-height: 60px;
 }
 
 #passwordField {
@@ -47,24 +45,22 @@
     border-radius: 5px;
     border: none;
     height: 20px;
+    background-color: white;
 }
 
 #emailField {
     border-radius: 5px;
     border: none;
     height: 20px;
+    margin-top: 0;
+    background-color: white;
 }
 
 #logIn {
-    width: 100%;
-    margin-right: 0;
     border-radius: 10px 0 0 0;
-    background-color: transparent;
 }
 
 #register {
-    width: 100%;
-    margin-right: 0;
     border-radius: 0 10px 0 0;
     background-color: hsl(160, 24%, 66%);
 }
@@ -73,4 +69,8 @@
     cursor: pointer;
     border-radius: 50px;
     border: none;
+    background-color: white;
+    color: grey;
+    margin-bottom: 30px;
+    margin-top: 0;
 }

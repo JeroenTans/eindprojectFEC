@@ -1,0 +1,24 @@
+
+* {
+    background-color: hsl(158, 100%, 24.8%);
+}
+
+.imageOne img {
+
+    height: 100vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.imageOne {
+    position: absolute;
+    margin-left: 110px;
+    background-color: hsl(158, 100%, 25%);
+}
+
+.loginPageOne {
+    position: absolute;
+    margin: 200px 175px 0 1050px;
+    /*box-shadow: 1px 1px 1px 1px;*/
+}

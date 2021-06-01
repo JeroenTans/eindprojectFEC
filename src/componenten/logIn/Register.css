@@ -1,0 +1,50 @@
+
+.registerForm {
+    margin: 150px 200px 0 0;
+    border-radius: 10px;
+    background-color: hsl(159, 100%, 19%);
+}
+
+.boxRegister {
+    display: flex;
+    margin: 50px 70px 40px;
+    border-radius: 5px;
+    border: none;
+    height: 20px;
+    background-color: white;
+}
+
+.changeRegister {
+    height: 90px;
+    border: none;
+    cursor: pointer;
+    color: white;
+    font-size: 20px;
+}
+
+#logInPage {
+    width: 50%;
+    border-radius: 10px 0 0 0;
+    background-color: hsl(160, 24%, 66%);
+}
+
+#registerPage {
+    width: 50%;
+    border-radius: 0 10px 0 0;
+    background-color: hsl(159, 100%, 19%);
+}
+
+#registerButton {
+    cursor: pointer;
+    border-radius: 50px;
+    border: none;
+    background-color: white;
+    color: grey;
+    margin-bottom: 30px;
+}
+
+#emailFieldRegister {
+    margin-top: 30px;
+}
+
+
