@@ -22,6 +22,13 @@
     font-size: 20px;
 }
 
+.errorMessage {
+    background-color: hsl(159, 100%, 19%);
+    color: yellow;
+    font-size: 17px;
+    margin: 0;
+}
+
 #logInPage {
     width: 50%;
     border-radius: 10px 0 0 0;
