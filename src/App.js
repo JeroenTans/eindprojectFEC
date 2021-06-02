@@ -16,7 +16,9 @@ import './App.css';
 // import PageRegister from "./pages/PageRegister";
 // import PageAvailableTip from "./pages/PageAvailableTip";
 // import PageTrade from "./pages/PageTrade";
-import PageSendTips from "./componenten/Tips/PageSendTips";
+// import PageSendTips from "./pages/PageSendTips";
+// import Group from "./componenten/group/Group";
+import PageGroup from "./pages/PageGroup";
 
 function App() {
   return (
@@ -37,7 +39,9 @@ function App() {
           {/*<PageRegister/>*/}
           {/*<PageAvailableTip/>*/}
           {/*<PageTrade/>*/}
-          <PageSendTips/>
+          {/*<PageSendTips/>*/}
+          {/*<Group/>*/}
+          <PageGroup/>
 
       </div>
   );

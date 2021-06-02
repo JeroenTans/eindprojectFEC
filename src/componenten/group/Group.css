@@ -1,0 +1,7 @@
+
+.groupDisplay {
+    background-color: hsl(155, 32%, 48%);
+    min-height: 500px;
+    max-width: 500px;
+    border-radius: 5px;
+}
