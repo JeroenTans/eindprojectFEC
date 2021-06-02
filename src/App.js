@@ -13,7 +13,10 @@ import './App.css';
 // import TipSmallVersion from "./componenten/Tips/TipSmallVersion";
 // import Register from './componenten/logIn/Register'
 // import PageInlog from "./pages/PageInlog";
-import PageRegister from "./pages/PageRegister";
+// import PageRegister from "./pages/PageRegister";
+// import PageAvailableTip from "./pages/PageAvailableTip";
+// import PageTrade from "./pages/PageTrade";
+import PageSendTips from "./componenten/Tips/PageSendTips";
 
 function App() {
   return (
@@ -28,11 +31,14 @@ function App() {
           {/*<MakeReview/>*/}
           {/*<ReviewScreen/>*/}
           {/*<TipInMaking/>*/}
-          {/*<TipSmallVersion/>*/}
           {/*<Register/>*/}
           {/*<LogIn/>*/}
           {/*<PageInlog/>*/}
-          <PageRegister/>
+          {/*<PageRegister/>*/}
+          {/*<PageAvailableTip/>*/}
+          {/*<PageTrade/>*/}
+          <PageSendTips/>
+
       </div>
   );
 }

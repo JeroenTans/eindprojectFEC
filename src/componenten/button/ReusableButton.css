@@ -8,6 +8,8 @@
     border-color: green;
     border-style: solid;
     cursor: pointer;
+    font-size: 22.5px;
+    margin-top: 25px;
 }
 
 .explainButton:hover {

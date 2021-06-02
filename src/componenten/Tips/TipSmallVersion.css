@@ -2,33 +2,41 @@
 
 .smallTipBox {
     border-style: solid;
-    max-width:200px;
-    min-height: 400px;
+    width: 220px;
+    height: auto;
     padding-top: 10px;
     border-radius: 5px;
     border-color: green;
-    background-color: 	hsl(155, 32%, 48%);
+    background-color: hsl(155, 32%, 48%);
+    margin: 0 40px 30px 40px;
+}
+
+.smallTipBox:hover {
+    background-color: hsla(108, 31%, 50%, 0.96);
+}
+
+.pictureBox {
+    display: flex;
+    justify-content: center;
 }
 
 #titelSmallTip {
     background-color: hsl(159, 32%, 62%);
     color: white;
-    max-width: 180px;
-    margin: 0 0 10px 8px;
+    margin: 0 5px 5px 5px;
     border-radius: 5px;
 }
 
 #displayPic {
     background-color: hsl(159, 32%, 62%);
     color: white;
-    min-height: 333px;
-    min-width: 180px;
-    border-radius: 5px;
+    width: 95%;
+    border-radius: 10px;
 }
 
 #readMoreButton {
-    min-width: 180px;
-    margin-top: 0;
+    width: 95%;
+    margin-bottom: 5px;
     border: none;
     color: green;
     background-color: hsla(52, 100%, 51%, 0.96);

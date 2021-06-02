@@ -1,9 +1,9 @@
 import React from 'react';
 import './ReusableButton.css';
 
-function ReusableButton ( { buttonTitle } ) {
+function ReusableButton () {
     return (
-        <button type="submit" className="explainButton">{buttonTitle}</button>
+        <button type="submit" className="explainButton">Uitleg</button>
     )
 }
 
