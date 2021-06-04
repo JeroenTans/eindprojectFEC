@@ -11,7 +11,8 @@ import ReusableButton from "../componenten/button/ReusableButton";
 
 function PageSenTips () {
     return (
-        <><NavBar id="navBarAvailableTip" />
+        <div className="pageBackground">
+        <NavBar id="navBarAvailableTip" />
             <div className="tipPageBox">
                 <TipSmallVersion
                     adres="Bloemgracht 4"
@@ -51,7 +52,8 @@ function PageSenTips () {
                     buttonTitle="Uitleg"
                 />
             </div>
-        </>
+        </div>
+
     )
 }
 

@@ -1,76 +1,11 @@
 
-.boxLogIn {
-    display: flex;
-    margin: 50px 70px 40px;
-}
 
-.buttonBoxLogIn {
-    display: flex;
-}
 
-.buttonBoxLogInTwo {
-    background-color: hsl(159, 100%, 19%);
-    display: flex;
-    justify-content: center;
-    border-radius: 0 0 10px 10px;
-}
-
-.change {
-    height: 75px;
-    border: none;
-    cursor: pointer;
-    color: white;
-    font-size: 20px;
-    width: 100%;
-    background-color: hsl(159, 100%, 19%);
-}
-
-.email {
-    background-color: hsl(159, 100%, 19%);
-    padding-top: 30px;
-}
-
-#forgotP {
-    font-size: 10px;
-    margin: 10px 0 0 123px;
-    border: none;
-    background-color: hsl(159, 100%, 19%);
-    cursor: pointer;
-    color: white;
-    min-height: 60px;
-}
-
-#passwordField {
-    margin-bottom: 0;
-    border-radius: 5px;
-    border: none;
-    height: 20px;
-    background-color: white;
-}
-
-#emailField {
-    border-radius: 5px;
-    border: none;
-    height: 20px;
-    margin-top: 0;
-    background-color: white;
-}
-
-#logIn {
-    border-radius: 10px 0 0 0;
-}
-
-#register {
+#registerPageIdOne {
     border-radius: 0 10px 0 0;
-    background-color: hsl(160, 24%, 66%);
+    background-color: hsl(100, 98%, 90%);
 }
 
-#logInButton {
-    cursor: pointer;
-    border-radius: 50px;
-    border: none;
-    background-color: white;
-    color: grey;
-    margin-bottom: 30px;
-    margin-top: 0;
+#loginPageIdOne {
+    border-radius: 10px 0 0 0;
 }

@@ -9,58 +9,57 @@ import pictureCanalTwo from "../images/pictureCanalTwo.png"
 
 function PageTrade () {
     return (
-        <>
-        <NavBar/>
-        <div className="box">
-            <div className="whatToDo">Opgeslagen Tips</div>
-            <div className="whatToDo">Maak uw tip</div>
-        </div>
-        <div className="completeBox">
-            <div className="boxTrade">
-                    <TipSmallVersion
-                        image={pictureCanal}
-                        adres="Lijnbaansgracht 91"
+
+        <div className="pageBackground">
+            <NavBar/>
+            <div className="box">
+                <div className="whatToDo">Opgeslagen Tips</div>
+                <div className="whatToDo">Maak uw tip</div>
+            </div>
+            <div className="completeBox">
+                <div className="boxTrade">
+                        <TipSmallVersion
+                            image={pictureCanal}
+                            adres="Lijnbaansgracht 91"
+                            />
+                        <TipSmallVersion
+                            image={pictureCanal}
+                            adres="Lijnbaansgracht 91"
+                        />
+                        <TipSmallVersion
+                            image={pictureCanal}
+                            adres="Lijnbaansgracht 91"
+                        />
+                        <TipSmallVersion
+                            image={pictureCanal}
+                            adres="Lijnbaansgracht 91"
+                        />
+                        <TipSmallVersion
+                            image={pictureCanal}
+                            adres="Lijnbaansgracht 91"
+                        />
+                        <TipSmallVersion
+                            image={pictureCanal}
+                            adres="Lijnbaansgracht 91"
+                        />
+                        <TipSmallVersion
+                            image={pictureCanal}
+                            adres="Lijnbaansgracht 91"
                         />
                     <TipSmallVersion
                         image={pictureCanal}
                         adres="Lijnbaansgracht 91"
                     />
-                    <TipSmallVersion
-                        image={pictureCanal}
-                        adres="Lijnbaansgracht 91"
-                    />
-                    <TipSmallVersion
-                        image={pictureCanal}
-                        adres="Lijnbaansgracht 91"
-                    />
-                    <TipSmallVersion
-                        image={pictureCanal}
-                        adres="Lijnbaansgracht 91"
-                    />
-                    <TipSmallVersion
-                        image={pictureCanal}
-                        adres="Lijnbaansgracht 91"
-                    />
-                    <TipSmallVersion
-                        image={pictureCanal}
-                        adres="Lijnbaansgracht 91"
-                    />
-                <TipSmallVersion
-                    image={pictureCanal}
-                    adres="Lijnbaansgracht 91"
-                />
-            </div>
-            <div className="makeTipBoxPage">
-                <TipInMaking
-                    uploadImage={pictureCanalTwo}
-                    className="makeTipPage"/>
-            </div>
+                </div>
+                <div className="makeTipBoxPage">
+                    <TipInMaking
+                        uploadImage={pictureCanalTwo}
+                        className="makeTipPage"/>
+                </div>
+                </div>
+                <ReusableButton/>
         </div>
-            {/*<div>*/}
-            {/*    <TipInMaking className="makeTipPage"/>*/}
-            {/*</div>*/}
-        <ReusableButton/>
-        </>
+
     )
 }
 

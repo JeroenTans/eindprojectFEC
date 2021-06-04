@@ -1,57 +1,74 @@
 
-.registerForm {
-    margin: 150px 200px 0 0;
+
+.completeRegister {
+    background-color: lightgreen;
     border-radius: 10px;
-    background-color: hsl(159, 100%, 19%);
+    font-size: 15px;
+    max-width: 350px;
 }
 
-.boxRegister {
+.logInAndRegister {
+    width: available;
     display: flex;
-    margin: 50px 70px 40px;
+    justify-content: space-around;
+    height: 80px;
+    border-radius: 10px 10px 0 0;
+    font-size: 27.5px;
+}
+
+.inputFieldRegister {
+    border: none;
+    margin: 20px 50px 20px 50px;
+    display: flex;
     border-radius: 5px;
-    border: none;
+    width: 200px;
     height: 20px;
-    background-color: white;
-}
+ }
 
-.changeRegister {
-    height: 90px;
-    border: none;
-    cursor: pointer;
-    color: white;
-    font-size: 20px;
-}
-
-.errorMessage {
-    background-color: hsl(159, 100%, 19%);
-    color: yellow;
-    font-size: 17px;
-    margin: 0;
-}
-
-#logInPage {
+.logInRegister {
     width: 50%;
-    border-radius: 10px 0 0 0;
-    background-color: hsl(160, 24%, 66%);
+    color: green;
+    text-decoration: none;
 }
 
-#registerPage {
-    width: 50%;
-    border-radius: 0 10px 0 0;
-    background-color: hsl(159, 100%, 19%);
+.labelRegister {
+    color: green;
 }
 
 #registerButton {
     cursor: pointer;
     border-radius: 50px;
     border: none;
-    background-color: white;
-    color: grey;
-    margin-bottom: 30px;
+    color: green;
+    margin-bottom: 20px;
+    background-color: yellow;
 }
 
-#emailFieldRegister {
-    margin-top: 30px;
+#registerButton:hover {
+    color: white;
+    background-color: green;
 }
+
+#registerPageId {
+    border-radius: 0 10px 0 0;
+}
+
+#loginPageId {
+    border-radius: 10px 0 0 0;
+    background-color: hsl(100, 98%, 90%);
+}
+
+.inputFieldRegister::placeholder {
+    color: lightgrey;
+}
+
+
+
+
+
+
+
+
+
 
 

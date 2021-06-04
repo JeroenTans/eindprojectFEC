@@ -5,16 +5,14 @@ import globe from "../images/globeLogin.png";
 
 function PageRegister () {
     return (
-        <>
-            <div className="completeLoginPage">
-                <div className="imageOne">
-                    <img className="globeOne" src={globe} alt="globeTwo" />
+            <div className="pageBackgroundColor">
+                <div>
+                    <img src={globe} alt="globeTwo" />
                 </div>
-                <div className="registerPageTwo">
+                <div>
                     <Register/>
                 </div>
             </div>
-        </>
     )
 }
 

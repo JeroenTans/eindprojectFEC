@@ -5,16 +5,14 @@ import LogIn from "../componenten/logIn/LogIn";
 
 function PageInlog () {
     return (
-        <>
-            <div className="completeLoginPage">
-                <div className="imageOne">
-                    <img className="globeOne" src={globe} alt="globeTwo" />
+            <div className="pageBackgroundColor">
+                <div>
+                    <img src={globe} alt="globeTwo" />
                 </div>
                 <div className="loginPageOne">
                     <LogIn/>
                 </div>
             </div>
-        </>
     )
 }
 

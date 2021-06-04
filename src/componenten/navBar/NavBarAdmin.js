@@ -1,5 +1,6 @@
 import React from 'react';
 import './NavBarAdmin.css';
+import { Link } from 'react-router-dom';
 
 function NavBarAdmin (){
     return (

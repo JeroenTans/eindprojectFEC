@@ -3,9 +3,10 @@
 .navContainer {
     border-style: solid;
     border-color: green;
-    margin: 20px 20px 10px 20px;
+    margin: 0 20px 10px 20px;
     padding: 15px;
     border-radius: 5px;
+    background-color: hsla(159, 37%, 40%, 0.94);
 }
 
 .mainContainer {
@@ -24,15 +25,13 @@
     justify-content: flex-start;
 }
 
-.navContainer {
-    background-color: hsla(159, 37%, 40%, 0.94);
-}
-
 .pages {
     color: white;
     list-style: none;
-    padding: 0;
     text-align: center;
+    width: 100%;
+    text-decoration: none;
+    font-size: 20px;
 }
 
 .textContainer {
@@ -42,6 +41,7 @@
     border-style: solid;
     border-color: darkgreen;
     width: 150px;
+    list-style-type: none;
 }
 
 .textContainer:hover {

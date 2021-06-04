@@ -1,4 +1,6 @@
-body {
+
+
+.pageBackground {
     background-size: cover;
     background-image: url("../images/AmsterdamDag.jpg");
     background-repeat: no-repeat;
@@ -37,7 +39,6 @@ body {
     color: green;
     border: solid green;
 }
-
 
 .boxTrade::-webkit-scrollbar{
     background-color: hsl(0, 0%, 52%);

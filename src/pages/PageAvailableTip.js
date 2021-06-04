@@ -11,7 +11,8 @@ import ReusableButton from "../componenten/button/ReusableButton";
 
 function PageAvailableTip () {
     return (
-        <><NavBar id="navBarAvailableTip" />
+        <div className="pageBackground">
+            <NavBar id="navBarAvailableTip" />
             {/*<div id="pageAvailableBox">*/}
             {/*    <img src={amsterdam} alt="background"/>*/}
             {/*</div>*/}
@@ -54,8 +55,8 @@ function PageAvailableTip () {
                         buttonTitle="Uitleg"
                 />
                 </div>
+        </div>
 
-        </>
     )
 }
 

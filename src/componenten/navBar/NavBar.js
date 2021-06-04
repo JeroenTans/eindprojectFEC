@@ -1,28 +1,30 @@
 import React from 'react';
 import './NavBar.css';
+import { NavLink, Route} from 'react-router-dom';
 
 function NavBar (){
     return (
-        <>
             <div className="mainContainer">
-                <div className="navContainer">
+                <ul className="navContainer">
                     <nav className="navBar">
-                        <div className="textContainer">
-                            <li className="pages">Home</li>
-                        </div>
-                        <div className="textContainer">
-                            <li className="pages">Trade</li>
-                        </div>
-                        <div className="textContainer">
-                            <li className="pages">Verstuurd</li>
-                        </div>
-                        <div className="textContainer">
-                            <li className="pages">Groep</li>
-                        </div>
+                        <li  className="textContainer">
+                            <NavLink to="/available_tips" className="pages" >Home</NavLink>
+                        </li>
+                        <li  className="textContainer">
+                            <NavLink to="/trade" className="pages" >Trade</NavLink>
+                        </li>
+                        <li  className="textContainer">
+                            <NavLink to="/verstuurde_tips" className="pages" >Verstuurd</NavLink>
+                        </li>
+                        <li  className="textContainer">
+                            <NavLink to="/groep" className="pages" >Groep</NavLink>
+                        </li>
+                        <li  className="textContainer">
+                            <NavLink exact to="/" className="pages" >Log-uit</NavLink>
+                        </li>
                     </nav>
-                </div>
+                </ul>
             </div>
-        </>
     )
 }
 

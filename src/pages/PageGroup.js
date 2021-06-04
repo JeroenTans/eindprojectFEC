@@ -7,13 +7,14 @@ import TipInMaking from "../componenten/Tips/TipInMaking";
 import pictureCanalTwo from "../images/pictureCanalTwo.png";
 import ReusableButton from "../componenten/button/ReusableButton";
 import Group from "../componenten/group/Group";
+import './PageGroup.css'
 
 function PageGroup () {
     return (
-        <>
+        <div className="pageBackground">
             <NavBar/>
             <div className="completeBox">
-                <div className="boxTrade">
+                <div className="boxGroup">
                     <TipSmallVersion
                         image={pictureCanal}
                         adres="Lijnbaansgracht 91"
@@ -56,7 +57,7 @@ function PageGroup () {
             {/*    <TipInMaking className="makeTipPage"/>*/}
             {/*</div>*/}
             <ReusableButton/>
-        </>
+        </div>
     )
 }
 

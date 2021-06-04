@@ -1,0 +1,59 @@
+
+
+.linkForm {
+    height: 240px;
+    width: 300px;
+    border-radius: 5px;
+    background-color: hsl(155, 32%, 48%);
+    color: white;
+    padding-bottom: 50px;
+    padding-top: 10px;
+}
+
+.titelLink {
+    height: 60px;
+    border: yellow solid;
+    margin: 0 20px 0 20px;
+    padding: 0 5px 0 5px;
+    border-radius: 5px;
+    color: white;
+    background-color: hsl(174, 53%, 56%);
+}
+
+.linkInput {
+    display: flex;
+    flex-direction: column;
+
+}
+
+.adressOne {
+    margin: 50px 20px 0 20px;
+    height: 22.5px;
+    border-radius: 5px;
+    border: none;
+    color: white;
+    background-color: hsl(159, 32%, 62%);
+}
+
+.adressOne::placeholder {
+    color: white;
+}
+
+.linkButton {
+    width: 270px;
+    height: 20px;
+    margin-top: 20px;
+    color: green;
+    background-color: hsla(52, 100%, 51%, 0.96);
+    border-radius: 5px;
+    border-color: green;
+    border-style: solid;
+    cursor: pointer;
+    font-size: 22.5px;
+    font-size: 12.5px;
+}
+
+.linkButton:hover {
+    background-color: hsla(108, 31%, 40%, 0.96);
+    color: white;
+}

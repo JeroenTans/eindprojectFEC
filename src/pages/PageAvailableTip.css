@@ -1,10 +1,4 @@
 
-body {
-    background-size: cover;
-    background-image: url("../images/AmsterdamDag.jpg");
-    background-repeat: no-repeat;
-}
-
 .tipPageBox {
     margin: 65px 0 0 0;
     display: flex;
