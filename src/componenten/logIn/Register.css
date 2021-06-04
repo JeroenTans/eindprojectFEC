@@ -1,5 +1,4 @@
 
-
 .completeRegister {
     background-color: lightgreen;
     border-radius: 10px;
@@ -33,6 +32,22 @@
 
 .labelRegister {
     color: green;
+}
+
+p {
+    color: red;
+    font-size: 12.5px;
+}
+
+.errorMessage {
+    color: red;
+    height: auto;
+    background-color: lightgreen;
+    font-size: 12.5px;
+}
+
+.errorBox {
+    margin-bottom: 15px;
 }
 
 #registerButton {

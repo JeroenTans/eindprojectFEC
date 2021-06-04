@@ -3,24 +3,23 @@ import './Register.css'
 import { useForm } from 'react-hook-form';
 import {NavLink} from "react-router-dom";
 
-
 function Register (){
 
     const { handleSubmit, formState: { errors }, register } = useForm();
-
     const [password, setPassword] = React.useState("");
-    const [confirmPassword, setConfirmPassword] = React.useState("");
-    const [isError, setIsError] = useState("")
 
     function sendInfo (e) {
         console.log(e);
     }
 
-    const validatePassword = (e)=> {
-        setConfirmPassword(e.target.value)
-        if (password === e.target.value) console.log(confirmPassword)
+    const validatePassword = (value)=> {
+        if (password !== value) return false;
     }
 
+    const checkCity = (value) => {
+        const availableCity = "Amsterdam"
+        if (value !== availableCity) return false
+    }
 
 
 
@@ -32,45 +31,46 @@ return (
                         <NavLink id="loginPageId" className="logInRegister" exact to="/">Login</NavLink>
                         <NavLink id="registerPageId" className="logInRegister" to="/register">Registreer</NavLink>
             </div>
-                <label className="labelRegister" htmlFor="e-mail">e-mail:
-                    <input  className="inputFieldRegister"
-                            type="text"
-                            placeholder="➡ type hier uw e-mail adres:"
-                            {...register("e-mailInputRegister")}
-                            />
+            <label className="labelRegister" htmlFor="e-mail">e-mail:
+                <input  className="inputFieldRegister"
+                        type="text"
+                        placeholder="➡ type hier uw e-mail adres:"
+                        {...register("emailRegistration", {
+                            required: true,
+                            validate: (value) => value.includes('@'),
+                        })}
+                />{errors.emailRegistration && <p>Het e-mail adres is verplicht en moet een "@ "</p>}
                 </label>
                 <label className="labelRegister" htmlFor="woonplaats">woonplaats:
                     <input  className="inputFieldRegister"
                             type="text"
                             placeholder="➡ type hier waar u woont:"
-                            {...register("residence")}
-                            />
+                            {...register("residence", {
+                                required: true,
+                                validate: (value) => checkCity(value),
+                            })}
+                            />{errors.residence && <p>Dit veld is verplicht en kan momenteel alleen Amsterdam zijn.</p>}
                 </label>
                 <label className="labelRegister" htmlFor="wachtwoord">wachtwoord:
                     <input  className="inputFieldRegister"
                             type="text"
                             placeholder="➡ type hier uw wachtwoord:"
-
+                            value={password}
                             onChange={(e)=>setPassword(e.target.value)}
-                            {...register("password", {
-                                required:true,
-                                setValueAs: password
-                            })}
                             />
                 </label>
                 <label className="labelRegister" htmlFor="wachtwoord">bevestig wachtwoord:
                     <input  className="inputFieldRegister"
                             type="text"
-                            placeholder="bevestig hier uw wachtwoord:"
-                            onChange={(e)=>validatePassword(e)}
-                            {...register("passwordCheck", {
-                                required:true,
-                                setValueAs: (e)=>validatePassword(e)
+                            placeholder="➡ bevestig hier uw wachtwoord:"
+                            {...register("confirmPassword", {
+                                required: true,
+                                validate: (value => validatePassword(value))
                             })}
-                            />
+                            />{errors.confirmPassword && errors.confirmPassword.type === "required" && <span className="errorMessage">De opgegeven wachtwoorden komen niet overeen</span>}
                 </label>
                 <div className="buttonRegisterPage">
-                    <button id="registerButton">registreer</button>
+                    <button type="submit" id="registerButton">registreer</button>
                 </div>
         </form>
     </div>
@@ -80,6 +80,17 @@ return (
 }
 
 export default Register;
+
+// <label  htmlFor="first-name">Naam:
+//     <input
+//         type="text"
+//         id="first-name"
+//         {...register("voornaam", {
+//             required: {value: true, message: "Dit veld is verplicht"}
+//         })}
+//     />
+//     {errors.voornaam && <p>{errors.voornaam.message}</p>}
+// </label>
 
 
 // <form   onSubmit={handleSubmit(sendInfo)}>
@@ -97,10 +108,10 @@ export default Register;
 //                     className="boxRegister"
 //                     placeholder=" ➡ e-mail adres:"
 //                     {...register("emailRegistration", {
-//                         required: true,
-//                         validate: (value) => value.includes('@')
-//                     })}
-//             />{errors.emailRegistration && errors.emailRegistration.type === "required" && <span className="errorMessage">Dit veld is verplicht en moet een '@' bevatten.</span>}
+//                 required: true,
+//                 validate: (value) => value.includes('@')
+// })}
+// />{errors.emailRegistration && errors.emailRegistration.type === "required" && <span className="errorMessage">Dit veld is verplicht en moet een '@' bevatten.</span>}
 //         </label>
 //         <label id="city">
 //             <input  type="text"
@@ -142,3 +153,9 @@ export default Register;
 //         </label>
 //     </div>
 // </form>
+
+// {...register("emailRegistration", {
+//     required: true,
+//     pattern: /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/,
+//     message: "Please enter a valid e mail."
+// })}
