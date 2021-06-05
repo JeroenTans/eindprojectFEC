@@ -6,12 +6,20 @@
     border-radius: 5px;
     margin: 10px;
     border: yellow solid;
-    display: flex;
-    flex-direction: column-reverse;
+    padding: 15px;
+    /*display: flex;*/
+    /*flex-direction: column-reverse;*/
 }
 
 .groupDisplay:hover {
     border-color: hsl(63, 88%, 47.5%);
 }
 
+.groupDisplay {
+    color: white;
+}
+
+.groupMember {
+    border: solid yellow;
+}
 

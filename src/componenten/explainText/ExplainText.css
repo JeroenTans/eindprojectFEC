@@ -1,11 +1,12 @@
 
 .textInfo {
-    max-width: 1300px;
+    max-width: 100%;
     border-style: solid;
     border-color: green;
     border-radius: 5px;
     background-color: hsl(123, 28%, 40%);
     padding: 0 7px 0 7px;
+    font-size: 20px;
 }
 
 .actualText {
@@ -15,5 +16,5 @@
 .boxAround {
     padding: 10px;
     background-color: hsl(123, 28%, 50%);
-    max-width: 1310px
+    width: 98.7%;
 }

@@ -3,11 +3,9 @@ import './PageTrade.css'
 import NavBar from "../componenten/navBar/NavBar";
 import TipSmallVersion from "../componenten/Tips/TipSmallVersion";
 import pictureCanal from "../images/pictureCanal.png";
-import TipInMaking from "../componenten/Tips/TipInMaking";
-import pictureCanalTwo from "../images/pictureCanalTwo.png";
-import ReusableButton from "../componenten/button/ReusableButton";
 import Group from "../componenten/group/Group";
 import './PageGroup.css'
+import ExplainText from "../componenten/explainText/ExplainText";
 
 function PageGroup () {
     return (
@@ -53,10 +51,7 @@ function PageGroup () {
                         className="makeTipPage"/>
                 </div>
             </div>
-            {/*<div>*/}
-            {/*    <TipInMaking className="makeTipPage"/>*/}
-            {/*</div>*/}
-            <ReusableButton/>
+            <ExplainText/>
         </div>
     )
 }

@@ -1,23 +1,25 @@
 import React from 'react';
 import './NavBarAdmin.css';
-import { Link } from 'react-router-dom';
+import { NavLink, Route} from 'react-router-dom';
 
 function NavBarAdmin (){
     return (
-        <>
+
             <div className="mainContainerAdmin">
-                <div className="navContainerAdmin">
+                <ul className="navContainerAdmin">
                     <nav className="navBarAdmin">
-                        <div className="textContainerAdmin">
-                            <li className="pagesAdmin">Link</li>
-                        </div>
-                        <div className="textContainerAdmin">
-                            <li className="pagesAdmin">Standaard tip</li>
-                        </div>
+                        <li className="textContainerAdmin">
+                            <NavLink to="/link" className="pagesAdmin">Link</NavLink>
+                        </li>
+                        <li className="textContainerAdmin">
+                            <NavLink to="/standaart_tip" className="pagesAdmin">Standaard tip</NavLink>
+                        </li>
+                        <li className="textContainerAdmin">
+                            <NavLink exact to="/" className="pagesAdmin" >Log-uit</NavLink>
+                        </li>
                     </nav>
-                </div>
+                </ul>
             </div>
-        </>
     )
 }
 

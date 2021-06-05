@@ -1,11 +1,11 @@
 import React from 'react';
 import './PageTrade.css'
 import NavBar from "../componenten/navBar/NavBar";
-import ReusableButton from "../componenten/button/ReusableButton";
 import TipInMaking from "../componenten/Tips/TipInMaking";
 import TipSmallVersion from "../componenten/Tips/TipSmallVersion";
 import pictureCanal from "../images/pictureCanal.png"
 import pictureCanalTwo from "../images/pictureCanalTwo.png"
+import ExplainText from "../componenten/explainText/ExplainText";
 
 function PageTrade () {
     return (
@@ -57,7 +57,7 @@ function PageTrade () {
                         className="makeTipPage"/>
                 </div>
                 </div>
-                <ReusableButton/>
+                <ExplainText/>
         </div>
 
     )
