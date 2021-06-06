@@ -13,7 +13,6 @@ function CompleteTipFocus ( { uploadImage, uploadAlt, adres, whatIsTheTipAbout }
     }
 
     return (
-        <>
             <div className="tipBox">
                 <div className="tipBoxTwo" id="pictureDisplay">
                     <img id="pictureDisplay" src={uploadImage} alt={uploadAlt}/>
@@ -33,7 +32,6 @@ function CompleteTipFocus ( { uploadImage, uploadAlt, adres, whatIsTheTipAbout }
                     <MakeReview/>
                 </PopUp>
             </div>
-        </>
 
     )
 }

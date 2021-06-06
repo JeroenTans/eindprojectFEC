@@ -13,10 +13,8 @@ function PageAvailableTip () {
     return (
         <div className="pageBackground">
             <NavBar id="navBarAvailableTip" />
-            {/*<div id="pageAvailableBox">*/}
-            {/*    <img src={amsterdam} alt="background"/>*/}
-            {/*</div>*/}
-                <div className="tipPageBox">
+            <div className="allTips">
+                <div className="tipPageBoxStandard">
                     <TipSmallVersion
                         adres="Bloemgracht 4"
                         image={pictureCanal}
@@ -29,14 +27,8 @@ function PageAvailableTip () {
                         adres="Westermarkt 20"
                         image={pictureCanalThree}
                     />
-                    <TipSmallVersion
-                        adres="lijnbaansgracht 91"
-                        image={pictureCanalFour}
-                    />
-                    <TipSmallVersion
-                        adres="Bloemgracht 4"
-                        image={pictureCanal}
-                    />
+                </div>
+                <div className="tipPageBoxPrive">
                     <TipSmallVersion
                         adres="Nieuwedijk 5"
                         image={pictureCanalTwo}
@@ -50,6 +42,21 @@ function PageAvailableTip () {
                         image={pictureCanalFour}
                     />
                 </div>
+                <div className="tipPageBoxPublic">
+                    <TipSmallVersion
+                        adres="Nieuwedijk 5"
+                        image={pictureCanalTwo}
+                    />
+                    <TipSmallVersion
+                        adres="Westermarkt 20"
+                        image={pictureCanalThree}
+                    />
+                    <TipSmallVersion
+                        adres="lijnbaansgracht 91"
+                        image={pictureCanalFour}
+                    />
+                </div>
+            </div>
                 <ReusableButton/>
         </div>
 

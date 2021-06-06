@@ -6,7 +6,7 @@ import TipSmallVersion from "../componenten/Tips/TipSmallVersion";
 import pictureCanal from "../images/pictureCanal.png"
 import pictureCanalTwo from "../images/pictureCanalTwo.png"
 import ReusableButton from "../componenten/button/ReusableButton";
-import Response from "../componenten/response/Response";
+
 
 function PageTrade () {
     return (
@@ -19,39 +19,38 @@ function PageTrade () {
             </div>
             <div className="completeBox">
                 <div className="boxTrade">
-                    {/*    <TipSmallVersion*/}
-                    {/*        image={pictureCanal}*/}
-                    {/*        adres="Lijnbaansgracht 91"*/}
-                    {/*        />*/}
-                    {/*    <TipSmallVersion*/}
-                    {/*        image={pictureCanal}*/}
-                    {/*        adres="Lijnbaansgracht 91"*/}
-                    {/*    />*/}
-                    {/*    <TipSmallVersion*/}
-                    {/*        image={pictureCanal}*/}
-                    {/*        adres="Lijnbaansgracht 91"*/}
-                    {/*    />*/}
-                    {/*    <TipSmallVersion*/}
-                    {/*        image={pictureCanal}*/}
-                    {/*        adres="Lijnbaansgracht 91"*/}
-                    {/*    />*/}
-                    {/*    <TipSmallVersion*/}
-                    {/*        image={pictureCanal}*/}
-                    {/*        adres="Lijnbaansgracht 91"*/}
-                    {/*    />*/}
-                    {/*    <TipSmallVersion*/}
-                    {/*        image={pictureCanal}*/}
-                    {/*        adres="Lijnbaansgracht 91"*/}
-                    {/*    />*/}
-                    {/*    <TipSmallVersion*/}
-                    {/*        image={pictureCanal}*/}
-                    {/*        adres="Lijnbaansgracht 91"*/}
-                    {/*    />*/}
-                    {/*<TipSmallVersion*/}
-                    {/*    image={pictureCanal}*/}
-                    {/*    adres="Lijnbaansgracht 91"*/}
-                    {/*/>*/}
-                    <Response/>
+                        <TipSmallVersion
+                            image={pictureCanal}
+                            adres="Lijnbaansgracht 91"
+                            />
+                        <TipSmallVersion
+                            image={pictureCanal}
+                            adres="Lijnbaansgracht 91"
+                        />
+                        <TipSmallVersion
+                            image={pictureCanal}
+                            adres="Lijnbaansgracht 91"
+                        />
+                        <TipSmallVersion
+                            image={pictureCanal}
+                            adres="Lijnbaansgracht 91"
+                        />
+                        <TipSmallVersion
+                            image={pictureCanal}
+                            adres="Lijnbaansgracht 91"
+                        />
+                        <TipSmallVersion
+                            image={pictureCanal}
+                            adres="Lijnbaansgracht 91"
+                        />
+                        <TipSmallVersion
+                            image={pictureCanal}
+                            adres="Lijnbaansgracht 91"
+                        />
+                    <TipSmallVersion
+                        image={pictureCanal}
+                        adres="Lijnbaansgracht 91"
+                    />
                 </div>
                     <div className="makeTipBoxPage">
                         <TipInMaking

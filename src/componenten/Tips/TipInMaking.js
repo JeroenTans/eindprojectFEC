@@ -1,16 +1,26 @@
 import React, { useState } from 'react';
 import './TipInMaking.css';
 import { useForm } from 'react-hook-form';
+import PopUp from "../popup/PopUp";
+import Response from "../response/Response";
+import CompleteTipFocus from "./CompleteTipFocus";
 
 function TipInMaking ({ uploadImage, uploadAlt, adres, whatIsTheTipAbout }) {
 
     const { handleSubmit, formState: { errors }, register } = useForm();
     const [imageTip, setImageTip] = useState();
+    const [buttonPopup, toggleButtonPopup] = useState(false);
 
-
+    function openPopup (e) {
+        toggleButtonPopup(true);
+        e.preventDefault()
+    }
 
     function sendInfo (data) {
         console.log(data);
+        <PopUp trigger={buttonPopup} setTrigger={toggleButtonPopup}>
+            <Response message="Super! De tip word z.s.m. gelinkt, veel plezier!"/>
+        </PopUp>
     }
 
     return (

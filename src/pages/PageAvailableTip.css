@@ -1,26 +1,47 @@
 
-.tipPageBox {
-    margin: 65px 0 0 0;
+.allTips {
     display: flex;
     justify-content: space-around;
-    align-items: center;
     width: auto;
     max-width: 100%;
     overflow: auto;
-    height: 60%;
+    height: 550px;
 }
 
-.tipPageBox::-webkit-scrollbar{
+/*.tipPageBoxStandard {*/
+/*    !*margin: 20px;*!*/
+/*    !*display: flex;*!*/
+/*    !*justify-content: space-around;*!*/
+/*    !*align-items: center;*!*/
+/*    !*flex-direction: column;*!*/
+/*    !*width: auto;*!*/
+/*    !*max-width: 100%;*!*/
+/*    !*overflow: auto;*!*/
+/*    !*height: 60%;*!*/
+/*}*/
+
+/*.tipPageBoxPrive {*/
+/*    !*display: flex;*!*/
+/*    !*justify-content: space-around;*!*/
+/*    !*align-items: center;*!*/
+/*    !*flex-direction: column;*!*/
+/*    !*width: auto;*!*/
+/*    !*max-width: 100%;*!*/
+/*    !*overflow: auto;*!*/
+/*    !*height: 60%;*!*/
+/*}*/
+
+.allTips::-webkit-scrollbar{
     background-color: hsl(0, 0%, 52%);
     color: red;
 }
 
-.tipPageBox::-webkit-scrollbar-track {
+.allTips::-webkit-scrollbar-track {
     -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
     border-radius: 10px;
 }
 
-.tipPageBox::-webkit-scrollbar-thumb {
+.allTips::-webkit-scrollbar-thumb {
     border-right: 10px;
     -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
 }

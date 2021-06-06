@@ -12,39 +12,35 @@ function PageSenTips () {
     return (
         <div className="pageBackground">
         <NavBar id="navBarAvailableTip" />
-            <div className="tipPageBox">
-                <TipSmallVersion
-                    adres="Bloemgracht 4"
-                    image={pictureCanal}
-                />
-                <TipSmallVersion
-                    adres="Nieuwedijk 5"
-                    image={pictureCanalTwo}
-                />
-                <TipSmallVersion
-                    adres="Westermarkt 20"
-                    image={pictureCanalThree}
-                />
-                <TipSmallVersion
-                    adres="lijnbaansgracht 91"
-                    image={pictureCanalFour}
-                />
-                <TipSmallVersion
-                    adres="Bloemgracht 4"
-                    image={pictureCanal}
-                />
-                <TipSmallVersion
-                    adres="Nieuwedijk 5"
-                    image={pictureCanalTwo}
-                />
-                <TipSmallVersion
-                    adres="Westermarkt 20"
-                    image={pictureCanalThree}
-                />
-                <TipSmallVersion
-                    adres="lijnbaansgracht 91"
-                    image={pictureCanalFour}
-                />
+            <div className="allTips">
+                <div className="tipPageBoxPublic">
+                    <TipSmallVersion
+                        adres="Bloemgracht 4"
+                        image={pictureCanal}
+                    />
+                    <TipSmallVersion
+                        adres="Nieuwedijk 5"
+                        image={pictureCanalTwo}
+                    />
+                    <TipSmallVersion
+                        adres="Westermarkt 20"
+                        image={pictureCanalThree}
+                    />
+                </div>
+                <div className="tipPageBoxPrive">
+                    <TipSmallVersion
+                        adres="Nieuwedijk 5"
+                        image={pictureCanalTwo}
+                    />
+                    <TipSmallVersion
+                        adres="Westermarkt 20"
+                        image={pictureCanalThree}
+                    />
+                    <TipSmallVersion
+                        adres="lijnbaansgracht 91"
+                        image={pictureCanalFour}
+                    />
+                </div>
             </div>
         <ReusableButton/>
         </div>
