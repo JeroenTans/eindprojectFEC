@@ -6,15 +6,16 @@
     border-radius: 5px;
     background-color: hsl(123, 28%, 40%);
     padding: 0 7px 0 7px;
-    font-size: 20px;
+
 }
 
 .actualText {
     color: white;
+    font-size: 17.5px;
 }
 
 .boxAround {
     padding: 10px;
     background-color: hsl(123, 28%, 50%);
-    width: 98.7%;
+    width: 1000px;
 }

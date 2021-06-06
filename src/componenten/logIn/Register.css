@@ -34,11 +34,6 @@
     color: white;
 }
 
-p {
-    color: red;
-    font-size: 12.5px;
-}
-
 .errorMessage {
     color: red;
     height: auto;

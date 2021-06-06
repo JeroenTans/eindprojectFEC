@@ -5,7 +5,7 @@ import TipSmallVersion from "../componenten/Tips/TipSmallVersion";
 import pictureCanal from "../images/pictureCanal.png";
 import Group from "../componenten/group/Group";
 import './PageGroup.css'
-import ExplainText from "../componenten/explainText/ExplainText";
+import ReusableButton from "../componenten/button/ReusableButton";
 
 function PageGroup () {
     return (
@@ -46,12 +46,12 @@ function PageGroup () {
                         adres="Lijnbaansgracht 91"
                     />
                 </div>
-                <div className="makeTipBoxPage">
+                <div className="boxGroupComp">
                         <Group
                         className="makeTipPage"/>
                 </div>
             </div>
-            <ExplainText/>
+            <ReusableButton/>
         </div>
     )
 }

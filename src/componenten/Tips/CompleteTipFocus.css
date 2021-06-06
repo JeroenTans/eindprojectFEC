@@ -4,8 +4,8 @@
     border-color: green;
     border-radius: 5px;
     background-color: 	hsl(155, 32%, 48%);
-    max-width: 600px;
-    min-height: 100%;
+    width: 600px;
+    height: 100%;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: 50px 210px auto;
@@ -25,26 +25,9 @@
     color: white;
 }
 
-
-#pictureDisplay {
-    grid-area: pic;
-    margin-right: 0;
-}
-
-#adressDisplay {
-    grid-area: adres;
-
-    margin-bottom: 0;
-}
-
-#textDisplayTip {
-    grid-area: textDis;
-
-}
-
-#buttonOne {
-    grid-area: butOne;
+.tipBoxTwoBut {
     min-width: 100px;
+    margin: 12px;
     height: 30px;
     color: green;
     background-color: hsla(52, 100%, 51%, 0.96);
@@ -55,16 +38,26 @@
     margin-top: 0;
 }
 
+#pictureDisplay {
+    grid-area: pic;
+    margin-right: 0;
+}
+
+#adressDisplay {
+    grid-area: adres;
+    margin-bottom: 0;
+}
+
+#textDisplayTip {
+    grid-area: textDis;
+
+}
+
+#buttonOne {
+    margin-top: 0;
+}
+
 #buttonTwo {
-    grid-area: butTwo;
-    min-width: 100px;
-    height: 30px;
-    color: green;
-    background-color: hsla(52, 100%, 51%, 0.96);
-    border-radius: 15px;
-    border-color: green;
-    border-style: solid;
-    cursor: pointer;
     margin-top: 0;
 }
 

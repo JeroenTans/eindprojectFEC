@@ -39,7 +39,7 @@ return (
                             required: true,
                             validate: (value) => value.includes('@'),
                         })}
-                />{errors.emailRegistration && <p>Het e-mail adres is verplicht en moet een "@ "</p>}
+                />{errors.emailRegistration && <p className="errorMessage">Het e-mail adres is verplicht en moet een "@ "</p>}
                 </label>
                 <label className="labelRegister" htmlFor="woonplaats">woonplaats:
                     <input  className="inputFieldRegister"
@@ -49,7 +49,7 @@ return (
                                 required: true,
                                 validate: (value) => checkCity(value),
                             })}
-                            />{errors.residence && <p>Dit veld is verplicht en kan momenteel alleen Amsterdam zijn.</p>}
+                            />{errors.residence && <p className="errorMessage">Dit veld is verplicht en kan momenteel alleen Amsterdam zijn.</p>}
                 </label>
                 <label className="labelRegister" htmlFor="wachtwoord">wachtwoord:
                     <input  className="inputFieldRegister"
@@ -67,7 +67,7 @@ return (
                                 required: true,
                                 validate: (value => validatePassword(value))
                             })}
-                            />{errors.confirmPassword && <p>De opgegeven wachtwoorden komen niet overeen</p>}
+                            />{errors.confirmPassword && <p className="errorMessage">De opgegeven wachtwoorden komen niet overeen</p>}
                 </label>
                 <div className="buttonRegisterPage">
                     <button type="submit" id="registerButton">registreer</button>

@@ -1,7 +1,7 @@
 
 .groupDisplay {
     background-color: hsl(174, 53%, 56%);
-    min-height: 510px;
+    height: 500px;
     width: 300px;
     border-radius: 5px;
     margin: 10px;

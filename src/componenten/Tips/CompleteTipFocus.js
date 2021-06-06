@@ -1,7 +1,17 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './CompleteTipFocus.css';
+import PopUp from "../popup/PopUp";
+import MakeReview from "../reviewScreen/MakeReview";
 
 function CompleteTipFocus ( { uploadImage, uploadAlt, adres, whatIsTheTipAbout } ) {
+
+    const [buttonPopup, toggleButtonPopup] = useState(false);
+
+    function openPopup (e) {
+        toggleButtonPopup(true);
+        e.preventDefault()
+    }
+
     return (
         <>
             <div className="tipBox">
@@ -12,12 +22,16 @@ function CompleteTipFocus ( { uploadImage, uploadAlt, adres, whatIsTheTipAbout }
                 <div id="textDisplayTip"  className="tipBoxTwo" >{whatIsTheTipAbout}</div>
 
                 <button
-                    className="tipBoxTwo"
+                    className="tipBoxTwoBut"
                     id="buttonOne">Lees review</button>
                 <button
-                    className="tipBoxTwo"
-                    id="buttonTwo">Schrijf review</button>
-
+                    className="tipBoxTwoBut"
+                    id="buttonTwo"
+                    onClick={(e)=>openPopup(e)}
+                    >Schrijf review</button>
+                <PopUp trigger={buttonPopup} setTrigger={toggleButtonPopup}>
+                    <MakeReview/>
+                </PopUp>
             </div>
         </>
 

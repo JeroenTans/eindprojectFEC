@@ -1,0 +1,23 @@
+
+.boxResponse {
+    border: green solid;
+    padding: 7.5px;
+    width: auto;
+    border-radius: 5px;
+    background-color: 	hsl(155, 32%, 48%);
+}
+
+.boxResponseTwo {
+    border: none;
+    padding: 7.5px;
+    border-radius: 5px;
+    background-color: hsl(159, 32%, 62%);
+}
+
+#messageBoxPar {
+    background-color: white;
+    color: darkslategray;
+    margin: 0;
+    border-radius: 5px;
+    padding: 0 5px 0 5px;
+}
