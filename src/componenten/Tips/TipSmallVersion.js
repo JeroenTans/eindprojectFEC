@@ -1,5 +1,6 @@
 import React from 'react';
 import './TipSmallVersion.css'
+import PopUp from "../PopUp";
 
 function TipSmallVersion ( { image, adres } ) {
     return (
@@ -11,6 +12,9 @@ function TipSmallVersion ( { image, adres } ) {
                     <img id="displayPic" src={image} alt={adres}/>
                 </div>
                 <button id="readMoreButton">Lees meer</button>
+                <PopUp trigger={false}>
+                    <p>Halloooo</p>
+                </PopUp>
             </div>
         </form>
     )

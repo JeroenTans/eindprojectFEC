@@ -7,8 +7,6 @@
     margin: 10px;
     border: yellow solid;
     padding: 15px;
-    /*display: flex;*/
-    /*flex-direction: column-reverse;*/
 }
 
 .groupDisplay:hover {

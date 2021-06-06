@@ -1,55 +1,13 @@
 
-.mainContainerAdmin {
-    padding-top: 20px;
-}
-
-.navContainerAdmin {
-    border-style: solid;
-    border-color: green;
-    margin: 0 400px 20px 400px;
-    padding: 15px;
+.navContainerOne {
+    border: solid green;
+    margin: 0 0 10px 20px;
+    padding: 10px;
     border-radius: 5px;
-}
-
-
-.navBarAdmin {
-    display: flex;
-    justify-content: space-around;
-    padding: -5px;
-}
-
-.buttonContainerAdmin {
-    display: flex;
-    justify-content: flex-start;
-}
-
-.navContainerAdmin {
     background-color: hsla(159, 37%, 40%, 0.94);
+    width: 100%;
+    height: 100%;
 }
-
-.pagesAdmin {
-    color: white;
-    list-style: none;
-    padding: 0;
-    text-align: center;
-    text-decoration: none;
-}
-
-.textContainerAdmin {
-    background-color: hsla(108, 31%, 29%, 0.96);
-    padding: 7px 20px;
-    border-radius: 5px;
-    border-style: solid;
-    border-color: darkgreen;
-    width: 100px;
-    list-style-type: none;
-}
-
-.textContainerAdmin:hover {
-    background-color: hsla(108, 31%, 40%, 0.96);
-}
-
-
 
 
 

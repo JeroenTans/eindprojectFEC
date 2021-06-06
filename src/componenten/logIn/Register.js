@@ -18,7 +18,7 @@ function Register (){
 
     const checkCity = (value) => {
         const availableCity = "Amsterdam"
-        if (value !== availableCity) return false
+        if (value !== availableCity) return false;
     }
 
 
@@ -67,7 +67,7 @@ return (
                                 required: true,
                                 validate: (value => validatePassword(value))
                             })}
-                            />{errors.confirmPassword && errors.confirmPassword.type === "required" && <span className="errorMessage">De opgegeven wachtwoorden komen niet overeen</span>}
+                            />{errors.confirmPassword && <p>De opgegeven wachtwoorden komen niet overeen</p>}
                 </label>
                 <div className="buttonRegisterPage">
                     <button type="submit" id="registerButton">registreer</button>

@@ -1,77 +1,49 @@
 
-
-.form {
-    max-width: 440px;
-    min-height: 250px;
+.completeFormReview {
+    border: solid green;
+    padding: 5px;
+    border-radius: 5px;
     background-color: hsl(155, 32%, 48%);
-    border-radius: 5px;
-    border-style: solid;
-    border-color: green;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
-    grid-template-rows: 30px 170px 10px;
-    grid-template-areas:
-                        "titel titel titel titel heartBroken heart"
-                        "review review review review review review"
-                        "plus plus plus plus plus plus";
-    gap: 12px
-}
-
-.commentPart {
-    margin: 12px 12px 0 12px;
-    border-radius: 5px;
-    grid-area: review;
-    background-color: hsl(159, 32%, 62%);
-    color: white;
-    border: none;
-    padding: 7px;
-}
-
-.likeOrNot {
-    background-color: hsl(159, 32%, 62%);
-    min-height: 30px;
-    border-radius: 5px;
-    margin: 12px 0 0 12px;
-    width: 100%;
-    grid-area: titel;
-    color: white;
 }
 
 .hearts {
-    margin: 12px 12px;
-    min-height: 30px;
-    border-radius: 5px;
-    border: none;
-    background-color: hsl(155, 32%, 48%);
-    cursor: pointer;
-
+    display: flex;
+    justify-content: space-between;
 }
 
-#plusButton {
-    grid-area: plus;
-    cursor: pointer;
-    margin: 0 12px 12px;
-    min-height: 18px;
+.labelHearts {
     border-radius: 5px;
+    background-color: hsl(159, 32%, 62%);
+    color: white;
+}
+
+.commentPart {
+    margin: 5px 0 0 0;
+    border-radius: 5px;
+    background-color: hsl(159, 32%, 62%);
+    color: white;
     border: none;
+}
+
+.commentPart::placeholder {
+    color: white;
+}
+
+.buttonReviewOne {
+    margin-top: 0;
+}
+
+#plusButtonReview {
+    width: 100%;
+    border-radius: 3px;
+    border: none;
+    cursor: pointer;
+    min-height: 18px;
     background-color: hsla(52, 100%, 51%, 0.96);
     color: green;
 }
 
-#buttonHeartBroken {
-    grid-area: heartBroken;
-}
-
-#buttonHeart {
-    grid-area: heart;
-}
-
-#plusButton:hover {
+#plusButtonReview:hover {
     background-color: hsla(108, 31%, 40%, 0.96);
     color: white;
 }
-
-::placeholder {
-    color: white;
-}
-

@@ -5,20 +5,16 @@ import { NavLink, Route} from 'react-router-dom';
 function NavBarAdmin (){
     return (
 
-            <div className="mainContainerAdmin">
-                <ul className="navContainerAdmin">
-                    <nav className="navBarAdmin">
-                        <li className="textContainerAdmin">
-                            <NavLink to="/link" className="pagesAdmin">Link</NavLink>
-                        </li>
-                        <li className="textContainerAdmin">
-                            <NavLink to="/standaart_tip" className="pagesAdmin">Standaard tip</NavLink>
-                        </li>
-                        <li className="textContainerAdmin">
-                            <NavLink exact to="/" className="pagesAdmin" >Log-uit</NavLink>
-                        </li>
+            <div className="mainContainer">
+                <ul className="navContainerOne">
+                    <nav className="navBar">
+                            <NavLink to="/link" className="pages">Link</NavLink>
+                            <NavLink to="/standaart_tip" className="pages">Standaard tip</NavLink>
                     </nav>
                 </ul>
+                <li className="logOutContainer">
+                    <NavLink className="logOut" exact to="/">Uitloggen</NavLink>
+                </li>
             </div>
     )
 }

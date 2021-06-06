@@ -1,7 +1,7 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './Group.css'
 import AddButton from "../button/AddButton";
-import {useForm} from "react-hook-form";
+import { useForm } from "react-hook-form";
 
 function Group () {
 
@@ -10,6 +10,11 @@ function Group () {
     function sendInfo (data) {
         console.log(data)
     }
+
+    const [groupMember, setGroupMember] = useState([
+        {email: "jeroen544@hotmail.com"},
+        {email: "jan544@hotmail.com"}
+    ])
 
     return (
         <div>

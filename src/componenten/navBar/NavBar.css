@@ -1,49 +1,61 @@
 
 
 .navContainer {
-    border-style: solid;
-    border-color: green;
+    border: solid green;
     margin: 0 20px 10px 20px;
-    padding: 15px;
+    padding: 10px;
     border-radius: 5px;
     background-color: hsla(159, 37%, 40%, 0.94);
+    width: 85%;
+    height: 100%;
 }
 
 .mainContainer {
     position: sticky;
     top: 10px;
+    display: flex;
+    justify-content: space-around;
 }
 
 .navBar {
     display: flex;
     justify-content: space-around;
-    padding: -5px;
-}
-
-.buttonContainer {
-    display: flex;
-    justify-content: flex-start;
 }
 
 .pages {
     color: white;
-    list-style: none;
-    text-align: center;
-    width: 100%;
     text-decoration: none;
     font-size: 20px;
-}
-
-.textContainer {
-    background-color: hsla(108, 31%, 29%, 0.96);
-    padding: 7px 20px;
-    border-radius: 5px;
-    border-style: solid;
-    border-color: darkgreen;
     width: 150px;
-    list-style-type: none;
+    background-color: hsla(108, 31%, 29%, 0.96);
+    border-radius: 5px;
+    border: solid darkgreen;
 }
 
-.textContainer:hover {
+.pages:hover {
     background-color: hsla(108, 31%, 40%, 0.96);
+}
+
+.logOut {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: white;
+}
+
+.logOutContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30px;
+    border-radius: 5px;
+    background-color: hsl(0, 0%, 52%);
+    border: darkgrey solid;
+    padding: 0 5px 0 5px;
+}
+
+.logOutContainer:hover {
+    background-color: darkgrey;
+    border: hsl(0, 0%, 52%) solid;
 }

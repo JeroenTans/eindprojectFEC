@@ -1,6 +1,6 @@
 
 .completeRegister {
-    background-color: lightgreen;
+    background-color: hsla(159, 37%, 40%, 0.94);
     border-radius: 10px;
     font-size: 15px;
     max-width: 350px;
@@ -26,12 +26,12 @@
 
 .logInRegister {
     width: 50%;
-    color: green;
+    color: white;
     text-decoration: none;
 }
 
 .labelRegister {
-    color: green;
+    color: white;
 }
 
 p {
@@ -42,7 +42,7 @@ p {
 .errorMessage {
     color: red;
     height: auto;
-    background-color: lightgreen;
+    background-color: hsla(159, 37%, 40%, 0.94);
     font-size: 12.5px;
 }
 
@@ -54,14 +54,14 @@ p {
     cursor: pointer;
     border-radius: 50px;
     border: none;
-    color: green;
+    color: white;
     margin-bottom: 20px;
-    background-color: yellow;
+    background-color: darkgrey;
 }
 
 #registerButton:hover {
-    color: white;
-    background-color: green;
+    color: darkgrey;
+    background-color: white;
 }
 
 #registerPageId {
@@ -70,7 +70,7 @@ p {
 
 #loginPageId {
     border-radius: 10px 0 0 0;
-    background-color: hsl(100, 98%, 90%);
+    background-color: darkgrey;
 }
 
 .inputFieldRegister::placeholder {
