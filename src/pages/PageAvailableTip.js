@@ -6,7 +6,6 @@ import pictureCanalTwo from "../images/pictureCanalTwo.png";
 import pictureCanalThree from "../images/pictureCanalThree.png";
 import pictureCanalFour from "../images/pictureCanalFour.png";
 import NavBar from "../componenten/navBar/NavBar";
-import ExplainText from "../componenten/explainText/ExplainText";
 import ReusableButton from "../componenten/button/ReusableButton";
 
 function PageAvailableTip () {

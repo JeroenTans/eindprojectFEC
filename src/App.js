@@ -1,6 +1,5 @@
 import './App.css';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import { NavLink} from 'react-router-dom';
 import PageInlog from "./pages/PageInlog";
 import PageRegister from "./pages/PageRegister";
 import PageAvailableTip from "./pages/PageAvailableTip";

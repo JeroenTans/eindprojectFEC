@@ -2,14 +2,27 @@ import React, { useState } from 'react';
 import './Register.css'
 import { useForm } from 'react-hook-form';
 import { NavLink } from "react-router-dom";
+import axios from 'axios';
+import * as url from "url";
 
 function Register (){
 
     const { handleSubmit, formState: { errors }, register } = useForm();
-    const [password, setPassword] = React.useState("");
+    const [password, setPassword] = useState("");
 
-    function sendInfo (e) {
-        console.log(e);
+    async function sendInfo (e) {
+
+        console.log(e)
+
+        try {
+
+            await axios.post('http://localhost:8080/', e)
+
+            console.log(e);
+        } catch (error) {
+            console.log("helaas")
+        }
+
     }
 
     const validatePassword = (value)=> {
@@ -20,8 +33,6 @@ function Register (){
         const availableCity = "Amsterdam"
         if (value !== availableCity) return false;
     }
-
-
 
 return (
 
