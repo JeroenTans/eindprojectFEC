@@ -15,7 +15,6 @@ function Register (){
         console.log(e)
 
         try {
-
             await axios.post('http://localhost:8080/', e)
 
             console.log(e);

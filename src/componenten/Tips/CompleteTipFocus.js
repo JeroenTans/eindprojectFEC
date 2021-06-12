@@ -18,8 +18,9 @@ function CompleteTipFocus ( { uploadImage, uploadAlt, adres, whatIsTheTipAbout }
     async function fetchData () {
         try {
             const result = await axios.get('http://localhost:8080/api/v1/tips/get_tips');
+            console.log(result)
             setTips(result.data);
-            console.log(tips[0])
+            console.log(tips)
         } catch (e) {
             console.error(e);
         }
@@ -33,7 +34,7 @@ function CompleteTipFocus ( { uploadImage, uploadAlt, adres, whatIsTheTipAbout }
             <div className="tipBox">
                 {tips.map((tip)=>(
                 <div key={tip.id} className="tipBoxTwo" id="pictureDisplay">
-                    <img id="pictureDisplay" src={tip.picturePath} alt={uploadAlt}/>
+                    <img id="pictureDisplay" src={tip.picturePath} alt={tip.address}/>
                 </div>))}
                 {tips.map((tip)=>(
                 <div key={tip.id} id="adressDisplay"  className="tipBoxTwo" >{tip.address}</div>))}
