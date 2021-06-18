@@ -19,43 +19,10 @@ function PageTrade () {
             </div>
             <div className="completeBox">
                 <div className="boxTrade">
-                        <TipSmallVersion
-                            image={pictureCanal}
-                            adres="Lijnbaansgracht 91"
-                            />
-                        <TipSmallVersion
-                            image={pictureCanal}
-                            adres="Lijnbaansgracht 91"
-                        />
-                        <TipSmallVersion
-                            image={pictureCanal}
-                            adres="Lijnbaansgracht 91"
-                        />
-                        <TipSmallVersion
-                            image={pictureCanal}
-                            adres="Lijnbaansgracht 91"
-                        />
-                        <TipSmallVersion
-                            image={pictureCanal}
-                            adres="Lijnbaansgracht 91"
-                        />
-                        <TipSmallVersion
-                            image={pictureCanal}
-                            adres="Lijnbaansgracht 91"
-                        />
-                        <TipSmallVersion
-                            image={pictureCanal}
-                            adres="Lijnbaansgracht 91"
-                        />
-                    <TipSmallVersion
-                        image={pictureCanal}
-                        adres="Lijnbaansgracht 91"
-                    />
+                        <TipSmallVersion/>
                 </div>
                     <div className="makeTipBoxPage">
-                        <TipInMaking
-                            uploadImage={pictureCanalTwo}
-                            className="makeTipPage"/>
+                        <TipInMaking/>
                     </div>
                 </div>
             <ReusableButton/>

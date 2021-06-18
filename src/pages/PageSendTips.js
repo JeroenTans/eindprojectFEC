@@ -14,32 +14,10 @@ function PageSenTips () {
         <NavBar id="navBarAvailableTip" />
             <div className="allTips">
                 <div className="tipPageBoxPublic">
-                    <TipSmallVersion
-                        adres="Bloemgracht 4"
-                        image={pictureCanal}
-                    />
-                    <TipSmallVersion
-                        adres="Nieuwedijk 5"
-                        image={pictureCanalTwo}
-                    />
-                    <TipSmallVersion
-                        adres="Westermarkt 20"
-                        image={pictureCanalThree}
-                    />
+                    <TipSmallVersion/>
                 </div>
                 <div className="tipPageBoxPrive">
-                    <TipSmallVersion
-                        adres="Nieuwedijk 5"
-                        image={pictureCanalTwo}
-                    />
-                    <TipSmallVersion
-                        adres="Westermarkt 20"
-                        image={pictureCanalThree}
-                    />
-                    <TipSmallVersion
-                        adres="lijnbaansgracht 91"
-                        image={pictureCanalFour}
-                    />
+                    <TipSmallVersion/>
                 </div>
             </div>
         <ReusableButton/>

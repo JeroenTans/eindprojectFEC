@@ -2,19 +2,21 @@ import React, { useState } from 'react'
 import './Group.css'
 import AddButton from "../button/AddButton";
 import { useForm } from "react-hook-form";
+import axios from "axios";
 
 function Group () {
 
     const { handleSubmit, formState: { errors }, register } = useForm();
 
-    function sendInfo (data) {
-        console.log(data)
-    }
+    async function sendInfo (data) {
 
-    const [groupMember, setGroupMember] = useState([
-        {email: "jeroen544@hotmail.com"},
-        {email: "jan544@hotmail.com"}
-    ])
+        try {
+            await axios.post('http://localhost:8080/api/v1/group_members/post_group_members', data)
+        } catch (e) {
+            console.log("Het is niet gelukt, error: " + e)
+        }
+
+    }
 
     return (
         <div>
@@ -22,7 +24,7 @@ function Group () {
                 <label id="groupMember" htmlFor="groeplid toevoegen">Voeg het e-mail adres toe van degene zie u aan de groep wilt toevoegen in
                     <input  type="text"
                             placeholder="nieuw groeplid: "
-                            {...register("groupMember")}
+                            {...register("emailAddress")}
                             />
                 </label>
                     <AddButton className="buttonPlus"/>

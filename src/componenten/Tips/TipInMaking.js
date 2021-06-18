@@ -19,27 +19,49 @@ function TipInMaking ({ uploadImage, uploadAlt, adres, whatIsTheTipAbout }) {
 
     async function sendInfo (data) {
 
-        const picturePath = encodeBase64(data.picturePath);
-        const dataObject = {
-            address: data.address,
-            explanation: data.textAboutTheTip,
-            privateTip: isPrivateTipFe,
-            publicTip: isPublicTipFe,
-            standardTip: false,
-            picturePath: picturePath
-        }
-        console.log(isPrivateTipFe, isPublicTipFe)
+
+        // console.log(data.picturePath)
+        // const dataObject = {
+        //     address: data.address,
+        //     explanation: data.textAboutTheTip,
+        //     privateTip: isPrivateTipFe,
+        //     publicTip: isPublicTipFe,
+        //     standardTip: false,
+
+        console.log("hoi formdata! succes")
+        console.log(formData)
+
         try {
-            await axios.post('http://localhost:8080/api/v1/tips/post_tips', dataObject)
+            await axios.post('http://localhost:8080/api/v1/tips/tip_upload', formData)
+            console.log("het is gelukt! de post data is gepost")
         } catch (e) {
-            console.log("Het is niet gelukt, error: " + e)
+            console.log(console.error(e))
         }
     }
 
+    const formData = new FormData();
+
+    const formSubmit = (data) => {
+
+        console.log("ik zit in de formsubmit!")
+        formData.append("explanation", data.textAboutTheTip)
+        formData.append("address", data.address)
+        formData.append("privateTip", isPrivateTipFe)
+        formData.append("publicTip", isPublicTipFe)
+        formData.append("standardTip", false)
+        formData.append("picturePath", data.picturePath[0])
+
+        console.log("formdata is toegewezen! ")
+        console.log(formData)
+
+        sendInfo(formData)
+    }
+
     return (
-                <form onSubmit={handleSubmit(sendInfo)}  className="tipInMakingBox">
+                <form onSubmit={handleSubmit(formSubmit)}  className="tipInMakingBox">
                     <div className="pictureDisplay">
-                        <UploadImage register={register("picturePath", {
+                        {/*<UploadImage></UploadImage>*/}
+                        <input type="file" {...register("picturePath", {
                             required:true
                         })}
                                         />

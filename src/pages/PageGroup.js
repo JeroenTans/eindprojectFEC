@@ -13,38 +13,7 @@ function PageGroup () {
             <NavBar/>
             <div className="completeBox">
                 <div className="boxGroup">
-                    <TipSmallVersion
-                        image={pictureCanal}
-                        adres="Lijnbaansgracht 91"
-                    />
-                    <TipSmallVersion
-                        image={pictureCanal}
-                        adres="Lijnbaansgracht 91"
-                    />
-                    <TipSmallVersion
-                        image={pictureCanal}
-                        adres="Lijnbaansgracht 91"
-                    />
-                    <TipSmallVersion
-                        image={pictureCanal}
-                        adres="Lijnbaansgracht 91"
-                    />
-                    <TipSmallVersion
-                        image={pictureCanal}
-                        adres="Lijnbaansgracht 91"
-                    />
-                    <TipSmallVersion
-                        image={pictureCanal}
-                        adres="Lijnbaansgracht 91"
-                    />
-                    <TipSmallVersion
-                        image={pictureCanal}
-                        adres="Lijnbaansgracht 91"
-                    />
-                    <TipSmallVersion
-                        image={pictureCanal}
-                        adres="Lijnbaansgracht 91"
-                    />
+                    <TipSmallVersion/>
                 </div>
                 <div className="boxGroupComp">
                         <Group

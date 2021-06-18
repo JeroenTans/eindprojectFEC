@@ -1,13 +1,30 @@
 import './MakeReview.css';
 import { useForm } from 'react-hook-form';
 import React, { useState } from 'react';
+import axios from "axios";
 
 function MakeReview () {
 
     const { handleSubmit, formState: { errors }, register } = useForm();
 
-    function sendInfo (data) {
+    const [heartFe, toggleHeartFe] = useState(true);
+    const [brokenHeartFe, toggleBrokenHeartFe] = useState(false);
+
+
+
+    async function sendInfo (data) {
         console.log(data);
+
+        const dataObjectWriteReview = {...data,
+            heart: heartFe,
+            brokenHeart: brokenHeartFe,
+            address: "Herengracht"
+        }
+        try {
+            await axios.post('http://localhost:8080/api/v1/reviews/post_reviews', dataObjectWriteReview)
+        } catch (e) {
+            console.log("Het is niet gelukt, error: " + e)
+        }
     }
 
     return(
@@ -15,15 +32,15 @@ function MakeReview () {
                 className="completeFormReview">
             <div className="hearts">
                 <label className="labelHearts">Rate de tip d.m.v. de hartjes!</label>
-                    <input  type="radio"
+                    <input  type="checkbox"
                             name="heart"
-                            value="heart"
-                            {...register("loveOrNot")}
+                            checked={heartFe}
+                            onChange={(e)=>brokenHeartFe?toggleBrokenHeartFe(false) && toggleHeartFe(e.target.checked):toggleHeartFe(e.target.checked)}
                             />💖
-                    <input  type="radio"
+                    <input  type="checkbox"
                             name="heart"
-                            value="brokenHeart"
-                            {...register("loveOrNot")}
+                            checked={brokenHeartFe}
+                            onChange={(e)=> heartFe?toggleHeartFe(false) && toggleBrokenHeartFe(e.target.checked):toggleBrokenHeartFe(e.target.checked)}
                             />💔
             </div>
                 <textarea   className="commentPart"

@@ -4,7 +4,7 @@
     border: solid green;
     background-color: hsl(155, 32%, 48%);
     width: 450px;
-    height: 225px;
+    min-height: 225px;
     display: flex;
     padding: 5px;
     border-radius: 5px;

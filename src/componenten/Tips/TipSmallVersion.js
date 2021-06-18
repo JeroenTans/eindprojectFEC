@@ -1,27 +1,43 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './TipSmallVersion.css'
 import PopUp from "../popup/PopUp";
 import CompleteTipFocus from "./CompleteTipFocus";
+import axios from "axios";
 
 
 function TipSmallVersion ( { image, adres } ) {
 
     const [buttonPopup, toggleButtonPopup] = useState(false);
+    const [smallTips, setSmallTips] = useState([])
 
     function openPopup (e) {
         toggleButtonPopup(true);
         e.preventDefault()
     }
 
-    return (
+    async function fetchData () {
+        try {
+            const result = await axios.get('http://localhost:8080/api/v1/tips')
+            setSmallTips(result.data)
+        } catch (e) {
+            console.log("het is niet gelukt, error: " + e)
+        }
+    }
 
-        <div className="completeSmallTipBox">
-            <div id="pictureBox" className="smallTipBox">
-                <img id="displayPic" src={image} alt={adres}/>
+    useEffect(()=>{
+        fetchData()
+    }, [])
+
+    return (
+        <>
+        {smallTips.map((smallTip)=>(
+        <div key={smallTip.id} className="completeSmallTipBox">
+            <div key={smallTip.id} id="pictureBox" className="smallTipBox">
+                <img id="displayPic" src={smallTip.picturePath} alt={smallTip.address}/>
             </div>
             <div id="titelSmallTip" className="smallTipBox">
                 <div className="adressBoxSmallTip">
-                    {adres}hallo
+                    {smallTip.address}
                 </div>
                 <div className="buttonBoxReadMore">
                     <button id="readMoreButton"
@@ -33,7 +49,8 @@ function TipSmallVersion ( { image, adres } ) {
                 </div>
             </div>
 
-        </div>
+        </div>))}
+        </>
     )
 }
 
