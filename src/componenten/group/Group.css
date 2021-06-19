@@ -1,23 +1,22 @@
 
 .groupDisplay {
-    background-color: hsl(174, 53%, 56%);
+    background-color: lightblue;
     height: 500px;
     width: 300px;
     border-radius: 5px;
     margin: 10px;
-    border: yellow solid;
+    border: solid lightsteelblue;
     padding: 15px;
-}
-
-.groupDisplay:hover {
-    border-color: hsl(63, 88%, 47.5%);
 }
 
 .groupDisplay {
     color: white;
 }
 
-.groupMember {
-    border: solid yellow;
+#inputField {
+    border: none;
+    padding: 5px;
+    border-radius: 2px;
+    background-color: hsl(210, 41%, 90%);
 }
 

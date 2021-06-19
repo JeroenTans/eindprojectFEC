@@ -17,9 +17,9 @@ function CompleteTipFocus () {
         e.preventDefault()
     }
 
-    async function fetchData(){
+    async function fetchData(id){
         try {
-            const result = await axios.get('http://localhost:8080/api/v1/tips/3')
+            const result = await axios.get(`http://localhost:8080/api/v1/tips/tip/${id}`)
             setTips(result.data)
             console.log(result.data)
         } catch (e) {
@@ -27,17 +27,17 @@ function CompleteTipFocus () {
         }
     }
 
-    async function fetchImage(){
+    async function fetchImage(id){
         try {
 
-            const result = await axios.get('http://localhost:8080/api/v1/tips/3/picturePath', {
+            const result = await axios.get(`http://localhost:8080/api/v1/tips/${id}/picturePath`, {
                 responseType: "arraybuffer",
                 headers: {
-                    "Content-Type": "image/pdf"
+                    'Content-Type': 'image/pdf',
                 }
             });
-            const blob = new Blob([result.data], {
-                type: "image/jpg"
+            const blob = new Blob([result.data.config], {
+                type: 'image/jpg',
             });
             const objectUrl = URL.createObjectURL(blob);
             setUrl(objectUrl);
@@ -51,12 +51,9 @@ function CompleteTipFocus () {
         }
     }
 
-
-
-
     useEffect(()=>{
-        fetchImage();
-        fetchData();
+        fetchImage(3);
+        fetchData(3);
     },[])
 
     return (

@@ -1,9 +1,8 @@
 .tipInMakingBox{
-    padding: 5px;
-    border-style: solid;
-    border-color: green;
+    padding: 7px;
     border-radius: 5px;
-    background-color: hsl(155, 32%, 48%);
+    background-color: lightblue;
+    border: solid lightsteelblue;
     height: 450px;
     width: 600px;
     display: grid;
@@ -19,7 +18,7 @@
 
 .textDis {
     grid-area: textDis;
-    background-color:  hsl(159, 32%, 62%);
+    background-color: lightsteelblue;
     border-radius: 5px;
     color: white;
     border: none;
@@ -36,7 +35,7 @@
     height: auto;
     width: auto;
     border-radius: 5px;
-    background-color:  hsl(159, 32%, 62%);
+    background-color: lightsteelblue;
     color: white;
     display: flex;
     justify-content: center;
@@ -51,7 +50,7 @@
 
 .adres {
     grid-area: adres;
-    background-color: hsl(159, 32%, 62%);
+    background-color: lightsteelblue;
     border-radius: 5px;
 }
 
@@ -61,7 +60,7 @@
     border-style: none;
     border-radius: 5px;
     color: white;
-    background-color:  hsl(159, 32%, 62%);
+    background-color: lightsteelblue;
     text-align: center;
 }
 

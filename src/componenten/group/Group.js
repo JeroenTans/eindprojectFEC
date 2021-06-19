@@ -23,6 +23,7 @@ function Group () {
             <form className="groupDisplay" onSubmit={handleSubmit(sendInfo)}>
                 <label id="groupMember" htmlFor="groeplid toevoegen">Voeg het e-mail adres toe van degene zie u aan de groep wilt toevoegen in
                     <input  type="text"
+                            id="inputField"
                             placeholder="nieuw groeplid: "
                             {...register("emailAddress")}
                             />

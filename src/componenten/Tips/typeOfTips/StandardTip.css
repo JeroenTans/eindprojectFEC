@@ -1,7 +1,5 @@
 
-
 .completeSmallTipBox {
-    border: solid green;
     background-color: hsl(155, 32%, 48%);
     width: 450px;
     min-height: 225px;
@@ -14,7 +12,6 @@
 .smallTipBox {
     border-radius: 5px;
     padding: 5px;
-    border: none;
     background-color:  hsl(159, 32%, 62%);
     color: white;
     display: flex;
@@ -35,7 +32,7 @@
 
 #readMoreButton {
     border: none;
-    background-color:  hsl(159, 32%, 62%);
+    background-color:  transparent;
     color: white;
     cursor: pointer;
 }
@@ -45,4 +42,3 @@
     height: 100%;
     border-radius: 10px;
 }
-
