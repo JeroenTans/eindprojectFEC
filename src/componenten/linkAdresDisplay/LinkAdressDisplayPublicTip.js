@@ -15,6 +15,16 @@ function LinkAddressDisplayPublicTip () {
         }
     }
 
+    async function deleteTip (id){
+        console.log(id)
+        try {
+            await axios.delete(`http://localhost:8080/api/v1/tips/${id}`)
+        } catch (e) {
+            console.log("Get req is niet gelukt, error: " + e)
+        }
+        console.log(id)
+    }
+
     useEffect(()=>{
         fetchData()
     }, [])
@@ -22,11 +32,10 @@ function LinkAddressDisplayPublicTip () {
     return (
         <div className="groupDisplay">
             <div className="groupMembersDisplay">
-                <h2>Adress privé tips:</h2>
+                <h2>Id & address publieke tips:</h2>
                 {publicTips.map((publicTip)=>(
-                    <div key={publicTip.id}>{publicTip.address}</div>
-
-                ))}
+                    <div key={publicTip.id}>{publicTip.id}  {publicTip.address}  <button onClick={(e)=>deleteTip(publicTip.id)}>X</button>
+                    </div>))}
             </div>
         </div>
     )

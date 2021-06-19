@@ -16,11 +16,13 @@ function LinkAddressDisplayPriveTip () {
     }
 
     async function deleteTip (id){
-        // try {
-        //     await axios.delete(`http://localhost:8080/api/v1/tips/${id}`)
-        // } catch (e) {
-        //     console.log("Get req is niet gelukt, error: " + e)
-        // }
+        console.log(id)
+        try {
+            await axios.delete(`http://localhost:8080/api/v1/tips/${id}`)
+        } catch (e) {
+            console.log("Get req is niet gelukt, error: " + e)
+        }
+        console.log("Usestate id: ", privateTips.id)
         console.log(id)
     }
 
@@ -31,11 +33,10 @@ function LinkAddressDisplayPriveTip () {
     return (
         <div className="groupDisplay">
             <div className="groupMembersDisplay">
-                <h2>Adress privé tips:</h2>
+                <h2>Id & adress privé tips:</h2>
                 {privateTips.map((priveTip)=>(
-                    <div key={priveTip.id}>{priveTip.address}  <button onClick={deleteTip(privateTips.id)}
-                                                                        >X</button></div>
-                ))}
+                    <div key={priveTip.id}>{priveTip.id} {priveTip.address}  <button onClick={(e)=>deleteTip(priveTip.id)}>X</button>
+                    </div>))}
             </div>
 
         </div>
