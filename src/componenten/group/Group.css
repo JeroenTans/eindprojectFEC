@@ -1,12 +1,17 @@
 
 .groupDisplay {
     background-color: lightblue;
-    height: 500px;
     width: 300px;
+    min-height: 500px;
     border-radius: 5px;
     margin: 10px;
     border: solid lightsteelblue;
     padding: 15px;
+}
+
+.groupMembersDisplay {
+    overflow: auto;
+    max-height: 365px;
 }
 
 .groupDisplay {
@@ -18,5 +23,21 @@
     padding: 5px;
     border-radius: 2px;
     background-color: hsl(210, 41%, 90%);
+}
+
+
+.groupMembersDisplay::-webkit-scrollbar{
+    background-color: lightblue;
+    color: red;
+}
+
+.groupMembersDisplay::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    border-radius: 10px;
+}
+
+.groupMembersDisplay::-webkit-scrollbar-thumb {
+    border-right: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
 }
 

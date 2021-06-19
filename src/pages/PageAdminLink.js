@@ -1,7 +1,8 @@
 import React from 'react'
 import './PageAdminLink.css'
 import NavBarAdmin from "../componenten/navBar/NavBarAdmin";
-import LinkAdresDisplay from "../componenten/linkAdresDisplay/LinkAdresDisplay";
+import LinkAddressDisplayPriveTip from "../componenten/linkAdresDisplay/LinkAddressDisplayPriveTip";
+import LinkAddressDisplayPublicTip from "../componenten/linkAdresDisplay/LinkAdressDisplayPublicTip";
 import AdminLink from "../componenten/adminLink/AdminLink";
 
 function PageAdminLink () {
@@ -10,13 +11,13 @@ function PageAdminLink () {
             <NavBarAdmin/>
             <div className="linkBox">
                 <div>
-                    <LinkAdresDisplay/>
+                    <LinkAddressDisplayPriveTip/>
                 </div>
                 <div className="linkSystem">
                     <AdminLink/>
                 </div>
                 <div>
-                    <LinkAdresDisplay/>
+                    <LinkAddressDisplayPublicTip/>
                 </div>
             </div>
         </div>
