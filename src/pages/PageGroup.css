@@ -16,7 +16,7 @@
 }
 
 .boxGroup::-webkit-scrollbar{
-    background-color: hsl(0, 0%, 52%);
+    background-color: lightblue;
     color: hsl(0, 0%, 52%);;
 }
 

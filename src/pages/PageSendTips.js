@@ -1,10 +1,7 @@
 import React from 'react'
 import './PageAvailableTip.css'
-import TipSmallVersion from "../componenten/Tips/TipSmallVersion";
-import pictureCanal from "../images/pictureCanal.png";
-import pictureCanalTwo from "../images/pictureCanalTwo.png";
-import pictureCanalThree from "../images/pictureCanalThree.png";
-import pictureCanalFour from "../images/pictureCanalFour.png";
+import PublicTip from "../componenten/Tips/typeOfTips/PublicTip";
+import PrivateTip from "../componenten/Tips/typeOfTips/PrivateTip";
 import NavBar from "../componenten/navBar/NavBar";
 import ReusableButton from "../componenten/button/ReusableButton";
 
@@ -14,10 +11,10 @@ function PageSenTips () {
         <NavBar id="navBarAvailableTip" />
             <div className="allTips">
                 <div className="tipPageBoxPublic">
-                    <TipSmallVersion/>
+                    <PublicTip/>
                 </div>
                 <div className="tipPageBoxPrive">
-                    <TipSmallVersion/>
+                    <PrivateTip/>
                 </div>
             </div>
         <ReusableButton/>

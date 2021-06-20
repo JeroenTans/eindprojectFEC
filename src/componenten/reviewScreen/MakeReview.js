@@ -21,7 +21,7 @@ function MakeReview () {
             address: "Herengracht"
         }
         try {
-            await axios.post('http://localhost:8080/api/v1/reviews/post_reviews', dataObjectWriteReview)
+            await axios.post('http://localhost:8080/api/v1/reviews', dataObjectWriteReview)
         } catch (e) {
             console.log("Het is niet gelukt, error: " + e)
         }

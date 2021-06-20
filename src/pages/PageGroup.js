@@ -1,7 +1,7 @@
 import React from 'react'
 import './PageTrade.css'
 import NavBar from "../componenten/navBar/NavBar";
-import TipSmallVersion from "../componenten/Tips/TipSmallVersion";
+import PublicTip from "../componenten/Tips/typeOfTips/PublicTip";
 import pictureCanal from "../images/pictureCanal.png";
 import Group from "../componenten/group/Group";
 import './PageGroup.css'
@@ -13,7 +13,7 @@ function PageGroup () {
             <NavBar/>
             <div className="completeBox">
                 <div className="boxGroup">
-                    <TipSmallVersion/>
+                    <PublicTip/>
                 </div>
                 <div className="boxGroupComp">
                         <Group

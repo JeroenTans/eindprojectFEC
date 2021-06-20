@@ -1,11 +1,11 @@
 
 
 .navContainer {
-    border: solid green;
+    border: solid lightsteelblue;
     margin: 0 20px 30px 20px;
     padding: 10px;
     border-radius: 5px;
-    background-color: hsla(159, 37%, 40%, 0.94);
+    background-color: lightblue;
     width: 85%;
     height: 100%;
 }
@@ -27,13 +27,15 @@
     text-decoration: none;
     font-size: 20px;
     width: 150px;
-    background-color: hsla(108, 31%, 29%, 0.96);
+    background-color: lightsteelblue;
     border-radius: 5px;
-    border: solid darkgreen;
+    border: solid lightsteelblue;
 }
 
 .pages:hover {
-    background-color: hsla(108, 31%, 40%, 0.96);
+    background-color: hsl(210, 41%, 85%);
+    border: solid hsl(210, 41%, 85%);
+    color: white;
 }
 
 .logOut {
@@ -51,11 +53,10 @@
     height: 30px;
     border-radius: 5px;
     background-color: hsl(0, 0%, 52%);
-    border: darkgrey solid;
+
     padding: 0 5px 0 5px;
 }
 
 .logOutContainer:hover {
     background-color: darkgrey;
-    border: hsl(0, 0%, 52%) solid;
 }
