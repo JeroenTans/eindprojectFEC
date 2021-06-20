@@ -16,21 +16,14 @@ function AdminLink () {
 
         try {
             const result = await axios.get(`http://localhost:8080/api/v1/tips/tip/${idOne}`)
-            console.log(result)
-            setTwoTips(result.data)
+            const resultTwo = await axios.get(`http://localhost:8080/api/v1/tips/tip/${idTwo}`)
+            console.log(result.data)
+            console.log(resultTwo.data)
         } catch (e) {
             console.log("Get req is niet gelukt, error: " + e)
         }
-        try {
-            const result = await axios.get(`http://localhost:8080/api/v1/tips/tip/${idTwo}`)
-            console.log(result)
-            setTwoTips(result.data)
-        } catch (e) {
-            console.log("Get req is niet gelukt, error: " + e)
-
-        }
-        console.log(twoTips)
     }
+
 
     return (
 

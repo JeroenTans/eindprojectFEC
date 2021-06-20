@@ -9,6 +9,11 @@
     padding: 15px;
 }
 
+.infoBox {
+    display: flex;
+    justify-content: space-between;
+}
+
 .groupMembersDisplay {
     overflow: auto;
     max-height: 365px;

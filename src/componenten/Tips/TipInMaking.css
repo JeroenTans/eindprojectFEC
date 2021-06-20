@@ -69,6 +69,7 @@
 }
 
 .checkboxTipInMakingOne {
+    grid-area: butOne;
     color: hsl(304, 99%, 25%);
     background-color: hsl(304, 99%, 62%);
     border-radius: 5px;
@@ -77,6 +78,7 @@
 }
 
 .checkboxTipInMakingTwo {
+    grid-area: butTwo;
     color: hsl(184, 100%, 20%);
     background-color: hsl(184, 100%, 49%);
     border-radius: 5px;

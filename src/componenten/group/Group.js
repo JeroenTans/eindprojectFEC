@@ -16,17 +16,27 @@ function Group () {
         } catch (e) {
             console.log("Het is niet gelukt, error: " + e)
         }
-
+        window.location.reload();
     }
 
     async function fetchData () {
         try {
             const result = await axios.get('http://localhost:8080/api/v1/group')
-            console.log(result)
             setWholeGroup(result.data)
         } catch (e) {
             console.log("Get req is niet gelukt, error: " + e)
         }
+    }
+
+
+    async function deleteGroupMember (id){
+        console.log(id)
+        try {
+            await axios.delete(`http://localhost:8080/api/v1/group/${id}`)
+        } catch (e) {
+            console.log("Get req is niet gelukt, error: " + e)
+        }
+        window.location.reload();
     }
 
     useEffect(()=>{
@@ -35,8 +45,8 @@ function Group () {
 
     return (
         <>
-            <div>
-                <form className="groupDisplay" onSubmit={handleSubmit(sendInfo)}>
+            <div className="groupDisplay">
+                <form onSubmit={handleSubmit(sendInfo)}>
                     <label id="groupMember" htmlFor="groeplid toevoegen">Voeg het e-mail adres toe van degene zie u aan de groep wilt toevoegen in
                         <input  type="text"
                                 id="inputField"
@@ -45,14 +55,12 @@ function Group () {
                                 />
                     </label>
                         <AddButton className="buttonPlus"/>
+                </form>
                     <div className="groupMembersDisplay">
                         <p>Groep leden:</p>
                             {group.map((groupMember)=>(
-                            <div key={groupMember.id}>{groupMember.emailAddress}</div>
-
-                            ))}
+                            <div className="infoBox" key={groupMember.id}>{groupMember.emailAddress}  <button onClick={(e)=>deleteGroupMember(groupMember.id)}>X</button></div>))}
                     </div>
-                </form>
             </div>
         </>
     )

@@ -35,7 +35,7 @@ function LinkAddressDisplayPriveTip () {
             <div className="groupMembersDisplay">
                 <h2>Id & adress privé tips:</h2>
                 {privateTips.map((priveTip)=>(
-                    <div key={priveTip.id}>{priveTip.id} {priveTip.address}  <button onClick={(e)=>deleteTip(priveTip.id)}>X</button>
+                    <div className="infoBox" key={priveTip.id}>Id: {priveTip.id}| Adres: {priveTip.address}  <button onClick={(e)=>deleteTip(priveTip.id)}>X</button>
                     </div>))}
             </div>
 

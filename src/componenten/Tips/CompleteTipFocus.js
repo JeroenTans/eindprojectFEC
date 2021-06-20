@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './CompleteTipFocus.css';
 import PopUp from "../popup/PopUp";
 import MakeReview from "../reviewScreen/MakeReview";
+import ReviewScreen from "../reviewScreen/ReviewScreen";
 import axios from "axios";
 import {decodeBase64} from "../../helpers/encodeBase64";
 
@@ -9,11 +10,17 @@ import {decodeBase64} from "../../helpers/encodeBase64";
 function CompleteTipFocus () {
 
     const [buttonPopup, toggleButtonPopup] = useState(false);
+    const [buttonPopupRead, toggleButtonPopupRead] = useState(false);
     const [tips, setTips] = useState([]);
     const [url, setUrl] = useState();
 
     function openPopup (e) {
         toggleButtonPopup(true);
+        e.preventDefault()
+    }
+
+    function openPopupRead (e) {
+        toggleButtonPopupRead(true);
         e.preventDefault()
     }
 
@@ -52,8 +59,8 @@ function CompleteTipFocus () {
     }
 
     useEffect(()=>{
-        fetchImage(3);
-        fetchData(3);
+        fetchImage(81);
+        fetchData(81);
     },[])
 
     return (
@@ -67,7 +74,12 @@ function CompleteTipFocus () {
                 <div id="textDisplayTip"  className="tipBoxTwo" ><p>{tips.explanation}</p></div>
                 <button
                     className="tipBoxTwoBut"
-                    id="buttonOne">Lees review</button>
+                    id="buttonOne"
+                    onClick={(e)=>openPopupRead(e)}
+                    >Lees review</button>
+                <PopUp trigger={buttonPopupRead} setTrigger={toggleButtonPopupRead}>
+                    <ReviewScreen/>
+                </PopUp>
                 <button
                     className="tipBoxTwoBut"
                     id="buttonTwo"
