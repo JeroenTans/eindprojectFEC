@@ -3,6 +3,7 @@ import './StandardTip.css'
 import PopUp from "../../popup/PopUp";
 import CompleteTipFocus from '../CompleteTipFocus';
 import axios from "axios";
+import StandardTipLabel from "./tipLabels.js/StandardTipLabel";
 
 
 function StandardTip (){
@@ -18,6 +19,7 @@ function StandardTip (){
     async function fetchData () {
         try {
             const result = await axios.get('http://localhost:8080/api/v1/tips/standardTip')
+            console.log(result)
             setSmallTips(result.data)
         } catch (e) {
             console.log("het is niet gelukt, error: " + e)
@@ -46,6 +48,9 @@ function StandardTip (){
                         <PopUp trigger={buttonPopup} setTrigger={toggleButtonPopup}>
                             <CompleteTipFocus/>
                         </PopUp>
+                    </div>
+                    <div className="labelBox">
+                        <StandardTipLabel/>
                     </div>
                 </div>
 

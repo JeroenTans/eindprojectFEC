@@ -3,6 +3,7 @@ import './PublicTip.css'
 import PopUp from "../../popup/PopUp";
 import CompleteTipFocus from "../CompleteTipFocus";
 import axios from "axios";
+import PublicTipLabel from "./tipLabels.js/PublicTipLabel";
 
 
 function PublicTip ( { image, adres } ) {
@@ -46,6 +47,9 @@ function PublicTip ( { image, adres } ) {
                         <PopUp trigger={buttonPopup} setTrigger={toggleButtonPopup}>
                             <CompleteTipFocus/>
                         </PopUp>
+                    </div>
+                    <div className="labelBox">
+                        <PublicTipLabel/>
                     </div>
                 </div>
 

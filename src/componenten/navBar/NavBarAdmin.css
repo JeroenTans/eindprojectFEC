@@ -1,12 +1,13 @@
 
 .navContainerOne {
     border: solid lightsteelblue;
-    margin: 0 0 10px 20px;
+    margin: 0 0 40px 20px;
     padding: 10px;
     border-radius: 5px;
     background-color: lightblue;
     width: 100%;
     height: 100%;
+    box-shadow: 5px 5px 40px 5px hsl(0, 0%, 50%);
 }
 
 

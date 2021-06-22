@@ -3,7 +3,7 @@ import './PrivateTip.css'
 import PopUp from "../../popup/PopUp";
 import CompleteTipFocus from "../CompleteTipFocus";
 import axios from "axios";
-
+import PrivateTipLabel from "./tipLabels.js/PrivateTipLabel";
 
 function PrivateTip ( { image, adres } ) {
 
@@ -46,6 +46,9 @@ function PrivateTip ( { image, adres } ) {
                         <PopUp trigger={buttonPopup} setTrigger={toggleButtonPopup}>
                             <CompleteTipFocus/>
                         </PopUp>
+                    </div>
+                    <div className="labelBox">
+                        <PrivateTipLabel/>
                     </div>
                 </div>
 
