@@ -3,26 +3,56 @@ import './Register.css'
 import { useForm } from 'react-hook-form';
 import { NavLink } from "react-router-dom";
 import axios from 'axios';
+import { Link, useHistory } from 'react-router-dom';
 import * as url from "url";
 
 function Register (){
 
     const { handleSubmit, formState: { errors }, register } = useForm();
     const [password, setPassword] = useState("");
+    const history = useHistory();
 
-    async function sendInfo (e) {
+    const [loading, toggleLoading] = useState(false);
+    const [error, setError] = useState('');
+    const [registerSuccess, toggleRegisterSuccess] = useState(false);
 
-        console.log(e)
+    async function sendInfo (data) {
+        // omdat onSubmit meerdere keren kan worden aangeroepen, beginnen we altijd met een "schone" lei (geen errors)
+        setError('');
+        toggleLoading(true);
+
+        console.log(data);
 
         try {
-            await axios.post('http://localhost:8080/', e)
+            const result = await axios.post('http://localhost:8080/api/v1/users', {
+                email: data.emailRegistration,
+                password: data.confirmPassword,
+                residence: data.residence,
+                username: data.emailRegistration
+            });
 
-            console.log(e);
-        } catch (error) {
-            console.log("helaas")
+            // als deze console.log wordt uitgevoerd is alles goedgegaan, want we zijn niet naar het catch blok gesprongen
+            // in de console zie je de gebruikelijke respons en daarin ook 'status: 201'
+            console.log(result);
+
+            toggleRegisterSuccess(true);
+
+            // we willen even wachten met doorlinken zodat de gebruiker de tijd heeft om de succesmelding ook daadwerkelijk te zien
+            setTimeout(() => {
+                history.push('/');
+            }, 2000);
+        } catch(e) {
+            console.error(e);
+            // op het error (e) object zit altijd een message property, maar die kan wat abstract zijn. Daarom extra text:
+            setError(`Het registeren is mislukt. Probeer het opnieuw (${e.message})`);
+
+            // TIP: Wanneer er echt iets fout gaat, krijg je een 404 error. Wanneer de gebruikersnaam al bestond,
+            // krijg je waarschijnlijk een 400 error.Zo kun je hier ook nog invloed uitoefenen op welke error message je laat zien op de gebruiker!
         }
 
+        toggleLoading(false);
     }
+
 
     const validatePassword = (value)=> {
         if (password !== value) return false;
@@ -80,13 +110,14 @@ return (
                             />{errors.confirmPassword && <p className="errorMessage">De opgegeven wachtwoorden komen niet overeen</p>}
                 </label>
                 <div className="buttonRegisterPage">
-                    <button type="submit" id="registerButton">registreer</button>
+                    <button type="submit" id="registerButton" disabled={loading}>{loading?"Versturen..":"Registreer"}</button>
+                    {registerSuccess === true &&  <p>Registeren is gelukt! Je wordt nu doorgestuurd naar de inlog pagina!</p>}
+                    {error && <p className="error-message">{error}</p>}
                 </div>
         </form>
+        <p>Heb je al een account? Je kunt je <Link to="/">hier</Link> inloggen.</p>
     </div>
-
-)
-
+    )
 }
 
 export default Register;

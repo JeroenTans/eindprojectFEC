@@ -1,7 +1,7 @@
 import React from 'react';
 import './pageInlog.css'
 import globe from '../images/globeLogin.png'
-import LogIn from "../componenten/logIn/LogIn";
+import LogInComp from "../componenten/logIn/LogIn";
 
 function PageInlog () {
     return (
@@ -10,7 +10,7 @@ function PageInlog () {
                     <img src={globe} alt="globeTwo" />
                 </div>
                 <div className="loginPageOne">
-                    <LogIn/>
+                    <LogInComp/>
                 </div>
             </div>
     )
