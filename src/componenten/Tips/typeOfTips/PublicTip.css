@@ -1,7 +1,7 @@
 .completeSmallTipBoxPublic {
-    background-color: lightblue;
-    width: 450px;
-    min-height: 225px;
+    backdrop-filter: blur(110px);
+    width: 350px;
+    min-height: 175px;
     display: flex;
     padding: 5px;
     border-radius: 5px;
@@ -11,10 +11,9 @@
 .smallTipBoxPublic {
     border-radius: 5px;
     padding: 5px;
-    background-color: #61dafb;
     color: white;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     flex-direction: column;
 }

@@ -1,0 +1,7 @@
+#publicTipLabel {
+    border-radius: 10px;
+    font-size: 10px;
+    background-color: hsl(184, 100%, 49%);
+    padding: 3px;
+    color: hsl(184, 100%, 20%);
+}
