@@ -1,0 +1,19 @@
+.userInfo {
+    display: flex;
+    justify-content: center;
+    border: solid darkgrey;
+    border-radius: 0 5px 5px 0;
+    width: 200px;
+    height: auto;
+    margin: 0;
+    padding: 0 3px 0 3px;
+    font-size: 14px;
+    background-color: hsl(0, 0%, 52%);
+    color: white;
+    box-shadow: 5px 5px 25px 5px hsl(0, 0%, 10%);
+}
+
+#linkTrade {
+    text-decoration: none;
+    color: white;
+}

@@ -1,11 +1,12 @@
-import React from 'react';
+import React, {useContext, useState} from 'react';
 import './NavBar.css';
-import { NavLink, Route} from 'react-router-dom';
+import { NavLink, Route, Link} from 'react-router-dom';
 import PopUp from "../popup/PopUp";
 import ExplainText from "../explainText/ExplainText";
 import ReusableButton from "../button/ReusableButton";
 
 function NavBar (){
+
     return (
             <div className="mainContainer">
                 <ul className="navContainer">

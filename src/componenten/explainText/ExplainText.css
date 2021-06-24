@@ -1,21 +1,22 @@
 
 .textInfo {
     max-width: 100%;
-    border-style: solid;
-    border-color: green;
+    border: solid lightsteelblue;
     border-radius: 5px;
-    background-color: hsl(123, 28%, 40%);
+    background-color: lightblue;
     padding: 0 7px 0 7px;
 
 }
 
 .actualText {
-    color: white;
+    color: steelblue;
     font-size: 17.5px;
 }
 
 .boxAround {
-    padding: 10px;
-    background-color: hsl(123, 28%, 50%);
+    border-radius: 5px;
+    border: solid white;
+    padding: 0;
+    background-color: lightblue;
     width: 1000px;
 }

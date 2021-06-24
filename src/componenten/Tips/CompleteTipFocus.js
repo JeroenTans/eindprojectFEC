@@ -5,14 +5,14 @@ import MakeReview from "../reviewScreen/MakeReview";
 import ReviewScreen from "../reviewScreen/ReviewScreen";
 import axios from "axios";
 import {decodeBase64} from "../../helpers/encodeBase64";
-
+import porfile from "../../images/pictureCanal.png"
 
 function CompleteTipFocus () {
 
     const [buttonPopup, toggleButtonPopup] = useState(false);
     const [buttonPopupRead, toggleButtonPopupRead] = useState(false);
     const [tips, setTips] = useState([]);
-    const [url, setUrl] = useState();
+    const [url, setUrl] = useState(porfile);
 
     function openPopup (e) {
         toggleButtonPopup(true);
@@ -40,7 +40,7 @@ function CompleteTipFocus () {
             const result = await axios.get(`http://localhost:8080/api/v1/tips/${id}/picturePath`, {
                 responseType: "arraybuffer",
                 headers: {
-                    'Content-Type': 'image/pdf',
+                    'Content-Type': 'image/jpg',
                 }
             });
             const blob = new Blob([result.data.config], {
@@ -59,8 +59,8 @@ function CompleteTipFocus () {
     }
 
     useEffect(()=>{
-        fetchImage(81);
-        fetchData(81);
+        fetchImage(15);
+        fetchData(15);
     },[])
 
     return (

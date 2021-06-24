@@ -2,7 +2,7 @@ import React, { useState, useContext } from 'react';
 import { useForm } from 'react-hook-form';
 import './LogIn.css';
 import { NavLink, Link } from 'react-router-dom';
-import {AuthContext} from "../AuthContextProvider";
+import {AuthContext} from "../Context/AuthContextProvider";
 import axios from "axios";
 
 
@@ -10,6 +10,7 @@ function LogInComp () {
 
     const {handleSubmit, formState: {errors}, register} = useForm();
     const {login} = useContext(AuthContext);
+    // const {login} = useContext(AuthContext);
 
     async function sendInfo(data) {
         console.log(data);
@@ -17,6 +18,8 @@ function LogInComp () {
             console.log("ik ga erin! ")
             const result = await axios.post('http://localhost:8080/api/v1/authenticate', data);
             console.log(result)
+            console.log("halooooooooo")
+            login(result.data.jwt)
         } catch (e) {
             console.error(e);
         }

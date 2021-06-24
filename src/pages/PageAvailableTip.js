@@ -5,6 +5,7 @@ import PrivateTip from "../componenten/Tips/typeOfTips/PrivateTip";
 import PublicTip from "../componenten/Tips/typeOfTips/PublicTip";
 import NavBar from "../componenten/navBar/NavBar";
 import ReusableButton from "../componenten/button/ReusableButton";
+import Profile from "../componenten/profile/Profile";
 
 function PageAvailableTip () {
     return (
@@ -21,7 +22,7 @@ function PageAvailableTip () {
                     <PublicTip/>
                 </div>
             </div>
-                <ReusableButton/>
+                <Profile className="profilePageBox"/>
         </div>
 
     )

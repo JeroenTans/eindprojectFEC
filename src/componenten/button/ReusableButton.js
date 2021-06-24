@@ -18,7 +18,7 @@ function ReusableButton () {
         <button type="submit"
                 className="explainButton"
                 onClick={(e)=>openPopup(e)}
-                >Uitleg</button>
+                >hier</button>
             <PopUp trigger={buttonPopup} setTrigger={toggleButtonPopup}>
                 <ExplainText/>
             </PopUp>

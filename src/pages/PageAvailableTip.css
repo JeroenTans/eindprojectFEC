@@ -31,6 +31,17 @@
 /*    !*height: 60%;*!*/
 /*}*/
 
+/*.profilePageBox {*/
+/*    width: 100%;*/
+/*    display: flex;*/
+/*    flex-direction: row;*/
+/*}*/
+
+.profileSticky {
+    display: flex;
+    flex-direction: column-reverse;
+}
+
 .allTips::-webkit-scrollbar{
     background-color: lightblue;
     color: red;

@@ -4,6 +4,7 @@ import NavBar from "../componenten/navBar/NavBar";
 import TipInMaking from "../componenten/Tips/TipInMaking";
 import PublicTip from "../componenten/Tips/typeOfTips/PublicTip";
 import ReusableButton from "../componenten/button/ReusableButton";
+import Profile from "../componenten/profile/Profile";
 
 
 function PageTrade () {
@@ -23,7 +24,7 @@ function PageTrade () {
                         <TipInMaking/>
                     </div>
                 </div>
-            <ReusableButton/>
+            <Profile className="profilePageBox"/>
         </div>
 
     )

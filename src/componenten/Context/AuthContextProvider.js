@@ -1,5 +1,7 @@
 import React, { createContext, useState, useEffect } from 'react';
 import {useHistory} from "react-router-dom";
+import axios from "axios";
+import jwtDecode from "jwt-decode";
 
 export const AuthContext = createContext({});
 
@@ -20,8 +22,43 @@ function AuthContextProvider({ children }) {
         })
     }, []);
 
-    function login() {
-        console.log('login!');
+    function login(jwtToken) {
+        console.log("in de login functie")
+        console.log(jwtToken)
+        localStorage.setItem('token', jwtToken);
+        const decodedToken = jwtDecode(jwtToken)
+        console.log("decodedToken: ", decodedToken);
+        const userId = decodedToken.sub;
+
+        fetchUserData(jwtToken, userId);
+    }
+
+    async function fetchUserData(token, userId) {
+        console.log("In de functie")
+        try {
+            console.log("in de try ")
+            const result = await axios.get(`http://localhost:8080/api/v1/users/${userId}`, {
+                headers: {
+                    "Content-Type": "application/json",
+                    Authorization: `Bearer ${token}`,
+                }
+            });
+            console.log(result);
+            console.log("wat gebeurd hier?")
+
+            setAuthState({
+                user: {
+                    username: result.data.username,
+                    email: result.data.email,
+                    // als je ook rollen hebt, plaats je die er ook bij!
+                },
+                status: 'done',
+            });
+
+            history.push('/available_tips');
+        } catch(e) {
+            console.error(e);
+        }
     }
 
     function logout() {

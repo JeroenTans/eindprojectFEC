@@ -4,6 +4,7 @@ import PublicTip from "../componenten/Tips/typeOfTips/PublicTip";
 import PrivateTip from "../componenten/Tips/typeOfTips/PrivateTip";
 import NavBar from "../componenten/navBar/NavBar";
 import ReusableButton from "../componenten/button/ReusableButton";
+import Profile from "../componenten/profile/Profile";
 
 function PageSenTips () {
     return (
@@ -17,7 +18,7 @@ function PageSenTips () {
                     <PrivateTip/>
                 </div>
             </div>
-        <ReusableButton/>
+            <Profile className="profilePageBox"/>
         </div>
 
     )

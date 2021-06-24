@@ -6,6 +6,7 @@ import pictureCanal from "../images/pictureCanal.png";
 import Group from "../componenten/group/Group";
 import './PageGroup.css'
 import ReusableButton from "../componenten/button/ReusableButton";
+import Profile from "../componenten/profile/Profile";
 
 function PageGroup () {
     return (
@@ -20,7 +21,7 @@ function PageGroup () {
                         className="makeTipPage"/>
                 </div>
             </div>
-            <ReusableButton/>
+            <Profile className="profilePageBox"/>
         </div>
     )
 }
