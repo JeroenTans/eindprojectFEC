@@ -1,7 +1,6 @@
 .completeSmallTipBoxPrivate {
-    opacity: 0.95;
     backdrop-filter: blur(110px);
-    width: 350px;
+    min-width: 300px;
     min-height: 175px;
     display: flex;
     padding: 5px;

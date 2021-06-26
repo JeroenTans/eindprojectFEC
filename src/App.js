@@ -1,5 +1,5 @@
 import './App.css';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { Switch, Route } from 'react-router-dom';
 import PageInlog from "./pages/PageInlog";
 import PageRegister from "./pages/PageRegister";
 import PageAvailableTip from "./pages/PageAvailableTip";
@@ -12,7 +12,6 @@ import PageAdminStandartTip from "./pages/PageAdminStandartTip";
 function App() {
   return (
       <div className="App">
-          <Router>
               <Switch>
                   <Route exact path="/">
                       <PageInlog/>
@@ -39,7 +38,6 @@ function App() {
                       <PageAdminStandartTip/>
                   </Route>
               </Switch>
-          </Router>
       </div>
   );
 }

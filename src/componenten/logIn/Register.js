@@ -3,25 +3,43 @@ import './Register.css'
 import { useForm } from 'react-hook-form';
 import { NavLink } from "react-router-dom";
 import axios from 'axios';
-import * as url from "url";
+import { Link, useHistory } from 'react-router-dom';
+
 
 function Register (){
 
     const { handleSubmit, formState: { errors }, register } = useForm();
     const [password, setPassword] = useState("");
+    const history = useHistory();
 
-    async function sendInfo (e) {
+    const [loading, toggleLoading] = useState(false);
+    const [error, setError] = useState('');
+    const [registerSuccess, toggleRegisterSuccess] = useState(false);
 
-        console.log(e)
+    async function sendInfo (data) {
+        setError('');
+        toggleLoading(true);
+
+        console.log(data);
 
         try {
-            await axios.post('http://localhost:8080/', e)
+            const result = await axios.post('http://localhost:8080/api/v1/users', {
+                email: data.emailRegistration,
+                password: data.confirmPassword,
+                residence: data.residence,
+                username: data.emailRegistration
+            });
+            toggleRegisterSuccess(true);
 
-            console.log(e);
-        } catch (error) {
-            console.log("helaas")
+            setTimeout(() => {
+                history.push('/');
+            }, 2000);
+        } catch(e) {
+            console.error(e);
+            setError(`Het registeren is mislukt. Probeer het opnieuw (${e.message})`);
         }
 
+        toggleLoading(false);
     }
 
     const validatePassword = (value)=> {
@@ -80,13 +98,14 @@ return (
                             />{errors.confirmPassword && <p className="errorMessage">De opgegeven wachtwoorden komen niet overeen</p>}
                 </label>
                 <div className="buttonRegisterPage">
-                    <button type="submit" id="registerButton">registreer</button>
+                    <button type="submit" id="registerButton" disabled={loading}>{loading?"Versturen..":"Registreer"}</button>
+                    {registerSuccess === true &&  <p>Registeren is gelukt! Je wordt nu doorgestuurd naar de inlog pagina!</p>}
+                    {error && <p className="error-message">{error}</p>}
                 </div>
         </form>
+        <p>Heb je al een account? Je kunt je <Link to="/">hier</Link> inloggen.</p>
     </div>
-
-)
-
+    )
 }
 
 export default Register;

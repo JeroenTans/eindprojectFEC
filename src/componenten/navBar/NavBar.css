@@ -54,7 +54,7 @@
     height: 30px;
     border-radius: 5px;
     background-color: hsl(0, 0%, 52%);
-    box-shadow: 5px 5px 50px 5px hsl(0, 0%, 40%);
+    box-shadow: 5px 5px 25px 5px hsl(0, 0%, 35%);
     padding: 0 5px 0 5px;
     border: solid darkgrey;
 }
@@ -62,3 +62,7 @@
 .logOutContainer:hover {
     background-color: darkgrey;
 }
+
+
+
+

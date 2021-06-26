@@ -1,41 +1,36 @@
-import React, { useState, useEffect } from 'react';
+import React, { useContext ,useState, useEffect } from 'react';
 import './StandardTip.css'
 import PopUp from "../../popup/PopUp";
 import CompleteTipFocus from '../CompleteTipFocus';
-import axios from "axios";
 import StandardTipLabel from "./tipLabels.js/StandardTipLabel";
-
+import {StandardTipContext} from "../../Context/StandardTipContextProvider";
+import TipByIdContextProvider from "../../Context/TipByIdContextProvider";
 
 function StandardTip (){
 
     const [buttonPopup, toggleButtonPopup] = useState(false);
-    const [smallTips, setSmallTips] = useState([])
+    const [tipId, setTipId] = useState()
+    const {tips} = useContext(StandardTipContext)
 
-    function openPopup (e) {
+    function openPopup (smallTipId) {
         toggleButtonPopup(true);
-        e.preventDefault()
-    }
-
-    async function fetchData () {
-        try {
-            const result = await axios.get('http://localhost:8080/api/v1/tips/standardTip')
-            console.log(result)
-            setSmallTips(result.data)
-        } catch (e) {
-            console.log("het is niet gelukt, error: " + e)
-        }
+        setTipId(smallTipId)
     }
 
     useEffect(()=>{
-        fetchData()
     }, [])
 
     return (
         <>
-            {smallTips.map((smallTip)=>(
+            <PopUp trigger={buttonPopup} setTrigger={toggleButtonPopup}>
+                <TipByIdContextProvider smallTipId={tipId}>
+                    <CompleteTipFocus smallTipId={tipId}/>
+                </TipByIdContextProvider>
+            </PopUp>
+            {tips.map((smallTip)=>(
             <div key={smallTip.id} className="completeSmallTipBox">
                 <div key={smallTip.id} id="pictureBox" className="smallTipBox">
-                    <img id="displayPic" src={smallTip.picturePath} alt={smallTip.address}/>
+                    <img id="displayPic" src={smallTip.url} alt={smallTip.address}/>
                 </div>
                 <div id="titelSmallTip" className="smallTipBox">
                     <div className="adressBoxSmallTip">
@@ -43,11 +38,8 @@ function StandardTip (){
                     </div>
                     <div className="buttonBoxReadMore">
                         <button id="readMoreButton"
-                                onClick={(e)=>openPopup(e)}
+                                onClick={(e)=>openPopup(smallTip.id)}
                         >Klik hier om meer te lezen...</button>
-                        <PopUp trigger={buttonPopup} setTrigger={toggleButtonPopup}>
-                            <CompleteTipFocus/>
-                        </PopUp>
                     </div>
                     <div className="labelBox">
                         <StandardTipLabel/>
@@ -60,3 +52,59 @@ function StandardTip (){
 }
 
 export default StandardTip;
+
+
+
+// async function fetchData (id) {
+//     try {
+//         const result = await axios.get('http://localhost:8080/api/v1/tips/standardTip')
+//         const resultTwo = await axios.get(`http://localhost:8080/api/v1/tips/${id}/picturePath`, {
+//             responseType: "arraybuffer",
+//             headers: {
+//                 'Content-Type': 'image/jpg',
+//             }
+//         });
+//         console.log("resultTwo", resultTwo)
+//         const blob = new Blob([result.data.config], {
+//             type: 'image/jpg',
+//         });
+//         console.log(blob)
+//         const objectUrl = URL.createObjectURL(blob);
+//         setUrl(objectUrl);
+//         console.log(blob)
+//         console.log("result", result)
+//         console.log("Blob: ",blob)
+//         console.log("Blob type", blob.type);
+//         console.log("ObjectUrl: ", objectUrl);
+//         console.log("Url: ", url)
+//         console.log(result)
+//
+//         setSmallTips(result.data)
+//     } catch (e) {
+//         console.log("het is niet gelukt, error: " + e)
+//     }
+// }
+
+// async function fetchImage(id){
+//     try {
+//
+//         const result = await axios.get(`http://localhost:8080/api/v1/tips/${id}/picturePath`, {
+//             responseType: "arraybuffer",
+//             headers: {
+//                 'Content-Type': 'image/jpg',
+//             }
+//         });
+//         const blob = new Blob([result.data.config], {
+//             type: 'image/jpg',
+//         });
+//         const objectUrl = URL.createObjectURL(blob);
+//         setUrl(objectUrl);
+//         console.log("result", result)
+//         console.log("Blob: ",blob)
+//         console.log("Blob type", blob.type);
+//         console.log("ObjectUrl: ", objectUrl);
+//         console.log("Url: ", url)
+//     } catch (e) {
+//         console.error(e);
+//     }
+// }

@@ -1,12 +1,12 @@
-
 .completeSmallTipBox {
     backdrop-filter: blur(110px);
-    width: 350px;
+    min-width: 300px;
     min-height: 175px;
     display: flex;
     padding: 5px;
     border-radius: 5px;
     margin: 30px 0 30px 0;
+
 }
 
 .smallTipBox {
@@ -20,6 +20,7 @@
 }
 
 
+
 #titelSmallTip {
     width: 50%;
     margin-left: 5px;
@@ -27,6 +28,7 @@
 
 #pictureBox {
     width: 50%;
+    height: 200px;
 }
 
 #readMoreButton {

@@ -1,8 +1,6 @@
 import React, {useEffect, useState} from 'react';
-import {useDropzone} from 'react-dropzone';
 import './UploadImage.css'
-import * as url from "url";
-import {useForm} from "react-hook-form";
+
 
 function UploadImage(props) {
     const [files, setFiles] = useState([]);

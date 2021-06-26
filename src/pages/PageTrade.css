@@ -13,7 +13,6 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    max-height: 500px;
 }
 
 .makeTipPage {
@@ -23,6 +22,7 @@
 .completeBox {
     display: flex;
     margin-top: 20px;
+    max-height: 500px;
 }
 
 .box {
