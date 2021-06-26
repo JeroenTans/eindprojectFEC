@@ -6,13 +6,13 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 550px;
+    max-height: 500px;
 }
 
 .completeBox {
     display: flex;
     justify-content: space-around;
-    height: 540px;
+    height: 500px;
 }
 
 .boxGroup::-webkit-scrollbar{

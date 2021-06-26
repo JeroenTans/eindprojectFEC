@@ -3,25 +3,25 @@ import { useForm } from 'react-hook-form';
 import React, { useState } from 'react';
 import axios from "axios";
 
-function MakeReview () {
+function MakeReview ({smallTipId}) {
 
     const { handleSubmit, formState: { errors }, register } = useForm();
-
     const [heartFe, toggleHeartFe] = useState(true);
     const [brokenHeartFe, toggleBrokenHeartFe] = useState(false);
-
-
+    const tipId = smallTipId;
 
     async function sendInfo (data) {
-        console.log(data);
+        console.log("daar gaat ie!")
+        const dataObject = {...data,
+        tipAmsterdamId: tipId,
+        brokenHeart: brokenHeartFe,
+        heart: heartFe
 
-        const dataObjectWriteReview = {...data,
-            heart: heartFe,
-            brokenHeart: brokenHeartFe,
-            address: "Herengracht"
         }
+        console.log(dataObject)
+        console.log("jaja")
         try {
-            await axios.post('http://localhost:8080/api/v1/reviews', dataObjectWriteReview)
+            await axios.post('http://localhost:8080/api/v1/reviews', dataObject)
         } catch (e) {
             console.log("Het is niet gelukt, error: " + e)
         }

@@ -1,36 +1,33 @@
-import React, { useState, useEffect } from 'react';
+import React, { useContext ,useState, useEffect } from 'react';
 import './PrivateTip.css'
 import PopUp from "../../popup/PopUp";
 import CompleteTipFocus from "../CompleteTipFocus";
-import axios from "axios";
 import PrivateTipLabel from "./tipLabels.js/PrivateTipLabel";
+import {PrivateTipContext} from "../../Context/PrivateTipContextProvider";
+import TipByIdContextProvider from "../../Context/TipByIdContextProvider";
 
-function PrivateTip ( { image, adres } ) {
+function PrivateTip () {
 
     const [buttonPopup, toggleButtonPopup] = useState(false);
-    const [smallTips, setSmallTips] = useState([])
+    const [tipId, setTipId] = useState()
+    const {tips} = useContext(PrivateTipContext)
 
-    function openPopup (e) {
+    function openPopup (smallTipId) {
         toggleButtonPopup(true);
-        e.preventDefault()
-    }
-
-    async function fetchData () {
-        try {
-            const result = await axios.get('http://localhost:8080/api/v1/tips/privateTip')
-            setSmallTips(result.data)
-        } catch (e) {
-            console.log("het is niet gelukt, error: " + e)
-        }
+        setTipId(smallTipId)
     }
 
     useEffect(()=>{
-        fetchData()
     }, [])
 
     return (
         <>
-            {smallTips.map((smallTip)=>(
+            <PopUp trigger={buttonPopup} setTrigger={toggleButtonPopup}>
+                <TipByIdContextProvider smallTipId={tipId}>
+                    <CompleteTipFocus smallTipId={tipId}/>
+                </TipByIdContextProvider>
+            </PopUp>
+            {tips.map((smallTip)=>(
             <div key={smallTip.id} className="completeSmallTipBoxPrivate">
                 <div key={smallTip.id} id="pictureBox" className="smallTipBoxPrivate">
                     <img id="displayPic" src={smallTip.picturePath} alt={smallTip.address}/>
@@ -41,11 +38,8 @@ function PrivateTip ( { image, adres } ) {
                     </div>
                     <div className="buttonBoxReadMore">
                         <button id="readMoreButton"
-                                onClick={(e)=>openPopup(e)}
+                                onClick={(e)=>openPopup(smallTip.id)}
                         >Klik hier om meer te lezen...</button>
-                        <PopUp trigger={buttonPopup} setTrigger={toggleButtonPopup}>
-                            <CompleteTipFocus/>
-                        </PopUp>
                     </div>
                     <div className="labelBox">
                         <PrivateTipLabel/>

@@ -2,15 +2,15 @@ import React, { createContext, useState, useEffect } from 'react';
 import axios from "axios";
 import profile from "../../images/pictureCanal.png";
 
-export const TipContext = createContext({});
+export const StandardTipContext = createContext({});
 
-function TipContextProvider ({children}) {
+function StandardTipContextProvider ({children}) {
     const [tips, setTips] = useState([])
     const [url, setUrl] = useState(profile);
 
     async function fetchData () {
         try {
-            const result = await axios.get('http://localhost:8080/api/v1/tips/standardTip')
+            const result = await axios.get("http://localhost:8080/api/v1/tips/standardTip")
             const blob = new Blob([result.data.config], {
                 type: 'image/jpg',
             });
@@ -22,15 +22,22 @@ function TipContextProvider ({children}) {
         }
     }
 
-    const data = {...tips,
+    console.log()
+
+    const data = {
+        tips:tips,
         picturePath: url
     }
 
-    return (
-           <TipContext.Provider value={data}>
+    useEffect(()=>{
+        fetchData()
+    },[])
 
-           </TipContext.Provider>
+    return (
+        <StandardTipContext.Provider value={data}>
+            {children}
+        </StandardTipContext.Provider>
     )
 }
 
-export default TipContextProvider;
+export default StandardTipContextProvider;

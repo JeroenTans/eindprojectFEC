@@ -1,9 +1,8 @@
 
 .tipBox {
-    border-style: solid;
-    border-color: green;
+    border: solid lightsteelblue;
     border-radius: 5px;
-    background-color: 	hsl(155, 32%, 48%);
+    background-color: lightblue;
     width: 600px;
     height: 100%;
     display: grid;
@@ -15,13 +14,12 @@
                         "pic pic butOne butTwo";
 }
 
-
 .tipBoxTwo {
     display: flex;
     justify-content: center;
     margin: 12px;
     border-radius: 5px;
-    background-color: hsl(159, 32%, 62%);
+    background-color: lightsteelblue;
     color: white;
 }
 

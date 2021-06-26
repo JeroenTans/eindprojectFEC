@@ -3,11 +3,13 @@ import './Group.css'
 import AddButton from "../button/AddButton";
 import { useForm } from "react-hook-form";
 import axios from "axios";
+import {useHistory} from "react-router-dom";
 
 function Group () {
 
-    const { handleSubmit, formState: { errors }, register } = useForm();
+    const { handleSubmit, register } = useForm();
     const [group, setWholeGroup] = useState([]);
+    const history = useHistory();
 
     async function sendInfo (data) {
 

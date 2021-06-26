@@ -3,7 +3,6 @@ import './PageTrade.css'
 import NavBar from "../componenten/navBar/NavBar";
 import TipInMaking from "../componenten/Tips/TipInMaking";
 import PublicTip from "../componenten/Tips/typeOfTips/PublicTip";
-import ReusableButton from "../componenten/button/ReusableButton";
 import Profile from "../componenten/profile/Profile";
 
 
@@ -12,6 +11,7 @@ function PageTrade () {
 
         <div className="pageBackground">
             <NavBar/>
+            <Profile className="profilePageBox"/>
             <div className="box">
                 <div className="whatToDo">Opgeslagen Tips</div>
                 <div className="whatToDo">Maak uw tip</div>
@@ -24,7 +24,6 @@ function PageTrade () {
                         <TipInMaking/>
                     </div>
                 </div>
-            <Profile className="profilePageBox"/>
         </div>
 
     )

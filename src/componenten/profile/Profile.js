@@ -1,14 +1,33 @@
 import React,{Link} from "react-router-dom";
-import {useContext} from "react";
+import {useContext, useState, useEffect} from "react";
 import ReusableButton from "../button/ReusableButton";
 import {AuthContext} from "../Context/AuthContextProvider";
 import "./Profile.css"
+import axios from "axios";
 
 
 function Profile () {
-    // const {user} = useContext(AuthContext);
-
+    const [privateContent, setPrivateContent] = useState({});
     const {user} = useContext(AuthContext);
+
+    useEffect(()=>{
+        const token = localStorage.getItem('token');
+
+        async function getPrivateContent () {
+            try {
+                const result = await axios.get('http://localhost:8080/api/v1/authenticated',  {
+                    headers: {
+                        "Content-Type": "application/json",
+                        Authorization: `Bearer ${token}`,
+                    }
+                });
+                setPrivateContent(result.data)
+            } catch (e) {
+                console.log("Helaas het is niet gelukt ", e)
+            }
+        }
+
+    }, [])
 
     return (
         <>
