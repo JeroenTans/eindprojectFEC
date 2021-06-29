@@ -2,40 +2,43 @@ import React, {useState, useEffect} from 'react';
 import './ReviewScreen.css'
 import axios from "axios";
 
-function ReviewScreen () {
+function ReviewScreen ({tipId}) {
 
     const [reviews, setReviews] = useState([]);
+    const tipAmsterdamId = tipId;
 
-    async function fetchData () {
+    async function fetchData (tipAmsterdamId) {
         try {
-            const result = await axios.get(`http://localhost:8080/api/v1/reviews/1`)
-            console.log(result.data)
+            const result = await axios.get(`http://localhost:8080/api/v1/reviews/9/reviews`)
+            // const image = await axios.get(`http://localhost:8080/api/v1/tips/${tipAmsterdamId}/picturePath`)
+            console.log("result.data ", result.data)
+            // console.log(image)
             setReviews(result.data)
-            console.log(reviews)
+            console.log("usestate ", reviews)
         } catch (e) {
             console.log("het is niet gelukt, error: " + e)
         }
     }
 
     useEffect(()=>{
-        fetchData()
+        fetchData(tipAmsterdamId)
     }, [])
 
     return (
         <>
-            {/*{reviews.map((review)=>(*/}
-            <div key={reviews.id} className="tipBox">
+            {reviews.map((review)=>(
+            <div key={review.id} className="tipBox">
                 <div className="tipBoxTwo" id="pictureDisplay">
                     <img id="pictureDisplay" src="" alt=""/>
                 </div>
-                <div id="adressDisplay"  className="tipBoxTwo" >{reviews.address}</div>
-                <div id="textDisplayTip"  className="tipBoxTwo">{reviews.comment}</div>
-                {reviews.brokenHeart?(
+                <div id="adressDisplay"  className="tipBoxTwo" >{review.address}</div>
+                <div id="textDisplayTip"  className="tipBoxTwo">{review.comment}</div>
+                {review.brokenHeart?(
                 <button id="buttonHeartBrokenScreen" className="heartsScreen">💔</button>):""}
-                {reviews.heart?(
+                {review.heart?(
                 <button id="buttonHeartScreen" className="heartsScreen">💖</button>):""}
             </div>
-            {/*))}*/}
+            ))}
         </>
 
     )

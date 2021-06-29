@@ -11,11 +11,14 @@ function MakeReview ({smallTipId}) {
     const tipId = smallTipId;
 
     async function sendInfo (data) {
-        console.log("daar gaat ie!")
-        const dataObject = {...data,
-        tipAmsterdamId: tipId,
-        brokenHeart: brokenHeartFe,
-        heart: heartFe
+            console.log("daar gaat ie!")
+            console.log(data)
+            const dataObject = {
+            tipAmsterdamId: tipId,
+            brokenHeart: brokenHeartFe,
+            heart: heartFe,
+            comment: data.comment,
+                adrress: "Herengracht 81!"
 
         }
         console.log(dataObject)

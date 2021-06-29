@@ -12,10 +12,8 @@ function LogInComp () {
     const {login} = useContext(AuthContext);
 
     async function sendInfo(data) {
-        console.log(data);
         try {
             const result = await axios.post('http://localhost:8080/api/v1/authenticate', data);
-            console.log(result)
             login(result.data.jwt)
         } catch (e) {
             console.error(e);

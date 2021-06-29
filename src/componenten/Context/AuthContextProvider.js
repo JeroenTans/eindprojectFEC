@@ -11,7 +11,7 @@ function AuthContextProvider({ children }) {
         status: 'pending',
     })
 
-    // const history = useHistory();
+    const history = useHistory();
 
     function isTokenValid(jwtToken) {
         const decodedToken = jwtDecode(jwtToken);
@@ -39,7 +39,9 @@ function AuthContextProvider({ children }) {
     function login(jwtToken) {
         localStorage.setItem('token', jwtToken);
         const decodedToken = jwtDecode(jwtToken)
+        console.log(decodedToken)
         const userId = decodedToken.sub;
+        console.log(userId)
 
         fetchUserData(jwtToken, userId);
     }
@@ -56,12 +58,12 @@ function AuthContextProvider({ children }) {
                 user: {
                     username: result.data.username,
                     email: result.data.email,
-                    // rollen hier.
+                    // authority: result.data.authorities[0].authority
                 },
                 status: 'done',
             });
-
-            // history.push('/available_tips');
+            // console.log(result.data.authorities[0].authority)
+            history.push('/available_tips');
         } catch(e) {
             console.error(e);
         }

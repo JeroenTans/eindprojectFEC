@@ -6,6 +6,9 @@ import LinkAddressDisplayPublicTip from "../componenten/linkAdresDisplay/LinkAdr
 import AdminLink from "../componenten/adminLink/AdminLink";
 
 function PageAdminLink () {
+
+
+
     return (
         <div className="pageBackground">
             <NavBarAdmin/>

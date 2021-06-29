@@ -31,7 +31,7 @@ function CompleteTipFocus ({smallTipId}) {
     return (
         <>
             <PopUp trigger={buttonPopupRead} setTrigger={toggleButtonPopupRead}>
-                <ReviewScreen/>
+                <ReviewScreen tipId={tipId}/>
             </PopUp>
             <div className="tipBox">
                 <div className="tipBoxTwo" id="pictureDisplay">

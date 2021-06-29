@@ -39,7 +39,7 @@ function LinkAddressDisplayPublicTip () {
     }
 
     useEffect(()=>{
-        fetchData()
+        // fetchData()
     }, [])
 
     return (
@@ -47,7 +47,7 @@ function LinkAddressDisplayPublicTip () {
             <div className="displayAdmin">
                     <h2>Id & adres publieke tips:</h2>
                     {publicTips.map((publicTip)=>(
-                    <div className="infoBox" key={publicTip.id}>Id: {publicTip.id}| adres: {publicTip.address}  <button onClick={(e)=>deleteTip(publicTip.id)}>X</button></div>))}
+                    <div className="infoBox" key={publicTip.id}>Id: {publicTip.id}| adres: {publicTip.address}  <button className="adminButton" onClick={(e)=>deleteTip(publicTip.id)}>X</button></div>))}
             </div>
             <div className="displayAdmin">
                     <h2>Delete reviews: </h2>
