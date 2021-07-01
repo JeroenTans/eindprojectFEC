@@ -1,14 +1,16 @@
 import React,{Link} from "react-router-dom";
 import {useContext, useState, useEffect} from "react";
 import ReusableButton from "../button/ReusableButton";
-import {AuthContext} from "../Context/AuthContextProvider";
+// import {AuthContext} from "../Context/AuthContextProvider";
 import "./Profile.css"
 import axios from "axios";
+import {AuthContext} from "../Context/AuthContextProvider";
 
 
 function Profile () {
     const [privateContent, setPrivateContent] = useState({});
-    const {user} = useContext(AuthContext);
+    const {user} = useContext(AuthContext)
+    // const {user} = useContext(AuthContext);
 
     useEffect(()=>{
         const token = localStorage.getItem('token');

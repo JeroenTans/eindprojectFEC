@@ -10,6 +10,7 @@ function MakeReview ({smallTipId}) {
     const [brokenHeartFe, toggleBrokenHeartFe] = useState(false);
     const tipId = smallTipId;
 
+
     async function sendInfo (data) {
             console.log("daar gaat ie!")
             console.log(data)
@@ -24,7 +25,7 @@ function MakeReview ({smallTipId}) {
         console.log(dataObject)
         console.log("jaja")
         try {
-            await axios.post('http://localhost:8080/api/v1/reviews', dataObject)
+            await axios.post('http://localhost:8080/api/v1/reviews/savereview', dataObject)
         } catch (e) {
             console.log("Het is niet gelukt, error: " + e)
         }

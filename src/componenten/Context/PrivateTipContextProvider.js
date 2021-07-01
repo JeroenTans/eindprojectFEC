@@ -1,6 +1,7 @@
-import React, { createContext, useState, useEffect } from 'react';
+import React, {createContext, useState, useEffect, useContext} from 'react';
 import axios from "axios";
 import profile from "../../images/pictureCanalTwo.png";
+import {AuthContext} from "./AuthContextProvider";
 
 
 export const PrivateTipContext = createContext({});
@@ -8,10 +9,13 @@ export const PrivateTipContext = createContext({});
 function PrivateTipContextProvider ({children}) {
     const [tips, setTips] = useState([])
     const [url, setUrl] = useState(profile);
+    const {user} = useContext(AuthContext)
 
-    async function fetchData () {
+
+
+    async function fetchData (username) {
         try {
-            const result = await axios.get("http://localhost:8080/api/v1/tips/privateTip")
+            const result = await axios.get(`http://localhost:8080/api/v1/tips/${username}/privateTip`)
             const blob = new Blob([result.data.config], {
                 type: 'image/jpg',
             });
@@ -29,7 +33,7 @@ function PrivateTipContextProvider ({children}) {
     }
 
     useEffect(()=>{
-        fetchData()
+        fetchData(user.username)
     },[])
 
     return (

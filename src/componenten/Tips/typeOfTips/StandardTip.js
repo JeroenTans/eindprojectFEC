@@ -5,17 +5,21 @@ import CompleteTipFocus from '../CompleteTipFocus';
 import StandardTipLabel from "./tipLabels.js/StandardTipLabel";
 import {StandardTipContext} from "../../Context/StandardTipContextProvider";
 import TipByIdContextProvider from "../../Context/TipByIdContextProvider";
+import test from "../../../images/pictureCanalTwo.png"
 
 function StandardTip (){
 
     const [buttonPopup, toggleButtonPopup] = useState(false);
     const [tipId, setTipId] = useState()
-    const {tips} = useContext(StandardTipContext)
+    const {tips, url} = useContext(StandardTipContext)
 
     function openPopup (smallTipId) {
         toggleButtonPopup(true);
         setTipId(smallTipId)
+        console.log(url)
     }
+
+
 
     useEffect(()=>{
     }, [])
@@ -30,7 +34,7 @@ function StandardTip (){
             {tips.map((smallTip)=>(
             <div key={smallTip.id} className="completeSmallTipBox">
                 <div key={smallTip.id} id="pictureBox" className="smallTipBox">
-                    <img id="displayPic" src={smallTip.url} alt={smallTip.address}/>
+                    <img id="displayPic" src={url} alt={smallTip.address}/>
                 </div>
                 <div id="titelSmallTip" className="smallTipBox">
                     <div className="adressBoxSmallTip">

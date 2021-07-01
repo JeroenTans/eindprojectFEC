@@ -1,7 +1,10 @@
-import React, { useState } from 'react';
+import React, {useContext, useState} from 'react';
 import './TipInMaking.css';
-import { useForm } from 'react-hook-form';
+import {useForm} from 'react-hook-form';
 import axios from "axios";
+import {AuthContext} from "../Context/AuthContextProvider";
+
+
 
 function TipInMaking () {
 
@@ -9,6 +12,9 @@ function TipInMaking () {
     // const [buttonPopup, toggleButtonPopup] = useState(false);
     const [isPrivateTipFe, toggleIsPrivateTipFe] = useState(false);
     const [isPublicTipFe, toggleIsPublicTipFe] = useState(true);
+    const {user} = useContext(AuthContext);
+
+
 
     async function sendInfo (data) {
 
@@ -22,7 +28,8 @@ function TipInMaking () {
     const formData = new FormData();
 
     const formSubmit = (data) => {
-
+        console.log(data)
+        console.log(user)
         console.log("ik zit in de formsubmit!")
         formData.append("explanation", data.textAboutTheTip)
         formData.append("address", data.address)
@@ -30,6 +37,7 @@ function TipInMaking () {
         formData.append("publicTip", isPublicTipFe)
         formData.append("standardTip", false)
         formData.append("picturePath", data.picturePath[0])
+        formData.append("username", user.username)
 
         sendInfo(formData)
     }

@@ -1,13 +1,14 @@
 import React, { createContext, useState, useEffect } from 'react';
 import axios from "axios";
 import profile from "../../images/pictureCanalThree.png";
+import test from "../../images/pictureCanalTwo.png"
 
 
 export const PublicTipContext = createContext({});
 
 function PublicTipContextProvider ({children}) {
     const [tips, setTips] = useState([])
-    const [url, setUrl] = useState(profile);
+    const [url, setUrl] = useState(test);
 
     async function fetchData () {
         try {

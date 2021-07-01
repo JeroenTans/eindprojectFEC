@@ -9,7 +9,7 @@ function ReviewScreen ({tipId}) {
 
     async function fetchData (tipAmsterdamId) {
         try {
-            const result = await axios.get(`http://localhost:8080/api/v1/reviews/9/reviews`)
+            const result = await axios.get(`http://localhost:8080/api/v1/reviews/${tipAmsterdamId}/reviews`)
             // const image = await axios.get(`http://localhost:8080/api/v1/tips/${tipAmsterdamId}/picturePath`)
             console.log("result.data ", result.data)
             // console.log(image)

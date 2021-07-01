@@ -38,9 +38,12 @@ function LinkAddressDisplayPublicTip () {
         }
     }
 
+
     useEffect(()=>{
-        // fetchData()
-    }, [])
+        fetchData();
+        // deleteTip()
+        // deleteReview();
+    },[])
 
     return (
         <div className="adminBox">

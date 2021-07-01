@@ -35,10 +35,16 @@ function LinkAddressDisplayPriveTip () {
             console.log("Get req is niet gelukt, error: " + e)
         }
     }
+    //
+    // useEffect(
+    //     fetchData()
+    // , [])
 
     useEffect(()=>{
         fetchData()
-    }, [])
+        // deleteUser();
+        // deleteTip();
+    },[])
 
     return (
         <div className="adminBox">

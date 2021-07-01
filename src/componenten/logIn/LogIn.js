@@ -15,6 +15,7 @@ function LogInComp () {
         try {
             const result = await axios.post('http://localhost:8080/api/v1/authenticate', data);
             login(result.data.jwt)
+            console.log("jwt", result.data.jwt)
         } catch (e) {
             console.error(e);
         }

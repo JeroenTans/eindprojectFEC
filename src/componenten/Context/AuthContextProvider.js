@@ -5,7 +5,7 @@ import jwtDecode from "jwt-decode";
 
 export const AuthContext = createContext({});
 
-function AuthContextProvider({ children }) {
+function AuthContextProvider({children}) {
     const [ authState, setAuthState ] = useState({
         user: null,
         status: 'pending',
@@ -42,6 +42,7 @@ function AuthContextProvider({ children }) {
         console.log(decodedToken)
         const userId = decodedToken.sub;
         console.log(userId)
+        console.log("hasllllalsoooooooo")
 
         fetchUserData(jwtToken, userId);
     }
@@ -85,6 +86,7 @@ function AuthContextProvider({ children }) {
                 ? <p>Loading...</p>
                 : children
             }
+            {/*{children}*/}
         </AuthContext.Provider>
     );
 }
