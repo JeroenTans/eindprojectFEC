@@ -42,8 +42,8 @@ function LinkAddressDisplayPriveTip () {
 
     useEffect(()=>{
         fetchData()
-        // deleteUser();
-        // deleteTip();
+        deleteUser();
+        deleteTip();
     },[])
 
     return (

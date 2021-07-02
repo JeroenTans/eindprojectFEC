@@ -33,7 +33,7 @@ function PrivateTipContextProvider ({children}) {
     }
 
     useEffect(()=>{
-        fetchData(user.username)
+        fetchData(user && user.username)
     },[])
 
     return (

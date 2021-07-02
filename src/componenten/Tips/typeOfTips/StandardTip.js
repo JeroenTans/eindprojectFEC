@@ -12,6 +12,7 @@ function StandardTip (){
     const [buttonPopup, toggleButtonPopup] = useState(false);
     const [tipId, setTipId] = useState()
     const {tips, url} = useContext(StandardTipContext)
+    console.log("Url: ", url)
 
     function openPopup (smallTipId) {
         toggleButtonPopup(true);
@@ -34,7 +35,8 @@ function StandardTip (){
             {tips.map((smallTip)=>(
             <div key={smallTip.id} className="completeSmallTipBox">
                 <div key={smallTip.id} id="pictureBox" className="smallTipBox">
-                    <img id="displayPic" src={url} alt={smallTip.address}/>
+                    { url && <img id="displayPic" src={url} className="hallo hebben we zeker weten de goede" alt={smallTip.address}/> }
+
                 </div>
                 <div id="titelSmallTip" className="smallTipBox">
                     <div className="adressBoxSmallTip">

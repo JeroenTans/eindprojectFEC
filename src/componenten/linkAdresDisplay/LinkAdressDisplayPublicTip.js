@@ -41,8 +41,8 @@ function LinkAddressDisplayPublicTip () {
 
     useEffect(()=>{
         fetchData();
-        // deleteTip()
-        // deleteReview();
+        deleteTip()
+        deleteReview();
     },[])
 
     return (

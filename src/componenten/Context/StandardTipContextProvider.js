@@ -12,24 +12,25 @@ function StandardTipContextProvider ({children}) {
     async function fetchData () {
         try {
             const result = await axios.get("http://localhost:8080/api/v1/tips/standardTip")
-            // const idImage = result.data[0].id
-            // const resultTwo = await axios.get(`http://localhost:8080/api/v1/tips/26/picturePath`)
-            // const image = resultTwo.data
+            const idImage = result.data[0].id
+            const resultTwo = await axios.get("http://localhost:8080/api/v1/tips/15/picturePath")
+            const image = resultTwo.data
+            // console.log("resultTwo", resultTwo)
             // console.log("image req: ", image.data)
             // console.log("result data", result.data)
             // console.log("image: ",image)
-            // const blob = new Blob([image], {
-            //     type: 'image/jpg',
-            // });
+            const blob = new Blob([image], {
+                type: 'image/jpg',
+            });
             // console.log("result: ", result)
             // console.log("blob: ", blob)
-            // // const objectUrl = URL.createObjectURL(blob);
-            // // setUrl(objectUrl);
-            // const imageOne = URL.createObjectURL(blob)
-            // setUrl(imageOne)
-            // console.log("objectUrl: ", imageOne)
-            // console.log("tips: ", tips)
-            // console.log("url: ", url)
+            // const objectUrl = URL.createObjectURL(blob);
+            // setUrl(objectUrl);
+            const imageOne = URL.createObjectURL(blob)
+            setUrl(imageOne)
+            console.log("HIER!objectUrl: ", imageOne)
+            console.log("tips: ", tips)
+            console.log("url: ", url)
             setTips(result.data)
         } catch (e) {
             console.log("het is niet gelukt, error: " + e)
@@ -49,7 +50,7 @@ function StandardTipContextProvider ({children}) {
     },[])
 
     return (
-        <StandardTipContext.Provider value={data}>
+        <StandardTipContext.Provider value={{tips, url}}>
             {children}
         </StandardTipContext.Provider>
     )

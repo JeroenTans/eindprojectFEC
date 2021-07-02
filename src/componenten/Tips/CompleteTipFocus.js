@@ -15,6 +15,7 @@ function CompleteTipFocus ({smallTipId}) {
     const {tip} = useContext(TipByIdContext)
     const tipId = smallTipId;
 
+
     function openPopup (e) {
         toggleButtonPopup(true);
         // e.preventDefault()

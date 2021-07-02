@@ -45,6 +45,7 @@ function AuthContextProvider({children}) {
         console.log("hasllllalsoooooooo")
 
         fetchUserData(jwtToken, userId);
+        history.push("/available_tips")
     }
 
     async function fetchUserData(token, userId) {
@@ -64,7 +65,6 @@ function AuthContextProvider({children}) {
                 status: 'done',
             });
             // console.log(result.data.authorities[0].authority)
-            history.push('/available_tips');
         } catch(e) {
             console.error(e);
         }
@@ -86,7 +86,7 @@ function AuthContextProvider({children}) {
                 ? <p>Loading...</p>
                 : children
             }
-            {/*{children}*/}
+            {children}
         </AuthContext.Provider>
     );
 }
