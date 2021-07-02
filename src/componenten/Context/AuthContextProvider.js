@@ -86,7 +86,6 @@ function AuthContextProvider({children}) {
                 ? <p>Loading...</p>
                 : children
             }
-            {children}
         </AuthContext.Provider>
     );
 }

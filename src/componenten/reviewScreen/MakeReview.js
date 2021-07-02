@@ -22,8 +22,7 @@ function MakeReview ({smallTipId}) {
                 adrress: "Herengracht 81!"
 
         }
-        console.log(dataObject)
-        console.log("jaja")
+        console.log("Wat stuur ik mee ", dataObject)
         try {
             await axios.post('http://localhost:8080/api/v1/reviews/savereview', dataObject)
         } catch (e) {

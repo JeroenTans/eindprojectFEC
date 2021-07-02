@@ -13,7 +13,7 @@ function StandardTipContextProvider ({children}) {
         try {
             const result = await axios.get("http://localhost:8080/api/v1/tips/standardTip")
             const idImage = result.data[0].id
-            const resultTwo = await axios.get("http://localhost:8080/api/v1/tips/15/picturePath")
+            const resultTwo = await axios.get(`http://localhost:8080/api/v1/tips/12/picturePath`)
             const image = resultTwo.data
             // console.log("resultTwo", resultTwo)
             // console.log("image req: ", image.data)
@@ -37,13 +37,10 @@ function StandardTipContextProvider ({children}) {
         }
     }
 
-    console.log()
-
     const data = {
         tips:tips,
         picturePath: url
     }
-    console.log(data)
 
     useEffect(()=>{
         fetchData()

@@ -20,8 +20,6 @@ function StandardTip (){
         console.log(url)
     }
 
-
-
     useEffect(()=>{
     }, [])
 

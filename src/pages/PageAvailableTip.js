@@ -1,26 +1,88 @@
-import React from 'react';
+import React, {useContext, useEffect, useState} from 'react';
 import './PageAvailableTip.css'
 import StandardTip from "../componenten/Tips/typeOfTips/StandardTip";
 import PrivateTip from "../componenten/Tips/typeOfTips/PrivateTip";
 import PublicTip from "../componenten/Tips/typeOfTips/PublicTip";
 import NavBar from "../componenten/navBar/NavBar";
 import Profile from "../componenten/profile/Profile";
+import axios from "axios";
+import {AuthContext} from "../componenten/Context/AuthContextProvider";
+import Tip from "../componenten/Tips/typeOfTips/Tip";
 
 
 function PageAvailableTip () {
+
+    const [standardTips, setStandardTips] = useState([])
+    const [publicTips, setPublicTips] = useState([])
+    const [privateTips, setPrivateTips] = useState([])
+    const [url, setUrl] = useState();
+    const {user} = useContext(AuthContext)
+
+    async function fetchData ({username}) {
+        console.log("fetchData", username)
+        try {
+            console.log("Try: ", username)
+            const resultStandardTip = await axios.get("http://localhost:8080/api/v1/tips/standardTip")
+            const resultPublicTip = await axios.get("http://localhost:8080/api/v1/tips/publicTip")
+            const resultPrivateTip = await axios.get(`http://localhost:8080/api/v1/tips/${username}/privateTip`)
+            // const idImage = resultStandardTip.data[0].id
+            const resultTwo = await axios.get(`http://localhost:8080/api/v1/tips/12/picturePath`)
+            const image = resultTwo.data
+            // console.log("resultTwo", resultTwo)
+            // console.log("image req: ", image.data)
+            // console.log("result data", result.data)
+            // console.log("image: ",image)
+            const blob = new Blob([image], {
+                type: 'image/jpg',
+            });
+            // console.log("result: ", result)
+            // console.log("blob: ", blob)
+            // const objectUrl = URL.createObjectURL(blob);
+            // setUrl(objectUrl);
+            const imageOne = URL.createObjectURL(blob)
+            setUrl(imageOne)
+            console.log("HIER!objectUrl: ", imageOne)
+            // console.log("tips: ", tips)
+            console.log("url: ", url)
+            setStandardTips(resultStandardTip.data)
+            setPublicTips(resultPublicTip.data)
+            setPrivateTips(resultPrivateTip.data)
+        } catch (e) {
+            console.log("het is niet gelukt, error: " + e)
+        }
+    }
+
+
+
+    console.log(privateTips)
+    // const data = {
+    //     standardTips:standardTips,
+    //     privateTips:privateTips,
+    //     publicTips:publicTips,
+    //     picturePath: url
+    // }
+
+    useEffect(()=>{
+        console.log("useEffect", user.username)
+        const username = user.username
+        console.log("username in variabele: ", username)
+        fetchData(username)
+    },[])
+
+
     return (
         <div className="pageBackground">
             <NavBar id="navBarAvailableTip" />
             <Profile className="profilePageBox"/>
             <div className="allTips">
                 <div className="tipPageBoxStandard">
-                    <StandardTip/>
+                    <Tip tips={standardTips} url={url}/>
                 </div>
                 <div className="tipPageBoxPrive">
-                    <PrivateTip/>
+                    <Tip tips={privateTips} url={url}/>
                 </div>
                 <div className="tipPageBoxPublic">
-                    <PublicTip/>
+                    <Tip tips={publicTips} url={url}/>
                 </div>
             </div>
         </div>
