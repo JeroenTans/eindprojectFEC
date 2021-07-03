@@ -1,4 +1,6 @@
-
+.tipBox {
+    margin: 50px;
+}
 
 #buttonHeartBrokenScreen {
     grid-area: butOne;
@@ -10,7 +12,7 @@
 
 .heartsScreen {
     display: flex;
-    background-color: hsl(155, 32%, 48%);
+    background-color: lightblue;
     border: none;
     margin: 0 0 12px 12px;
 }

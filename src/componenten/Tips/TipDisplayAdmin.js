@@ -6,7 +6,6 @@ import axios from "axios";
 
 function TipDisplayAdmin () {
     const { handleSubmit, formState: { errors }, register } = useForm();
-    // const [buttonPopup, toggleButtonPopup] = useState(false);
     const {user} = useContext(AuthContext);
 
 
@@ -16,7 +15,7 @@ function TipDisplayAdmin () {
         try {
             await axios.post('http://localhost:8080/api/v1/tips/standardTip_upload', formData)
         } catch (e) {
-            console.log(console.error(e))
+            console.log("Helaas, het is niet gelukt ", e)
         }
     }
 

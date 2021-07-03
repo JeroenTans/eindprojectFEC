@@ -36,18 +36,6 @@ function AuthContextProvider({children}) {
         }
     }, []);
 
-    function login(jwtToken) {
-        localStorage.setItem('token', jwtToken);
-        const decodedToken = jwtDecode(jwtToken)
-        console.log(decodedToken)
-        const userId = decodedToken.sub;
-        console.log(userId)
-        console.log("hasllllalsoooooooo")
-
-        fetchUserData(jwtToken, userId);
-        history.push("/available_tips")
-    }
-
     async function fetchUserData(token, userId) {
         try {
             const result = await axios.get(`http://localhost:8080/api/v1/users/${userId}`, {
@@ -60,14 +48,25 @@ function AuthContextProvider({children}) {
                 user: {
                     username: result.data.username,
                     email: result.data.email,
-                    // authority: result.data.authorities[0].authority
+                    authority: result.data.authorities[0].authority
                 },
                 status: 'done',
             });
-            // console.log(result.data.authorities[0].authority)
+            console.log("Authorityyyyyy", result.data.authorities[0].authority)
         } catch(e) {
             console.error(e);
         }
+    }
+
+    function login(jwtToken) {
+        localStorage.setItem('token', jwtToken);
+        const decodedToken = jwtDecode(jwtToken)
+        const userId = decodedToken.sub;
+        fetchUserData(jwtToken, userId);
+        history.push("/available_tips")
+        authState.user.authority === "ADMIN" && history.push("/link")
+        // authState.user.authority === "ADMIN" && history.push("/link");
+        // console.log(authState.user.authority)
     }
 
     function logout() {

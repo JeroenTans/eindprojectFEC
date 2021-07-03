@@ -19,7 +19,7 @@ function MakeReview ({smallTipId}) {
             brokenHeart: brokenHeartFe,
             heart: heartFe,
             comment: data.comment,
-                adrress: "Herengracht 81!"
+                address: "Herengracht 81!"
 
         }
         console.log("Wat stuur ik mee ", dataObject)

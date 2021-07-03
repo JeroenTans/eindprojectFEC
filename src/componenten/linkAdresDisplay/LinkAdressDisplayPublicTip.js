@@ -24,7 +24,7 @@ function LinkAddressDisplayPublicTip () {
         try {
             await axios.delete(`http://localhost:8080/api/v1/tips/${id}`)
         } catch (e) {
-            console.log("Get req is niet gelukt, error: " + e)
+            console.log("Delete req is niet gelukt, error: " + e)
         }
 
     }
@@ -34,7 +34,7 @@ function LinkAddressDisplayPublicTip () {
         try {
             await axios.delete(`http://localhost:8080/api/v1/reviews/${id}`)
         } catch (e) {
-            console.log("Get req is niet gelukt, error: " + e)
+            console.log("Delete req is niet gelukt, error: " + e)
         }
     }
 

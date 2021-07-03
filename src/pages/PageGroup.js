@@ -1,7 +1,6 @@
 import React from 'react'
 import './PageTrade.css'
 import NavBar from "../componenten/navBar/NavBar";
-import PublicTip from "../componenten/Tips/typeOfTips/PublicTip";
 import Group from "../componenten/group/Group";
 import './PageGroup.css'
 import Profile from "../componenten/profile/Profile";
@@ -12,7 +11,7 @@ function PageGroup () {
             <NavBar/>
             <div className="completeBox">
                 <div className="boxGroup">
-                    <PublicTip/>
+                    {/*<PublicTip/>*/}
                 </div>
                 <div className="boxGroupComp">
                         <Group

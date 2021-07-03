@@ -3,47 +3,59 @@ import './CompleteTipFocus.css';
 import PopUp from "../popup/PopUp";
 import MakeReview from "../reviewScreen/MakeReview";
 import ReviewScreen from "../reviewScreen/ReviewScreen";
-import {TipByIdContext} from "../Context/TipByIdContextProvider";
+// import {TipByIdContext} from "../Context/TipByIdContextProvider";
 import axios from "axios";
+import TipImage from "./typeOfTips/TipImage";
 
 function CompleteTipFocus ({smallTipId}) {
 
     const [buttonPopup, toggleButtonPopup] = useState(false);
     const [buttonPopupRead, toggleButtonPopupRead] = useState(false);
-    // const [tip, setTip] = useState([]);
-    const [url, setUrl] = useState();
-    const {tip} = useContext(TipByIdContext)
+    const [tip, setTip] = useState([]);
+    const [address, setAddress] = useState();
+    // const {tip} = useContext(TipByIdContext)
     const tipId = smallTipId;
 
+    async function fetchData(tipId){
+        try {
+            const result = await axios.get(`http://localhost:8080/api/v1/tips/tip/${tipId}`)
+            setTip(result.data)
+        } catch (e) {
+            console.log(e);
+        }
+    }
 
     function openPopup (e) {
         toggleButtonPopup(true);
+
         // e.preventDefault()
     }
 
-    function openPopupRead (e) {
+    function openPopupRead (address) {
         toggleButtonPopupRead(true);
+        setAddress(address)
         // e.preventDefault()
     }
 
     useEffect(()=>{
+        fetchData(tipId)
     },[])
 
     return (
         <>
             <PopUp trigger={buttonPopupRead} setTrigger={toggleButtonPopupRead}>
-                <ReviewScreen tipId={tipId}/>
+                <ReviewScreen tipId={tipId} addressTip={address}/>
             </PopUp>
             <div className="tipBox">
                 <div className="tipBoxTwo" id="pictureDisplay">
-                    <img id="pictureDisplay" src={url} alt="foto"/>
+                    <TipImage props={tip.id}/>
                 </div>
                 <div key={tip.id}  id="adressDisplay"  className="tipBoxTwo" ><p>{tip.address}</p></div>
                 <div id="textDisplayTip"  className="tipBoxTwo" ><p>{tip.explanation}</p></div>
                 <button
                     className="tipBoxTwoBut"
                     id="buttonOne"
-                    onClick={(e)=>openPopupRead(e)}
+                    onClick={(e)=>openPopupRead(tip.address)}
                     >Lees review</button>
                 <button
                     className="tipBoxTwoBut"

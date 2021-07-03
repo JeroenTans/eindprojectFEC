@@ -2,7 +2,7 @@ import React, {useContext, useEffect, useState} from "react";
 import PopUp from "../../popup/PopUp";
 import TipByIdContextProvider from "../../Context/TipByIdContextProvider";
 import CompleteTipFocus from "../CompleteTipFocus";
-import StandardTipLabel from "./tipLabels.js/StandardTipLabel";
+import TipLabel from "./tipLabels.js/TipLabel";
 import "./Tip.css"
 import TipImage from "./TipImage";
 
@@ -11,27 +11,24 @@ function Tip ({tips, url}){
     const [buttonPopup, toggleButtonPopup] = useState(false);
     const [tipId, setTipId] = useState()
 
-
     function openPopup (smallTipId) {
         toggleButtonPopup(true);
         setTipId(smallTipId)
-        console.log(url)
     }
 
     useEffect(()=>{
     }, [])
 
+
     return (
         <>
             <PopUp trigger={buttonPopup} setTrigger={toggleButtonPopup}>
-                <TipByIdContextProvider smallTipId={tipId}>
                     <CompleteTipFocus smallTipId={tipId}/>
-                </TipByIdContextProvider>
             </PopUp>
             {tips.map((smallTip)=>(
                 <div key={smallTip.id} className="completeSmallTipBox">
                     <div key={smallTip.id} id="pictureBox" className="smallTipBox">
-                        { url && <TipImage props={tips}/>}
+                        <TipImage props={smallTip.id}/>
 
                     </div>
                     <div id="titelSmallTip" className="smallTipBox">
@@ -44,7 +41,7 @@ function Tip ({tips, url}){
                             >Klik hier om meer te lezen...</button>
                         </div>
                         <div className="labelBox">
-                            <StandardTipLabel/>
+                            {smallTip.privateTip && <TipLabel kindOfTip={"Privé"}/> || smallTip.publicTip && <TipLabel kindOfTip={"Publiek"}/> || smallTip.standardTip && <TipLabel kindOfTip={"Standaard"}/>}
                         </div>
                     </div>
 

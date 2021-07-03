@@ -23,7 +23,7 @@ function LinkAddressDisplayPriveTip () {
         try {
             await axios.delete(`http://localhost:8080/api/v1/tips/${id}`)
         } catch (e) {
-            console.log("Get req is niet gelukt, error: " + e)
+            console.log("Delete req is niet gelukt, error: " + e)
         }
     }
 
@@ -32,7 +32,7 @@ function LinkAddressDisplayPriveTip () {
         try {
             await axios.delete(`http://localhost:8080/api/v1/users/${username}`)
         } catch (e) {
-            console.log("Get req is niet gelukt, error: " + e)
+            console.log("Delete req is niet gelukt, error: " + e)
         }
     }
     //
@@ -56,7 +56,7 @@ function LinkAddressDisplayPriveTip () {
             <div className="displayAdmin">
                 <h2>Delete users: </h2>
                 {users.map((user)=>(
-                    <div className="infoBox" key={user.id}>name: {user.username}  <button className="adminButton" onClick={(e)=>deleteUser(user.username)}>X</button></div>))}
+                    <div className="infoBox" key={user.username}>name: {user.username}  <button className="adminButton" onClick={(e)=>deleteUser(user.username)}>X</button></div>))}
             </div>
         </div>
     )

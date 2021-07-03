@@ -1,20 +1,18 @@
 import React, {useState, useEffect} from 'react';
 import './ReviewScreen.css'
 import axios from "axios";
+import TipImage from "../Tips/typeOfTips/TipImage";
 
-function ReviewScreen ({tipId}) {
+function ReviewScreen ({tipId, addressTip}) {
 
     const [reviews, setReviews] = useState([]);
     const tipAmsterdamId = tipId;
+    const addressTipReview = addressTip
 
     async function fetchData (tipAmsterdamId) {
         try {
             const result = await axios.get(`http://localhost:8080/api/v1/reviews/${tipAmsterdamId}/reviews`)
-            // const image = await axios.get(`http://localhost:8080/api/v1/tips/${tipAmsterdamId}/picturePath`)
-            console.log("result.data ", result.data)
-            // console.log(image)
             setReviews(result.data)
-            console.log("usestate ", reviews)
         } catch (e) {
             console.log("het is niet gelukt, error: " + e)
         }
@@ -29,9 +27,9 @@ function ReviewScreen ({tipId}) {
             {reviews.map((review)=>(
             <div key={review.id} className="tipBox">
                 <div className="tipBoxTwo" id="pictureDisplay">
-                    <img id="pictureDisplay" src="" alt=""/>
+                    <TipImage props={tipAmsterdamId}/>
                 </div>
-                <div id="adressDisplay"  className="tipBoxTwo" >{review.address}</div>
+                <div id="adressDisplay"  className="tipBoxTwo" >{addressTipReview}</div>
                 <div id="textDisplayTip"  className="tipBoxTwo">{review.comment}</div>
                 {review.brokenHeart?(
                 <button id="buttonHeartBrokenScreen" className="heartsScreen">💔</button>):""}
