@@ -24,7 +24,6 @@ function PageAdminLink () {
                     <LinkAddressDisplayPublicTip/>
                 </div>
             </div>
-            <Profile/>
         </div>
     )
 }

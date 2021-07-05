@@ -3,13 +3,11 @@ import './Group.css'
 import AddButton from "../button/AddButton";
 import { useForm } from "react-hook-form";
 import axios from "axios";
-import {useHistory} from "react-router-dom";
 
 function Group () {
 
     const { handleSubmit, register } = useForm();
     const [group, setWholeGroup] = useState([]);
-    const history = useHistory();
 
     async function sendInfo (data) {
 
@@ -30,7 +28,6 @@ function Group () {
         }
     }
 
-
     async function deleteGroupMember (id){
         console.log(id)
         try {
@@ -46,7 +43,6 @@ function Group () {
     }, [])
 
     return (
-        <>
             <div className="groupDisplay">
                 <form onSubmit={handleSubmit(sendInfo)}>
                     <label id="groupMember" htmlFor="groeplid toevoegen">Voeg het e-mail adres toe van degene zie u aan de groep wilt toevoegen in
@@ -64,7 +60,6 @@ function Group () {
                             <div className="infoBox" key={groupMember.id}>{groupMember.emailAddress}  <button onClick={(e)=>deleteGroupMember(groupMember.id)}>X</button></div>))}
                     </div>
             </div>
-        </>
     )
 }
 

@@ -25,6 +25,7 @@ function LinkAddressDisplayPriveTip () {
         } catch (e) {
             console.log("Delete req is niet gelukt, error: " + e)
         }
+        window.location.reload();
     }
 
     async function deleteUser (username){
@@ -34,6 +35,7 @@ function LinkAddressDisplayPriveTip () {
         } catch (e) {
             console.log("Delete req is niet gelukt, error: " + e)
         }
+        window.location.reload();
     }
     //
     // useEffect(
@@ -42,8 +44,8 @@ function LinkAddressDisplayPriveTip () {
 
     useEffect(()=>{
         fetchData()
-        deleteUser();
-        deleteTip();
+        // deleteUser();
+        // deleteTip();
     },[])
 
     return (

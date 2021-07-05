@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from 'react'
 import axios from "axios";
+import {useHistory} from "react-router-dom";
 
 function LinkAddressDisplayPublicTip () {
 
     const [publicTips, setPublicTips] = useState([]);
     const [reviews, setReviews] = useState([])
     // const [refreshPage, setRefreshPage] = useState(false)
+    const history = useHistory();
 
     async function fetchData () {
         try {
@@ -26,7 +28,7 @@ function LinkAddressDisplayPublicTip () {
         } catch (e) {
             console.log("Delete req is niet gelukt, error: " + e)
         }
-
+        window.location.reload();
     }
 
     async function deleteReview (id){
@@ -36,13 +38,14 @@ function LinkAddressDisplayPublicTip () {
         } catch (e) {
             console.log("Delete req is niet gelukt, error: " + e)
         }
+        window.location.reload();
     }
 
 
     useEffect(()=>{
         fetchData();
-        deleteTip()
-        deleteReview();
+        // deleteTip()
+        // deleteReview();
     },[])
 
     return (

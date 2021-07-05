@@ -13,15 +13,17 @@ function TipDisplayAdmin () {
     async function sendInfo (data) {
 
         try {
-            await axios.post('http://localhost:8080/api/v1/tips/standardTip_upload', formData)
+            console.log(user.authority)
+            await axios.post('http://localhost:8080/api/v1/tips/standardTip_upload', data)
         } catch (e) {
             console.log("Helaas, het is niet gelukt ", e)
         }
     }
 
-    const formData = new FormData();
+    // const formData = new FormData();
 
     const formSubmit = (data) => {
+        const formData = new FormData();
         console.log(data)
         console.log(user)
         console.log("ik zit in de formsubmit!")

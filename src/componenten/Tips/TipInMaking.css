@@ -16,6 +16,26 @@
     gap: 7.5px;
 }
 
+.errorMessageAddress {
+    color: red;
+    height: auto;
+    background-color: transparent;
+    font-size: 12.5px;
+    z-index: 100;
+    position: absolute;
+    margin: 300px 0 0 0;
+}
+
+.errorMessageImage {
+    color: red;
+    height: auto;
+    background-color: transparent;
+    font-size: 12.5px;
+    z-index: 100;
+    position: absolute;
+    margin: 310px 0 0 0;
+}
+
 .textDis {
     grid-area: textDis;
     background-color: lightsteelblue;

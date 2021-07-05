@@ -29,6 +29,10 @@ function Register (){
                 residence: data.residence,
                 username: data.emailRegistration
             });
+            const resultUSER = await axios.post(`http://localhost:8080/api/v1/users/${data.emailRegistration}/authorities`, {
+                username: data.emailRegistration,
+                authority: "USER"
+            })
             toggleRegisterSuccess(true);
 
             setTimeout(() => {

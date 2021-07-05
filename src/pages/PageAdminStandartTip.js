@@ -9,7 +9,8 @@ function PageAdminStandartTip () {
         <div className="pageBackground">
             <NavBarAdmin/>
             <div className="boxAdminStandartTip">
-                <TipDisplayAdmin id="formTip"/>
+                <TipInMaking id="formTip"/>
+                {/*<TipDisplayAdmin id="formTip"/>*/}
             </div>
         </div>
     )

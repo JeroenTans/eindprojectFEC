@@ -37,7 +37,7 @@
 .errorMessage {
     color: red;
     height: auto;
-    background-color: hsla(159, 37%, 40%, 0.94);
+    background-color: transparent;
     font-size: 12.5px;
 }
 
