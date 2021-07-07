@@ -14,35 +14,39 @@ import {AuthContext} from "./componenten/Context/AuthContextProvider";
 function App() {
 
     const {user} = useContext(AuthContext);
-
+    console.log(user)
   return (
       <div className="App">
               <Switch>
                   <Route exact path="/">
                       <PageInlog/>
                   </Route>
-                  <Route path="/register">
+                  <Route exact path="/register">
                       <PageRegister/>
                   </Route>
-                  {user.authority === "USER" || user.authority === "ADMIN" ? (
+                  {/*{user.authority === "USER" || user.authority === "ADMIN" ? (*/}
                   <Route path="/available_tips">
                       <PageAvailableTip/>
-                  </Route>):""}
-                  {user.authority === "USER" || user.authority === "ADMIN" ? (
+                  </Route>
+                  {/*):""}*/}
+                  {/*{user.authority === "USER" || user.authority === "ADMIN" ? (*/}
                   <Route path="/trade">
                       <PageTrade/>
-                  </Route>):""}
-                  {user.authority === "USER" || user.authority === "ADMIN" ? (
+                  </Route>
+                  {/*):""}*/}
+                  {/*{user.authority === "USER" || user.authority === "ADMIN" ? (*/}
                   <Route path="/verstuurde_tips">
                       <PageSendTips/>
-                  </Route>):""}
+                  </Route>
+                  {/*):""}*/}
                   <Route path="/groep">
                       <PageGroup/>
                   </Route>
-                  {user.authority === "ADMIN" ? (
+                  {/*{user.authority === "ADMIN" ? (*/}
                   <Route path="/link">
                       <PageAdminLink/>
-                  </Route>):""}
+                  </Route>
+                  {/*):""}*/}
                   {/*{user.authority === "ADMIN" ? (*/}
                   <Route path="/standaart_tip">
                       <PageAdminStandartTip/>

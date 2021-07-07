@@ -20,25 +20,6 @@ function PageAvailableTip () {
             const resultStandardTip = await axios.get("http://localhost:8080/api/v1/tips/standardTip")
             const resultPublicTip = await axios.get("http://localhost:8080/api/v1/tips/publicTip")
             const resultPrivateTip = await axios.get(`http://localhost:8080/api/v1/tips/${username}/privateTip`)
-            // const idImage = resultStandardTip.data[0].id
-            // const resultTwo = await axios.get(`http://localhost:8080/api/v1/tips/12/picturePath`)
-            // const image = resultTwo.data
-            // console.log("resultTwo", resultTwo)
-            // console.log("image req: ", image.data)
-            // console.log("result data", result.data)
-            // console.log("image: ",image)
-            // const blob = new Blob([image], {
-            //     type: 'image/jpg',
-            // });
-            // console.log("result: ", result)
-            // console.log("blob: ", blob)
-            // const objectUrl = URL.createObjectURL(blob);
-            // setUrl(objectUrl);
-            // const imageOne = URL.createObjectURL(blob)
-            // setUrl(imageOne)
-            // console.log("HIER!objectUrl: ", imageOne)
-            // console.log("tips: ", tips)
-            // console.log("url: ", url)
             setStandardTips(resultStandardTip.data)
             setPublicTips(resultPublicTip.data)
             setPrivateTips(resultPrivateTip.data)
