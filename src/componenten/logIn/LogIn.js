@@ -2,23 +2,29 @@ import React, { useState, useContext } from 'react';
 import { useForm } from 'react-hook-form';
 import './LogIn.css';
 import { NavLink, useHistory } from 'react-router-dom';
-import {AuthContext} from "../Context/AuthContextProvider";
+import {useAuthContext} from "../Context/AuthContextProvider";
 import axios from "axios";
 
 
 function LogInComp () {
 
     const {handleSubmit, register} = useForm();
-    const {login, user} = useContext(AuthContext);
+    const {login, user} = useAuthContext();
     const history = useHistory();
 
     async function sendInfo(data) {
         try {
             const result = await axios.post('http://localhost:8080/api/v1/authenticate', data);
-            login(result.data.jwt)
-            console.log(user)
-            // {user.authority === "USER" ? (history.push("/available_tips")):(history.push("/link"))}
-            // {user.authority === "ADMIN" && history.push("/link")}
+            // {result.data.authorityRole === "USER" && history.push("/available_tips")||result.data.authorityRole === "ADMIN" && history.push("/link")}
+            // {result.data.authorityRole === "ADMIN" && history.push("/link")}
+
+            login(result.data.jwt, result)
+
+            // Maak backend zo dat de backend gelijk alle belangrijke informatie over de gebruiker meestuurt
+            // Geef die mee aan de login functie in de context
+            // in de context kan gelijk de state worden gezet met de user
+            // En weet je gelijk wat de rol is en naar welke pagina deze gestuurd moet worden
+            // login(result.data.jwt, data)
         } catch (e) {
             console.error(e);
         }
@@ -55,40 +61,3 @@ function LogInComp () {
 
 }
 export default LogInComp;
-
-// <form   onSubmit={handleSubmit(sendInfo)}>
-//     <div className="buttonBoxLogIn">
-//         <NavLink    exact to="/" className="change"
-//                     id="logIn">Login</NavLink>
-//         <NavLink    to="/register" className="change"
-//                     id="register"
-//         >Registreer</NavLink>
-//     </div>
-//     <div className="email">
-//         <label>
-//             <input  className="boxLogIn"
-//                     id="emailField"
-//                     type="text"
-//                     placeholder=" ➡ e-mail adres:"
-//                     {...register("emailInput")}
-//             />
-//         </label>
-//         <label id="password">
-//             <input  className="boxLogIn"
-//                     id="passwordField"
-//                     type="password"
-//                     placeholder=" ➡ wachtwoord:"
-//                     {...register("passwordInput")}
-//             />
-//         </label>
-//         <button id="forgotP"
-//                 className="boxLogIn"
-//         >Wachtwoord vergeten?
-//         </button>
-//     </div>
-//     <div className="buttonBoxLogInTwo">
-//         <button className="boxLogIn"
-//                 type="submit"
-//                 id="logInButton">Inloggen</button>
-//     </div>
-// </form>

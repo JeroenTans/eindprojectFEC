@@ -24,13 +24,15 @@ function PageAvailableTip () {
             setPublicTips(resultPublicTip.data)
             setPrivateTips(resultPrivateTip.data)
         } catch (e) {
-            console.log("het is niet gelukt, error: " + e)
+            console.error("het is niet gelukt, error: " + e)
         }
     }
 
     useEffect(()=>{
-        const username = user.username
-        fetchData(username)
+        if (user) {
+            fetchData(user.username)
+        }
+
     },[])
 
 

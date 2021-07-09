@@ -9,12 +9,13 @@ import PageSendTips from "./pages/PageSendTips";
 import PageGroup from "./pages/PageGroup";
 import PageAdminLink from "./pages/PageAdminLink";
 import PageAdminStandartTip from "./pages/PageAdminStandartTip";
-import {AuthContext} from "./componenten/Context/AuthContextProvider";
+import RouteProtector from "./componenten/routeProtector/RouteProtector";
+import ProtectedRouteAdmin from "./componenten/routeProtector/RouteProtectorAdmin";
+import PageNotFound from "./pages/PageNotFound";
+import {useAuthContext} from "./componenten/Context/AuthContextProvider";
 
 function App() {
-
-    const {user} = useContext(AuthContext);
-    console.log(user)
+    const {user} = useAuthContext()
   return (
       <div className="App">
               <Switch>
@@ -24,34 +25,15 @@ function App() {
                   <Route exact path="/register">
                       <PageRegister/>
                   </Route>
-                  {/*{user.authority === "USER" || user.authority === "ADMIN" ? (*/}
-                  <Route path="/available_tips">
-                      <PageAvailableTip/>
-                  </Route>
-                  {/*):""}*/}
-                  {/*{user.authority === "USER" || user.authority === "ADMIN" ? (*/}
-                  <Route path="/trade">
-                      <PageTrade/>
-                  </Route>
-                  {/*):""}*/}
-                  {/*{user.authority === "USER" || user.authority === "ADMIN" ? (*/}
-                  <Route path="/verstuurde_tips">
-                      <PageSendTips/>
-                  </Route>
-                  {/*):""}*/}
-                  <Route path="/groep">
-                      <PageGroup/>
-                  </Route>
-                  {/*{user.authority === "ADMIN" ? (*/}
-                  <Route path="/link">
-                      <PageAdminLink/>
-                  </Route>
-                  {/*):""}*/}
-                  {/*{user.authority === "ADMIN" ? (*/}
-                  <Route path="/standaart_tip">
-                      <PageAdminStandartTip/>
-                  </Route>
-                  {/*):""}*/}
+                  <RouteProtector exact path="/available_tips" component={PageAvailableTip}/>
+                  <RouteProtector exact path="/trade" component={PageTrade}/>
+                  <RouteProtector exact path="/verstuurde_tips" component={PageSendTips}/>
+                  <RouteProtector exact path="/groep" component={PageGroup}/>
+                  {user && user.authority === "ADMIN"?
+                  <RouteProtector exact path="/link" component={PageAdminLink}/>:""}
+                  {user && user.authority === "ADMIN"?
+                  <RouteProtector exact path="/standaart_tip" component={PageAdminStandartTip}/>:""}
+                  <Route path="/*" component={PageNotFound}/>
               </Switch>
       </div>
   );

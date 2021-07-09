@@ -1,14 +1,14 @@
-import React from 'react'
+import React, {useEffect, useContext} from 'react'
 import './PageAdminLink.css'
 import NavBarAdmin from "../componenten/navBar/NavBarAdmin";
 import LinkAddressDisplayPriveTip from "../componenten/linkAdresDisplay/LinkAddressDisplayPriveTip";
 import LinkAddressDisplayPublicTip from "../componenten/linkAdresDisplay/LinkAdressDisplayPublicTip";
 import AdminLink from "../componenten/adminLink/AdminLink";
-import Profile from "../componenten/profile/Profile";
+import {useAuthContext} from "../componenten/Context/AuthContextProvider";
+
 
 function PageAdminLink () {
-
-
+    const {user} = useAuthContext()
 
     return (
         <div className="pageBackground">

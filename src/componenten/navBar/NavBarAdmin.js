@@ -1,8 +1,12 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import './NavBarAdmin.css';
-import { NavLink, Route} from 'react-router-dom';
+import {NavLink} from 'react-router-dom';
+import {AuthContext} from "../Context/AuthContextProvider";
 
 function NavBarAdmin (){
+
+    const {logout} = useContext(AuthContext);
+
     return (
 
             <div className="mainContainer">
@@ -13,7 +17,7 @@ function NavBarAdmin (){
                     </nav>
                 </ul>
                 <li className="logOutContainer">
-                    <NavLink className="logOut" exact to="/">Uitloggen</NavLink>
+                    <button className="logOut" onClick={logout}>Uitloggen</button>
                 </li>
             </div>
     )

@@ -9,18 +9,13 @@ import axios from "axios";
 
 
 function PageTrade () {
-
-    const [publicTips, setPublicTips] = useState([])
-    const [privateTips, setPrivateTips] = useState([])
+    const [sendTips, setSendTips] = useState([])
     const {user} = useContext(AuthContext)
 
     async function fetchData (username) {
         try {
-            const resultPublicTip = await axios.get(`http://localhost:8080/api/v1/tips/${username}/publicTip`)
-            const resultPrivateTip = await axios.get(`http://localhost:8080/api/v1/tips/${username}/privateTip`)
-
-            setPublicTips(resultPublicTip.data)
-            setPrivateTips(resultPrivateTip.data)
+            const result =  await axios.get(`http://localhost:8080/api/v1/tips/getAllTradedTips/${username}`)
+            setSendTips(result.data)
         } catch (e) {
             console.log("het is niet gelukt, error: " + e)
         }
@@ -37,13 +32,13 @@ function PageTrade () {
             <NavBar/>
             <Profile className="profilePageBox"/>
             <div className="box">
-                <div className="whatToDo">Verzonden Tips</div>
+                <div className="whatToDo">Geruilde tips</div>
                 <div className="whatToDo">Maak uw tip</div>
             </div>
             <div className="completeBox">
                 <div className="boxTrade">
-                        <Tip tips={publicTips}/>
-                        <Tip tips={privateTips}/>
+                        <Tip tips={sendTips}/>
+                        {/*<Tip tips={privateTips}/>*/}
                 </div>
                     <div className="makeTipBoxPage">
                         <TipInMaking/>

@@ -10,13 +10,13 @@ function Group () {
     const [group, setWholeGroup] = useState([]);
 
     async function sendInfo (data) {
-
+        console.log(data)
         try {
             await axios.post('http://localhost:8080/api/v1/group', data)
         } catch (e) {
             console.log("Het is niet gelukt, error: " + e)
         }
-        window.location.reload();
+        // window.location.reload();
     }
 
     async function fetchData () {
@@ -45,6 +45,12 @@ function Group () {
     return (
             <div className="groupDisplay">
                 <form onSubmit={handleSubmit(sendInfo)}>
+                    <div>
+                        <input type="text"
+                        placeholder="Groepsnaam:"
+                               {...register("groupName")}
+                        />
+                    </div>
                     <label id="groupMember" htmlFor="groeplid toevoegen">Voeg het e-mail adres toe van degene zie u aan de groep wilt toevoegen in
                         <input  type="text"
                                 id="inputField"

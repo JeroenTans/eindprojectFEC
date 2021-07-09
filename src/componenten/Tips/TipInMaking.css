@@ -114,6 +114,10 @@
     background-color: hsl(304, 99%, 75%);
 }
 
+#groupInput {
+    width: 100%;
+}
+
 #plusButton {
     grid-area: plus;
     border-radius: 5px;

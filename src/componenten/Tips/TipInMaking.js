@@ -44,6 +44,8 @@ function TipInMaking () {
         // formData.append("standardTip", false)
         formData.append("picturePath", data.picturePath[0])
         formData.append("username", user.username)
+        formData.append("sendTip", true)
+        formData.append("groupName", "No Group")
 
         sendInfo(formData)
     }

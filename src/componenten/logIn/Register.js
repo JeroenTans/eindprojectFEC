@@ -20,8 +20,6 @@ function Register (){
         setError('');
         toggleLoading(true);
 
-        console.log(data);
-
         try {
             const result = await axios.post('http://localhost:8080/api/v1/users', {
                 email: data.emailRegistration,
@@ -114,81 +112,3 @@ return (
 
 export default Register;
 
-// <label  htmlFor="first-name">Naam:
-//     <input
-//         type="text"
-//         id="first-name"
-//         {...register("voornaam", {
-//             required: {value: true, message: "Dit veld is verplicht"}
-//         })}
-//     />
-//     {errors.voornaam && <p>{errors.voornaam.message}</p>}
-// </label>
-
-
-// <form   onSubmit={handleSubmit(sendInfo)}>
-//     <div className="registerForm">
-//         <div className="boxRegisterChange">
-//             <NavLink    exact to="/" className="changeRegister"
-//                         id="logInPage">Login</NavLink>
-//             <NavLink    to="/register" className="changeRegister"
-//                         id="registerPage"
-//             >Registreer</NavLink>
-//         </div>
-//         <label>
-//             <input  type="text"
-//                     id="emailFieldRegister"
-//                     className="boxRegister"
-//                     placeholder=" ➡ e-mail adres:"
-//                     {...register("emailRegistration", {
-//                 required: true,
-//                 validate: (value) => value.includes('@')
-// })}
-// />{errors.emailRegistration && errors.emailRegistration.type === "required" && <span className="errorMessage">Dit veld is verplicht en moet een '@' bevatten.</span>}
-//         </label>
-//         <label id="city">
-//             <input  type="text"
-//                     className="boxRegister"
-//                     placeholder=" ➡ woonachtig in:"
-//                     {...register("city", {
-//                         required:true,
-//                     })}
-//             />{errors.city && errors.city.type === "required" && <span className="errorMessage">Dit veld is verplicht.</span>}
-//         </label>
-//         <label id="makePassword">
-//             <input  type="password"
-//                     className="boxRegister"
-//                     placeholder=" ➡ wachtwoord:"
-//                     value={password}
-//                     onChange={(e)=>setPassword(e.target.value)}/>
-//             {/*{...register("password", {*/}
-//             {/*    required:true,*/}
-//             {/*    maxLength: {*/}
-//             {/*        value:15,*/}
-//             {/*    },*/}
-//             {/*    minLength: {*/}
-//             {/*        value: 6,*/}
-//             {/*    },*/}
-//             {/*})}*/}
-//             {/*/>{errors.password && errors.password.type === "required" && <span className="errorMessage">Dit veld is verplicht en moet minimaal bestaan uit zes karakters en maximaal uit 15.</span>}*/}
-//             <input  type="password"
-//                     className="boxRegister"
-//                     placeholder=" ➡ bevestig wachtwoord:"
-//                     value={checkpassword}
-//                     onChange={(e)=>setCheckPassword(e.target.value)}/>
-//             {/*{...register("passwordConfirm", {*/}
-//             {/*    required:true,*/}
-//             {/*})}*/}
-//             {/*/>{errors.passwordConfirm && errors.passwordConfirm.type === "required" && <span className="errorMessage">Dit wachtwoord komt niet overeen met het eerder opgegeven wachtwoord</span>}*/}
-//             <button className="boxLogIn"
-//                     type="submit"
-//                     id="registerButton">registreer</button>
-//         </label>
-//     </div>
-// </form>
-
-// {...register("emailRegistration", {
-//     required: true,
-//     pattern: /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/,
-//     message: "Please enter a valid e mail."
-// })}

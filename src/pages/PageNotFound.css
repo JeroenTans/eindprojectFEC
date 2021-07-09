@@ -1,0 +1,12 @@
+.pageBackground {
+    background-size: cover;
+    background-image: url("../images/AmsterdamDag.jpg");
+    background-repeat: no-repeat;
+    height: 100vh;
+}
+
+.notFoundBox {
+    display: flex;
+    justify-content: center;
+    color: deeppink;
+}

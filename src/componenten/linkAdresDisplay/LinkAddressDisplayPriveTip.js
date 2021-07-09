@@ -53,12 +53,12 @@ function LinkAddressDisplayPriveTip () {
             <div className="displayAdmin">
                 <h2>Id & adress privé tips:</h2>
                 {privateTips.map((priveTip)=>(
-                    <div className="infoBox" key={priveTip.id}>Id: {priveTip.id}| Address: {priveTip.address}  <button className="adminButton" onClick={(e)=>deleteTip(priveTip.id)}>X</button></div>))}
+                    <div className="infoBox" key={priveTip.id}>Id: {priveTip.id}| Address: {priveTip.address}| Wie heeft deze tip gemaakt: {priveTip.username} <button className="adminButton" onClick={(e)=>deleteTip(priveTip.id)}>X</button></div>))}
             </div>
             <div className="displayAdmin">
                 <h2>Delete users: </h2>
                 {users.map((user)=>(
-                    <div className="infoBox" key={user.username}>name: {user.username}  <button className="adminButton" onClick={(e)=>deleteUser(user.username)}>X</button></div>))}
+                    <div className="infoBox" key={user.username}>name: {user.username}| Authority: {user.authorities[0].authority} <button className="adminButton" onClick={(e)=>deleteUser(user.username)}>X</button></div>))}
             </div>
         </div>
     )
