@@ -32,7 +32,7 @@ function PageTrade () {
             <NavBar/>
             <Profile className="profilePageBox"/>
             <div className="box">
-                <div className="whatToDo">Geruilde tips</div>
+                <div className="whatToDo">Ontvangen tips</div>
                 <div className="whatToDo">Maak uw tip</div>
             </div>
             <div className="completeBox">
