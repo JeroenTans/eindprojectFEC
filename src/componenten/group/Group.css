@@ -2,7 +2,7 @@
 .groupDisplay {
     background-color: lightblue;
     width: 300px;
-    min-height: 500px;
+    height: 425px;
     border-radius: 5px;
     margin: 10px;
     border: solid lightsteelblue;
@@ -16,7 +16,7 @@
 
 .groupMembersDisplay {
     overflow: auto;
-    max-height: 365px;
+    height: auto;
 }
 
 .groupDisplay {

@@ -4,13 +4,13 @@ import NavBar from "../componenten/navBar/NavBar";
 import TipInMaking from "../componenten/Tips/TipInMaking";
 import Tip from "../componenten/Tips/typeOfTips/Tip";
 import Profile from "../componenten/profile/Profile";
-import {AuthContext} from "../componenten/Context/AuthContextProvider";
+import {useAuthContext} from "../componenten/Context/AuthContextProvider";
 import axios from "axios";
 
 
 function PageTrade () {
     const [sendTips, setSendTips] = useState([])
-    const {user} = useContext(AuthContext)
+    const {user} = useAuthContext()
 
     async function fetchData (username) {
         try {
@@ -38,7 +38,6 @@ function PageTrade () {
             <div className="completeBox">
                 <div className="boxTrade">
                         <Tip tips={sendTips}/>
-                        {/*<Tip tips={privateTips}/>*/}
                 </div>
                     <div className="makeTipBoxPage">
                         <TipInMaking/>

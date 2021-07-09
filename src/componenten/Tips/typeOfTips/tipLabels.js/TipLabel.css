@@ -21,3 +21,11 @@
     padding: 3px;
     color: hsl(184, 100%, 20%);
 }
+
+#groupTipLabel {
+    border-radius: 10px;
+    font-size: 10px;
+    background-color: yellow;
+    padding: 3px;
+    color: darkorange;
+}

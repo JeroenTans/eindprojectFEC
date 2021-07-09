@@ -14,18 +14,19 @@ function PageGroup () {
     const [groupTips, setGroupTips] = useState([]);
     const {user} = useAuthContext()
 
-    async function fetchData (groupName) {
-        console.log(groupName)
+    async function fetchData () {
+        const groupName = user.groupName
         try {
-            const result = await axios.get(`http://localhost:8080/api/v1/tips/getGroupTips/${groupName}`)
+            const result = await axios.get(`http://localhost:8080/api/v1/tips/groupTips/${groupName}`)
             setGroupTips(result.data)
+            console.log(groupTips)
         } catch (e) {
-            console.log("helaas: ", e)
+            console.error("helaas: ", e)
         }
     }
 
     useEffect(()=>{
-        // fetchData(user.groupName)
+        fetchData()
     },[])
 
     return (

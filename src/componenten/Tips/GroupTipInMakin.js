@@ -34,6 +34,7 @@ function GroupTipInMaking () {
         formData.append("privateTip", false)
         formData.append("publicTip", false)
         formData.append("standardTip", false)
+        formData.append("groupTip", true)
         formData.append("picturePath", data.picturePath[0])
         formData.append("username", user.username)
         formData.append("sendTip", true)
@@ -75,13 +76,13 @@ function GroupTipInMaking () {
                                 required:true
                             })}
                 />{errors.textAboutTheTip && <p className="errorMessage">Het is verplicht alle velden in te vullen</p>}
-                <div>
-                    <input  type="text"
-                            placeholder="Voeg de groepsnaam toe:"
-                            id="groupInput"
-                            {...register("groupName")}
-                            />
-                </div>
+                {/*<div>*/}
+                {/*    <input  type="text"*/}
+                {/*            placeholder="Voeg de groepsnaam toe:"*/}
+                {/*            id="groupInput"*/}
+                {/*            {...register("groupName")}*/}
+                {/*            />*/}
+                {/*</div>*/}
                 {/*<div className="checkboxTipInMakingOne">*/}
                 {/*    {user.authority === "ADMIN" ?*/}
                 {/*        <input  type="checkbox"*/}

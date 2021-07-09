@@ -41,7 +41,12 @@ function Tip ({tips, url}){
                             >Klik hier om meer te lezen...</button>
                         </div>
                         <div className="labelBox">
-                            {smallTip.privateTip && <TipLabel kindOfTip={"Privé"}/> || smallTip.publicTip && <TipLabel kindOfTip={"Publiek"}/> || smallTip.standardTip && <TipLabel kindOfTip={"Standaard"}/>}
+                            {smallTip.privateTip && <TipLabel kindOfTip={"Privé"}/>}
+                            {smallTip.publicTip && <TipLabel kindOfTip={"Publiek"}/>}
+                            {smallTip.standardTip && <TipLabel kindOfTip={"Standaard"}/>}
+                            {smallTip.groupTip && <TipLabel kindOfTip={"Groep"}/>}
+
+
                         </div>
                     </div>
 

@@ -3,25 +3,27 @@ import './Group.css'
 import AddButton from "../button/AddButton";
 import { useForm } from "react-hook-form";
 import axios from "axios";
+import {useAuthContext} from "../Context/AuthContextProvider";
 
 function Group () {
 
     const { handleSubmit, register } = useForm();
     const [group, setWholeGroup] = useState([]);
+    const {user} = useAuthContext()
 
     async function sendInfo (data) {
-        console.log(data)
+
         try {
             await axios.post('http://localhost:8080/api/v1/group', data)
         } catch (e) {
             console.log("Het is niet gelukt, error: " + e)
         }
-        // window.location.reload();
     }
 
     async function fetchData () {
+        const groupName = user.groupName
         try {
-            const result = await axios.get('http://localhost:8080/api/v1/group')
+            const result = await axios.get(`http://localhost:8080/api/v1/users/getUsersByGroupName/${groupName}`)
             setWholeGroup(result.data)
         } catch (e) {
             console.log("Get req is niet gelukt, error: " + e)
@@ -61,9 +63,9 @@ function Group () {
                         <AddButton className="buttonPlus"/>
                 </form>
                     <div className="groupMembersDisplay">
-                        <p>Groep leden:</p>
+                        <p>Groep : {user && user.groupName} | Groep leden:</p>
                             {group.map((groupMember)=>(
-                            <div className="infoBox" key={groupMember.id}>{groupMember.emailAddress}  <button onClick={(e)=>deleteGroupMember(groupMember.id)}>X</button></div>))}
+                            <div className="infoBox" key={groupMember.id}>{groupMember.username}  <button onClick={(e)=>deleteGroupMember(groupMember.id)}>X</button></div>))}
                     </div>
             </div>
     )

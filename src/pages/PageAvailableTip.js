@@ -3,8 +3,9 @@ import './PageAvailableTip.css'
 import NavBar from "../componenten/navBar/NavBar";
 import Profile from "../componenten/profile/Profile";
 import axios from "axios";
-import {AuthContext} from "../componenten/Context/AuthContextProvider";
+import {useAuthContext} from "../componenten/Context/AuthContextProvider";
 import Tip from "../componenten/Tips/typeOfTips/Tip";
+import {useHistory} from "react-router-dom";
 
 
 function PageAvailableTip () {
@@ -13,13 +14,15 @@ function PageAvailableTip () {
     const [publicTips, setPublicTips] = useState([])
     const [privateTips, setPrivateTips] = useState([])
     const [url, setUrl] = useState();
-    const {user} = useContext(AuthContext)
+    const {user} = useAuthContext();
+    const history = useHistory();
 
-    async function fetchData (username) {
+    async function fetchData () {
         try {
+
             const resultStandardTip = await axios.get("http://localhost:8080/api/v1/tips/standardTip")
             const resultPublicTip = await axios.get("http://localhost:8080/api/v1/tips/publicTip")
-            const resultPrivateTip = await axios.get(`http://localhost:8080/api/v1/tips/${username}/privateTip`)
+            const resultPrivateTip = await axios.get(`http://localhost:8080/api/v1/tips/${user.username}/privateTip`)
             setStandardTips(resultStandardTip.data)
             setPublicTips(resultPublicTip.data)
             setPrivateTips(resultPrivateTip.data)
@@ -29,10 +32,7 @@ function PageAvailableTip () {
     }
 
     useEffect(()=>{
-        if (user) {
-            fetchData(user.username)
-        }
-
+        fetchData()
     },[])
 
 
