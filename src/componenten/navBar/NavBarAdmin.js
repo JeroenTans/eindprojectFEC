@@ -1,11 +1,11 @@
-import React, {useContext} from 'react';
+import React from 'react';
 import './NavBarAdmin.css';
 import {NavLink} from 'react-router-dom';
-import {AuthContext} from "../Context/AuthContextProvider";
+import {useAuthContext} from "../Context/AuthContextProvider";
 
 function NavBarAdmin (){
 
-    const {logout} = useContext(AuthContext);
+    const {logout} = useAuthContext()
 
     return (
 

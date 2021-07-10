@@ -1,9 +1,8 @@
-import React, {useState, useEffect, useContext} from 'react';
+import React, {useState, useEffect} from 'react';
 import './CompleteTipFocus.css';
 import PopUp from "../popup/PopUp";
 import MakeReview from "../reviewScreen/MakeReview";
 import ReviewScreen from "../reviewScreen/ReviewScreen";
-// import {TipByIdContext} from "../Context/TipByIdContextProvider";
 import axios from "axios";
 import TipImage from "./typeOfTips/TipImage";
 
@@ -13,7 +12,7 @@ function CompleteTipFocus ({smallTipId}) {
     const [buttonPopupRead, toggleButtonPopupRead] = useState(false);
     const [tip, setTip] = useState([]);
     const [address, setAddress] = useState();
-    // const {tip} = useContext(TipByIdContext)
+
     const tipId = smallTipId;
 
     async function fetchData(tipId){
@@ -21,20 +20,17 @@ function CompleteTipFocus ({smallTipId}) {
             const result = await axios.get(`http://localhost:8080/api/v1/tips/tip/${tipId}`)
             setTip(result.data)
         } catch (e) {
-            console.log(e);
+            console.error(e);
         }
     }
 
     function openPopup (e) {
         toggleButtonPopup(true);
-
-        // e.preventDefault()
     }
 
     function openPopupRead (address) {
         toggleButtonPopupRead(true);
         setAddress(address)
-        // e.preventDefault()
     }
 
     useEffect(()=>{
@@ -66,98 +62,8 @@ function CompleteTipFocus ({smallTipId}) {
                     <MakeReview smallTipId={tipId}/>
                 </PopUp>
             </div>
-            {/*))}*/}
                 </>
     )
 }
 
 export default CompleteTipFocus;
-
-//
-// async function fetchData(tipId){
-//     try {
-//         const result = await axios.get(`http://localhost:8080/api/v1/tips/tip/${tipId}`)
-//         setTip(result.data)
-//     } catch (e) {
-//         console.log(e);
-//     }
-// }
-//
-// async function fetchImage(tipId){
-//     try {
-//
-//         const result = await axios.get(`http://localhost:8080/api/v1/tips/${tipId}/picturePath`, {
-//             responseType: "arraybuffer",
-//             headers: {
-//                 'Content-Type': 'image/jpg',
-//             }
-//         });
-//         const blob = new Blob([result.data.config], {
-//             type: 'image/jpg',
-//         });
-//         const objectUrl = URL.createObjectURL(blob);
-//         setUrl(objectUrl);
-//         console.log("result", result)
-//         console.log("Blob: ",blob)
-//         console.log("Blob type", blob.type);
-//         console.log("ObjectUrl: ", objectUrl);
-//         console.log("Url: ", url)
-//     } catch (e) {
-//         console.error(e);
-//     }
-// }
-
-// decodeBase64(result.data[0].picturePath)
-
-// const imageString = result[0].picturePath;
-
-// console.log(imageString)
-
-// console.log(result.data[0])
-
-//
-// decodeBase64(result.data.picturePath);
-//
-//
-// console.log(result.data)
-// console.log(result.data.picturePath)
-
-// const dataObjectCompleteTip = {
-//     address: result.data.address,
-//     picturePath: decodeBase64(result),
-//     explanation: result.data.explanation
-// }
-
-//
-// async function fetchData(tipId){
-//     try {
-//         const result = await axios.get(`http://localhost:8080/api/v1/tips/tip/${tipId}`)
-//         setTip(result.data)
-//     } catch (e) {
-//         console.log(e);
-//     }
-// }
-//
-// async function fetchImage(tipId){
-//     try {
-//
-//         const result = await axios.get(`http://localhost:8080/api/v1/tips/${tipId}/picturePath`, {
-//             responseType: "arraybuffer",
-//             headers: {
-//                 'Content-Type': 'image/jpg',
-//             }
-//         });
-//         const blob = new Blob([result.data.config], {
-//             type: 'image/jpg',
-//         });
-//         const objectUrl = URL.createObjectURL(blob);
-//         setUrl(objectUrl);
-//         console.log("result", result)
-//         console.log("Blob: ",blob)
-//         console.log("Blob type", blob.type);
-//         console.log("ObjectUrl: ", objectUrl);
-//         console.log("Url: ", url)
-//     } catch (e) {
-//         console.error(e);
-//     }
-// }

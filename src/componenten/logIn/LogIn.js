@@ -1,15 +1,14 @@
-import React, { useState, useContext } from 'react';
+import React from 'react';
 import { useForm } from 'react-hook-form';
 import './LogIn.css';
-import { NavLink, useHistory } from 'react-router-dom';
+import {NavLink} from 'react-router-dom';
 import {useAuthContext} from "../Context/AuthContextProvider";
 import axios from "axios";
 
 function LogInComp () {
 
     const {handleSubmit, register} = useForm();
-    const {login, user, setAuthState} = useAuthContext();
-    const history = useHistory();
+    const {login} = useAuthContext();
 
     async function sendInfo(data) {
         try {

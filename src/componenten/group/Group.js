@@ -21,7 +21,7 @@ function Group () {
             await axios.post('http://localhost:8080/api/v1/group', groupObject)
             setGroupSucces(true);
         } catch (e) {
-            console.log("Het is niet gelukt, error: " + e)
+            console.error("Het is niet gelukt, error: " + e)
         }
     }
 
@@ -31,18 +31,9 @@ function Group () {
             const result = await axios.get(`http://localhost:8080/api/v1/users/getUsersByGroupName/${groupName}`)
             setWholeGroup(result.data)
         } catch (e) {
-            console.log("Get req is niet gelukt, error: " + e)
+            console.error("Get req is niet gelukt, error: " + e)
         }
     }
-
-    // async function deleteGroupMember (id){
-    //     console.log(id)
-    //     try {
-    //         await axios.delete(`http://localhost:8080/api/v1/group/${id}`)
-    //     } catch (e) {
-    //         console.log("Get req is niet gelukt, error: " + e)
-    //     }
-    // }
 
     useEffect(()=>{
         fetchData()
@@ -51,12 +42,6 @@ function Group () {
     return (
             <div className="groupDisplay">
                 <form onSubmit={handleSubmit(sendInfo)}>
-                    <div>
-                        {/*<input type="text"*/}
-                        {/*placeholder="Groepsnaam:"*/}
-                        {/*       {...register("groupName")}*/}
-                        {/*/>*/}
-                    </div>
                     <label id="groupMember" htmlFor="groeplid toevoegen">Voeg uw groep toe
                         <input  type="text"
                                 id="inputField"

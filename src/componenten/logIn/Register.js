@@ -10,11 +10,10 @@ function Register (){
 
     const { handleSubmit, formState: { errors }, register } = useForm();
     const [password, setPassword] = useState("");
-    const history = useHistory();
-
     const [loading, toggleLoading] = useState(false);
     const [error, setError] = useState('');
     const [registerSuccess, toggleRegisterSuccess] = useState(false);
+    const history = useHistory();
 
     async function sendInfo (data) {
         setError('');
@@ -29,7 +28,7 @@ function Register (){
             });
             const resultUSER = await axios.post(`http://localhost:8080/api/v1/users/${data.emailRegistration}/authorities`, {
                 username: data.emailRegistration,
-                authority: "USER"
+                authority: "ROLE_USER"
             })
             toggleRegisterSuccess(true);
 
@@ -40,7 +39,6 @@ function Register (){
             console.error(e);
             setError(`Het registeren is mislukt. Probeer het opnieuw (${e.message})`);
         }
-
         toggleLoading(false);
     }
 

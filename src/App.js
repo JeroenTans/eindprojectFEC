@@ -28,9 +28,9 @@ function App() {
                   <RouteProtector exact path="/trade" component={PageTrade}/>
                   <RouteProtector exact path="/verstuurde_tips" component={PageSendTips}/>
                   <RouteProtector exact path="/groep" component={PageGroup}/>
-                  {user && user.authority === "ADMIN"?
+                  {user && user.authority === "ROLE_ADMIN"?
                   <RouteProtector exact path="/link" component={PageAdminLink}/>:""}
-                  {user && user.authority === "ADMIN"?
+                  {user && user.authority === "ROLE_ADMIN"?
                   <RouteProtector exact path="/standaart_tip" component={PageAdminStandartTip}/>:""}
                   <Route path="/*" component={PageNotFound}/>
               </Switch>

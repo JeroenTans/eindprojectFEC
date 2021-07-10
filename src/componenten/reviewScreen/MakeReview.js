@@ -1,6 +1,6 @@
 import './MakeReview.css';
-import { useForm } from 'react-hook-form';
-import React, { useState } from 'react';
+import {useForm} from 'react-hook-form';
+import React, {useState} from 'react';
 import axios from "axios";
 
 function MakeReview ({smallTipId}) {
@@ -21,7 +21,6 @@ function MakeReview ({smallTipId}) {
                 address: "Herengracht 81!"
 
         }
-        console.log("Wat stuur ik mee ", dataObject)
         try {
             await axios.post('http://localhost:8080/api/v1/reviews/savereview', dataObject)
             setReviewSucces(true);
@@ -49,8 +48,11 @@ function MakeReview ({smallTipId}) {
                 <textarea   className="commentPart"
                             id="" cols="50" rows="9"
                             placeholder="Schrijf hier uw review:"
-                            {...register("comment")}
-                            />
+                            {...register("comment", {
+                                required: true
+                                }
+                            )}
+                            />{errors.comment && <p className="errorMessageReview">Dit is een verplicht veld.</p>}
             <div className="buttonReview">
                 <button type="submit" id="plusButtonReview">Voeg uw review toe</button>
                 {reviewSucces && <p className="succes-message">Bedankt voor de review!</p>}
@@ -60,16 +62,3 @@ function MakeReview ({smallTipId}) {
 }
 
 export default MakeReview;
-
-// <div className="boxReview">
-//     <form className="form">
-//         <div className="likeOrNot" placeholder="halooo"/>Rate hier de tip d.m.v. hartjes
-//         <button type="checkbox" id="buttonHeartBroken" className="hearts">💔</button>
-//         <button type="checkbox" id="buttonHeart" className="hearts">💖</button>
-
-        // <textarea   className="commentPart"
-        //             id="" cols="50" rows="9"
-        //             placeholder="Schrijf hier uw review"/>
-        // <button type="submit" id="plusButton">Voeg uw review toe</button>
-//     </form>
-// </div>

@@ -1,4 +1,4 @@
-import React, {useContext, useEffect, useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import './PageTrade.css'
 import NavBar from "../componenten/navBar/NavBar";
 import TipInMaking from "../componenten/Tips/TipInMaking";

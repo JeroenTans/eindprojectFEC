@@ -1,4 +1,4 @@
-import React, {useState, useContext, useEffect} from 'react'
+import React, {useState, useEffect} from 'react'
 import './PageTrade.css'
 import NavBar from "../componenten/navBar/NavBar";
 import Group from "../componenten/group/Group";

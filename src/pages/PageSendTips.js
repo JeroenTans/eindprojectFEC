@@ -16,11 +16,10 @@ function PageSenTips () {
         try {
             const resultPublicTip = await axios.get(`http://localhost:8080/api/v1/tips/${username}/publicTip`)
             const resultPrivateTip = await axios.get(`http://localhost:8080/api/v1/tips/${username}/privateTip`)
-
             setPublicTips(resultPublicTip.data)
             setPrivateTips(resultPrivateTip.data)
         } catch (e) {
-            console.log("het is niet gelukt, error: " + e)
+            console.error("het is niet gelukt, error: " + e)
         }
     }
 

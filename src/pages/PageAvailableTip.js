@@ -1,21 +1,17 @@
-import React, {useContext, useEffect, useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import './PageAvailableTip.css'
 import NavBar from "../componenten/navBar/NavBar";
 import Profile from "../componenten/profile/Profile";
 import axios from "axios";
 import {useAuthContext} from "../componenten/Context/AuthContextProvider";
 import Tip from "../componenten/Tips/typeOfTips/Tip";
-import {useHistory} from "react-router-dom";
-
 
 function PageAvailableTip () {
 
     const [standardTips, setStandardTips] = useState([])
     const [publicTips, setPublicTips] = useState([])
     const [privateTips, setPrivateTips] = useState([])
-    const [url, setUrl] = useState();
     const {user} = useAuthContext();
-    const history = useHistory();
 
     async function fetchData () {
         try {
@@ -42,13 +38,13 @@ function PageAvailableTip () {
             <Profile className="profilePageBox"/>
             <div className="allTips">
                 <div className="tipPageBoxStandard">
-                    <Tip tips={standardTips} url={url}/>
+                    <Tip tips={standardTips}/>
                 </div>
                 <div className="tipPageBoxPrive">
-                    <Tip tips={privateTips} url={url}/>
+                    <Tip tips={privateTips}/>
                 </div>
                 <div className="tipPageBoxPublic">
-                    <Tip tips={publicTips} url={url}/>
+                    <Tip tips={publicTips}/>
                 </div>
             </div>
         </div>

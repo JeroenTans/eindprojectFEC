@@ -5,7 +5,7 @@ import TipLabel from "./tipLabels.js/TipLabel";
 import "./Tip.css"
 import TipImage from "./TipImage";
 
-function Tip ({tips, url}){
+function Tip ({tips}){
 
     const [buttonPopup, toggleButtonPopup] = useState(false);
     const [tipId, setTipId] = useState()
@@ -44,8 +44,6 @@ function Tip ({tips, url}){
                             {smallTip.publicTip && <TipLabel kindOfTip={"Publiek"}/>}
                             {smallTip.standardTip && <TipLabel kindOfTip={"Standaard"}/>}
                             {smallTip.groupTip && <TipLabel kindOfTip={"Groep"}/>}
-
-
                         </div>
                     </div>
 

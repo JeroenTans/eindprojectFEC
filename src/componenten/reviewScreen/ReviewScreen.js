@@ -14,7 +14,7 @@ function ReviewScreen ({tipId, addressTip}) {
             const result = await axios.get(`http://localhost:8080/api/v1/reviews/${tipAmsterdamId}/reviews`)
             setReviews(result.data)
         } catch (e) {
-            console.log("het is niet gelukt, error: " + e)
+            console.error("het is niet gelukt, error: " + e)
         }
     }
 

@@ -8,7 +8,7 @@ function AdminLink () {
     const [users, setUsers]= useState([])
     const [linkSucces, setLinkSucces] = useState(false)
     const [adminSucces, setAdminSucces] = useState(false)
-    const { handleSubmit, register } = useForm();
+    const {handleSubmit, register} = useForm();
 
     async function fetchData (data) {
         let idOne = data.adressOne;
@@ -25,7 +25,7 @@ function AdminLink () {
                 setLinkSucces(true);
             }
         } catch (e) {
-            console.log("Get request is niet gelukt, error: " + e)
+            console.error("Get request is niet gelukt, error: " + e)
         }
     }
 
@@ -34,14 +34,14 @@ function AdminLink () {
             const result = await axios.get('http://localhost:8080/api/v1/users')
             setUsers(result.data)
         } catch (e) {
-            console.log("Het ophalen van de gebruikers met de USER als authority is niet gelukt.", e)
+            console.error("Het ophalen van de gebruikers met de USER als authority is niet gelukt.", e)
         }
     }
 
     async function sendAuthority(data){
         const username = data.usernameInput
-        const adminAuthority = "ADMIN"
-        const userAuthority = "USER"
+        const adminAuthority = "ROLE_ADMIN"
+        const userAuthority = "ROLE_USER"
         try {
             const resultDeleteAuth = await axios.delete(`http://localhost:8080/api/v1/users/${username}/authorities/${userAuthority}`)
             const resultAuth = await axios.post(`http://localhost:8080/api/v1/users/${username}/authorities`,{
@@ -85,12 +85,10 @@ function AdminLink () {
                         placeholder="Username: "
                         {...register("usernameInput")}
                         />
-                        {/*<div>*/}
                             <button className="linkButton">Voeg authority toe</button>
                             {adminSucces && <p className="succes-message">De user rol word vervanger door een admin rol</p>}
-                        {/*</div>*/}
                 <div className="userShow">{users.map((user)=>(
-                    <p key={user.username}>{user.authorities[0].authority === "USER" && user.username}</p>))}
+                    <p key={user.username}>{user.authorities[0].authority === "ROLE_USER" && user.username}</p>))}
                 </div>
             </form>
         </>

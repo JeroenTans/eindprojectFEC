@@ -1,12 +1,10 @@
-import React, { useState, useEffect } from 'react'
+import React, {useState, useEffect} from 'react'
 import axios from "axios";
-import {useHistory} from "react-router-dom";
 
 function LinkAddressDisplayPublicTip () {
 
     const [publicTips, setPublicTips] = useState([]);
     const [reviews, setReviews] = useState([])
-    const [activateEffect, setActivateEffect] = useState(false)
 
     async function fetchData () {
         try {
@@ -17,7 +15,6 @@ function LinkAddressDisplayPublicTip () {
         } catch (e) {
             console.error("Get req is niet gelukt, error: " + e)
         }
-
     }
 
     async function deleteTip (id){
@@ -57,7 +54,7 @@ function LinkAddressDisplayPublicTip () {
             <div className="displayAdmin">
                     <h2>Id & adres publieke tips:</h2>
                     {publicTips.map((publicTip)=>(
-                    <div className="infoBox" key={publicTip.id}>Id: {publicTip.id}| adres: {publicTip.address}| Wie heeft deze tip gemaakt: {publicTip.username}   <button className="adminButton" onClick={(e)=>setActivateEffect(true) & deleteTip(publicTip.id)}>X</button></div>))}
+                    <div className="infoBox" key={publicTip.id}>Id: {publicTip.id}| adres: {publicTip.address}| Wie heeft deze tip gemaakt: {publicTip.username}   <button className="adminButton" onClick={(e)=> deleteTip(publicTip.id)}>X</button></div>))}
             </div>
             <div className="displayAdmin">
                     <h2>Delete reviews: </h2>

@@ -33,7 +33,6 @@ function AuthContextProvider({children}) {
         const token = localStorage.getItem('token');
         if(!authState.user && isTokenValid()) {
             const decodedToken = jwtDecode(token);
-            // fetchUserData(token, decodedToken.sub);
         } else {
             setAuthState({
                 user: null,
@@ -41,24 +40,6 @@ function AuthContextProvider({children}) {
             });
         }
     },[]);
-
-    // async function fetchUserData(token, userId) {
-    //     try {
-    //         await axios.get(`http://localhost:8080/api/v1/users/${userId}`, {
-    //             headers: {
-    //                 "Content-Type": "application/json",
-    //                 Authorization: `Bearer ${token}`,
-    //             }
-    //         });
-    //         // setAuthState({
-    //         //     user: {...authState.user,
-    //         //     },
-    //         //     status: 'done',
-    //         // });
-    //     } catch(e) {
-    //         console.error(e);
-    //     }
-    // }
 
     async function login(jwtToken, result) {
         localStorage.setItem('token', result.data.jwt);
@@ -74,7 +55,7 @@ function AuthContextProvider({children}) {
                 status: 'done',
             }
         )
-        {result.data.authorityRole === "USER" && history.push("/available_tips")||result.data.authorityRole === "ADMIN" && history.push("/link")}
+        {result.data.authorityRole === "ROLE_USER" && history.push("/available_tips")||result.data.authorityRole === "ROLE_ADMIN" && history.push("/link")}
     }
 
     function logout() {
@@ -93,7 +74,7 @@ function AuthContextProvider({children}) {
     return (
         <AuthContext.Provider value={data}>
             {authState.status === 'pending'
-                ? <p>Loading...</p>
+                ? <p>We zijn bezig...</p>
                 : children
             }
         </AuthContext.Provider>

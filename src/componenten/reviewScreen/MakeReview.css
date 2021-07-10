@@ -1,3 +1,11 @@
+.errorMessageReview{
+    position: absolute;
+    color: red;
+    font-size: 20px;
+    background-color: greenyellow;
+    border-radius: 5px;
+    border: red solid 2px;
+}
 
 .completeFormReview {
     border: solid lightsteelblue;

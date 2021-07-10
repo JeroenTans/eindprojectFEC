@@ -1,8 +1,8 @@
-import React, {useContext, useState} from 'react';
+import React, {useState} from 'react';
 import './TipInMaking.css';
 import {useForm} from 'react-hook-form';
 import axios from "axios";
-import {AuthContext} from "../Context/AuthContextProvider";
+import {useAuthContext} from "../Context/AuthContextProvider";
 import PopUp from "../popup/PopUp";
 import Response from "../response/Response";
 
@@ -10,10 +10,7 @@ function GroupTipInMaking () {
 
     const { handleSubmit, formState: { errors }, register } = useForm();
     const [buttonPopupRead, toggleButtonPopupRead] = useState(false);
-    // const [isPrivateTipFe, toggleIsPrivateTipFe] = useState(false);
-    // const [isPublicTipFe, toggleIsPublicTipFe] = useState(true);
-    // const [isStandardTipFe, toggleStandardTipFe] = useState(false);
-    const {user} = useContext(AuthContext);
+    const {user} = useAuthContext()
 
     async function sendInfo (data) {
 
@@ -21,7 +18,7 @@ function GroupTipInMaking () {
             await axios.post('http://localhost:8080/api/v1/tips/tip_upload', formData)
             openPopup()
         } catch (e) {
-            console.log(console.error(e))
+            console.error("De upload is niet gelukt", e)
         }
     }
 
@@ -43,7 +40,7 @@ function GroupTipInMaking () {
         sendInfo(formData)
     }
 
-    function openPopup (e) {
+    function openPopup () {
         toggleButtonPopupRead(true)
     }
 
@@ -76,29 +73,6 @@ function GroupTipInMaking () {
                                 required:true
                             })}
                 />{errors.textAboutTheTip && <p className="errorMessage">Het is verplicht alle velden in te vullen</p>}
-                {/*<div>*/}
-                {/*    <input  type="text"*/}
-                {/*            placeholder="Voeg de groepsnaam toe:"*/}
-                {/*            id="groupInput"*/}
-                {/*            {...register("groupName")}*/}
-                {/*            />*/}
-                {/*</div>*/}
-                {/*<div className="checkboxTipInMakingOne">*/}
-                {/*    {user.authority === "ADMIN" ?*/}
-                {/*        <input  type="checkbox"*/}
-                {/*                checked={isStandardTipFe}*/}
-                {/*                onChange={(e)=>standardFunction(e)}/>:*/}
-                {/*        <input  type="checkbox"*/}
-                {/*                checked={isPrivateTipFe}*/}
-                {/*                onChange={(e)=> isPublicTipFe?toggleIsPublicTipFe(false) && toggleIsPrivateTipFe(e.target.checked):toggleIsPrivateTipFe(e.target.checked)}*/}
-                {/*        />}Prive*/}
-                {/*</div>*/}
-                {/*<div className="checkboxTipInMakingTwo">*/}
-                {/*    <input  type="checkbox"*/}
-                {/*            checked={isPublicTipFe}*/}
-                {/*            onChange={(e)=> isPrivateTipFe?toggleIsPrivateTipFe(false) && toggleIsPublicTipFe(e.target.checked):toggleIsPublicTipFe(e.target.checked)}*/}
-                {/*    />Publiek*/}
-                {/*</div>*/}
                 <button id="plusButton" >Voeg uw tip toe</button>
             </form>
         </>

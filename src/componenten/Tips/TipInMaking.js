@@ -1,8 +1,8 @@
-import React, {useContext, useState} from 'react';
+import React, {useState} from 'react';
 import './TipInMaking.css';
 import {useForm} from 'react-hook-form';
 import axios from "axios";
-import {AuthContext} from "../Context/AuthContextProvider";
+import {useAuthContext} from "../Context/AuthContextProvider";
 import PopUp from "../popup/PopUp";
 import Response from "../response/Response";
 
@@ -13,9 +13,9 @@ function TipInMaking () {
     const [isPrivateTipFe, toggleIsPrivateTipFe] = useState(false);
     const [isPublicTipFe, toggleIsPublicTipFe] = useState(true);
     const [isStandardTipFe, toggleStandardTipFe] = useState(false);
-    const {user} = useContext(AuthContext);
+    const {user} = useAuthContext()
 
-    async function sendInfo (data) {
+    async function sendInfo (formData) {
 
         try {
             await axios.post('http://localhost:8080/api/v1/tips/tip_upload', formData)
@@ -31,17 +31,15 @@ function TipInMaking () {
 
         formData.append("explanation", data.textAboutTheTip)
         formData.append("address", data.address)
-        {user.authority === "ADMIN" ? (
+        {user.authority === "ROLE_ADMIN" ? (
             formData.append("privateTip", false)):(
             formData.append("privateTip", isPrivateTipFe))}
-        {user.authority === "ADMIN" ? (
+        {user.authority === "ROLE_ADMIN" ? (
             formData.append("publicTip", false)):(
             formData.append("publicTip", isPublicTipFe))}
-        // formData.append("publicTip", isPublicTipFe)
-        {user.authority === "ADMIN" ? (
+        {user.authority === "ROLE_ADMIN" ? (
             formData.append("standardTip", true)):(
             formData.append("standardTip", isStandardTipFe))}
-        // formData.append("standardTip", false)
         formData.append("groupTip", false)
         formData.append("picturePath", data.picturePath[0])
         formData.append("username", user.username)

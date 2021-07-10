@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import './ReusableButton.css';
 import PopUp from "../popup/PopUp";
-import CompleteTipFocus from "../Tips/CompleteTipFocus";
 import ExplainText from "../explainText/ExplainText";
 
 function ReusableButton () {

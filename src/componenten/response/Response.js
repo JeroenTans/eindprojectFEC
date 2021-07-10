@@ -1,7 +1,7 @@
 import React from 'react';
 import './Response.css';
 
-function Response ({ message }) {
+function Response ({message}) {
     return (
         <div className="boxResponse">
             <div className="boxResponseTwo">
