@@ -5,26 +5,16 @@ import { NavLink, useHistory } from 'react-router-dom';
 import {useAuthContext} from "../Context/AuthContextProvider";
 import axios from "axios";
 
-
 function LogInComp () {
 
     const {handleSubmit, register} = useForm();
-    const {login, user} = useAuthContext();
+    const {login, user, setAuthState} = useAuthContext();
     const history = useHistory();
 
     async function sendInfo(data) {
         try {
             const result = await axios.post('http://localhost:8080/api/v1/authenticate', data);
-            // {result.data.authorityRole === "USER" && history.push("/available_tips")||result.data.authorityRole === "ADMIN" && history.push("/link")}
-            // {result.data.authorityRole === "ADMIN" && history.push("/link")}
-
             login(result.data.jwt, result)
-
-            // Maak backend zo dat de backend gelijk alle belangrijke informatie over de gebruiker meestuurt
-            // Geef die mee aan de login functie in de context
-            // in de context kan gelijk de state worden gezet met de user
-            // En weet je gelijk wat de rol is en naar welke pagina deze gestuurd moet worden
-            // login(result.data.jwt, data)
         } catch (e) {
             console.error(e);
         }

@@ -8,6 +8,10 @@
     margin-top: 40px;
 }
 
+.succes-message{
+    color: green;
+}
+
 .userShow{
     height: 75px;
     overflow: auto;

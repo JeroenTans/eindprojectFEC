@@ -8,12 +8,11 @@ function MakeReview ({smallTipId}) {
     const { handleSubmit, formState: { errors }, register } = useForm();
     const [heartFe, toggleHeartFe] = useState(true);
     const [brokenHeartFe, toggleBrokenHeartFe] = useState(false);
+    const [reviewSucces, setReviewSucces] = useState(false);
     const tipId = smallTipId;
 
 
     async function sendInfo (data) {
-            console.log("daar gaat ie!")
-            console.log(data)
             const dataObject = {
             tipAmsterdamId: tipId,
             brokenHeart: brokenHeartFe,
@@ -25,8 +24,9 @@ function MakeReview ({smallTipId}) {
         console.log("Wat stuur ik mee ", dataObject)
         try {
             await axios.post('http://localhost:8080/api/v1/reviews/savereview', dataObject)
+            setReviewSucces(true);
         } catch (e) {
-            console.log("Het is niet gelukt, error: " + e)
+            console.error("Het plaatsen van de review is niet gelukt, error: " + e)
         }
     }
 
@@ -53,6 +53,7 @@ function MakeReview ({smallTipId}) {
                             />
             <div className="buttonReview">
                 <button type="submit" id="plusButtonReview">Voeg uw review toe</button>
+                {reviewSucces && <p className="succes-message">Bedankt voor de review!</p>}
             </div>
         </form>
     )

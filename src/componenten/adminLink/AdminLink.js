@@ -2,10 +2,12 @@ import React, {useState, useEffect} from 'react'
 import './AdminLink.css'
 import {useForm} from 'react-hook-form';
 import axios from "axios";
+import {useHistory} from "react-router-dom";
 
 function AdminLink () {
     const [users, setUsers]= useState([])
-    const [tipLink, setTipLink] = useState([])
+    const [linkSucces, setLinkSucces] = useState(false)
+    const [adminSucces, setAdminSucces] = useState(false)
     const { handleSubmit, register } = useForm();
 
     async function fetchData (data) {
@@ -19,6 +21,9 @@ function AdminLink () {
             const usernameTipTwo = resultTwo.data.username
             const postResult = await axios.post(`http://localhost:8080/api/v1/tips/addUserAndGetTipById/${usernameTipOne}/${idTwo}`)
             const postResultTwo = await axios.post(`http://localhost:8080/api/v1/tips/addUserAndGetTipById/${usernameTipTwo}/${idOne}`)
+            if (postResult.status || postResultTwo === 200){
+                setLinkSucces(true);
+            }
         } catch (e) {
             console.log("Get request is niet gelukt, error: " + e)
         }
@@ -42,6 +47,7 @@ function AdminLink () {
             const resultAuth = await axios.post(`http://localhost:8080/api/v1/users/${username}/authorities`,{
                 authority: adminAuthority
             })
+            setAdminSucces(true)
         }catch (e){
             console.log("Het toevoegen van een ADMIN is niet gelukt. ", e)
         }
@@ -70,6 +76,7 @@ function AdminLink () {
                             />
                 </div>
                 <button className="linkButton">link de tips</button>
+                {linkSucces && <p className="succes-message">De tips worden gelinkt</p>}
             </form>
             <form onSubmit={handleSubmit(sendAuthority)} className="addAdmin">
                 <div>Maak hier een nieuwe Admin aan</div>
@@ -78,9 +85,10 @@ function AdminLink () {
                         placeholder="Username: "
                         {...register("usernameInput")}
                         />
-                        <div>
+                        {/*<div>*/}
                             <button className="linkButton">Voeg authority toe</button>
-                        </div>
+                            {adminSucces && <p className="succes-message">De user rol word vervanger door een admin rol</p>}
+                        {/*</div>*/}
                 <div className="userShow">{users.map((user)=>(
                     <p key={user.username}>{user.authorities[0].authority === "USER" && user.username}</p>))}
                 </div>

@@ -11,7 +11,7 @@ function PageNotFound (){
                     <h1>404 PAGINA NIET GEVONDEN</h1>
                 </div>
                 <div className="notFoundBox">
-                    <h2>Klik <Link to="/available_tips">hier</Link> om naar het overzicht te gaan.</h2>
+                    <h2>Klik <Link to="/">hier</Link> om naar het log in scherm te gaan.</h2>
                 </div>
             </div>
         </>

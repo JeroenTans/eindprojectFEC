@@ -10,9 +10,9 @@ function GroupTipInMaking () {
 
     const { handleSubmit, formState: { errors }, register } = useForm();
     const [buttonPopupRead, toggleButtonPopupRead] = useState(false);
-    const [isPrivateTipFe, toggleIsPrivateTipFe] = useState(false);
-    const [isPublicTipFe, toggleIsPublicTipFe] = useState(true);
-    const [isStandardTipFe, toggleStandardTipFe] = useState(false);
+    // const [isPrivateTipFe, toggleIsPrivateTipFe] = useState(false);
+    // const [isPublicTipFe, toggleIsPublicTipFe] = useState(true);
+    // const [isStandardTipFe, toggleStandardTipFe] = useState(false);
     const {user} = useContext(AuthContext);
 
     async function sendInfo (data) {
@@ -38,7 +38,7 @@ function GroupTipInMaking () {
         formData.append("picturePath", data.picturePath[0])
         formData.append("username", user.username)
         formData.append("sendTip", true)
-        formData.append("groupName", "Tipsy")
+        formData.append("groupName", user.groupName)
 
         sendInfo(formData)
     }

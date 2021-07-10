@@ -14,38 +14,40 @@ function LinkAddressDisplayPriveTip () {
             setPrivateTips(result.data)
             setUsers(resultTwo.data)
         } catch (e) {
-            console.log("Get req is niet gelukt, error: " + e)
+            console.error("Get req is niet gelukt, error: " + e)
         }
     }
 
     async function deleteTip (id){
-
+        const newArray = [];
+        privateTips.map((privateTip)=>{
+            if (privateTip.id !== id) newArray.push(privateTip)
+        })
+        setPrivateTips(null)
+        setPrivateTips(newArray)
         try {
             await axios.delete(`http://localhost:8080/api/v1/tips/${id}`)
         } catch (e) {
-            console.log("Delete req is niet gelukt, error: " + e)
+            console.error("Delete req is niet gelukt, error: " + e)
         }
-        window.location.reload();
     }
 
     async function deleteUser (username){
-
+        const newArray = [];
+        users.map((user)=>{
+            if (user.username !== username) newArray.push(user)
+        })
+        setUsers(null)
+        setUsers(newArray)
         try {
             await axios.delete(`http://localhost:8080/api/v1/users/${username}`)
         } catch (e) {
-            console.log("Delete req is niet gelukt, error: " + e)
+            console.error("Delete req is niet gelukt, error: " + e)
         }
-        window.location.reload();
     }
-    //
-    // useEffect(
-    //     fetchData()
-    // , [])
 
     useEffect(()=>{
         fetchData()
-        // deleteUser();
-        // deleteTip();
     },[])
 
     return (

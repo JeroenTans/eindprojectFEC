@@ -1,5 +1,5 @@
 import './App.css';
-import React, {useContext} from 'react'
+import React from 'react'
 import { Switch, Route } from 'react-router-dom';
 import PageInlog from "./pages/PageInlog";
 import PageRegister from "./pages/PageRegister";
@@ -10,7 +10,6 @@ import PageGroup from "./pages/PageGroup";
 import PageAdminLink from "./pages/PageAdminLink";
 import PageAdminStandartTip from "./pages/PageAdminStandartTip";
 import RouteProtector from "./componenten/routeProtector/RouteProtector";
-import ProtectedRouteAdmin from "./componenten/routeProtector/RouteProtectorAdmin";
 import PageNotFound from "./pages/PageNotFound";
 import {useAuthContext} from "./componenten/Context/AuthContextProvider";
 

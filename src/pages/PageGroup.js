@@ -5,7 +5,7 @@ import Group from "../componenten/group/Group";
 import './PageGroup.css'
 import Profile from "../componenten/profile/Profile";
 import GroupTipInMakin from "../componenten/Tips/GroupTipInMakin";
-import {AuthContext, useAuthContext} from "../componenten/Context/AuthContextProvider";
+import {useAuthContext} from "../componenten/Context/AuthContextProvider";
 import axios from "axios";
 import Tip from "../componenten/Tips/typeOfTips/Tip";
 
@@ -19,7 +19,6 @@ function PageGroup () {
         try {
             const result = await axios.get(`http://localhost:8080/api/v1/tips/groupTips/${groupName}`)
             setGroupTips(result.data)
-            console.log(groupTips)
         } catch (e) {
             console.error("helaas: ", e)
         }

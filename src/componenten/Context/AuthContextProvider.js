@@ -1,9 +1,6 @@
 import React, { createContext, useState, useEffect, useContext } from 'react';
 import {useHistory} from "react-router-dom";
-import axios from "axios";
 import jwtDecode from "jwt-decode";
-
-//AuthContext = createContext({});
 
 export const AuthContext = createContext({});
 
@@ -36,39 +33,37 @@ function AuthContextProvider({children}) {
         const token = localStorage.getItem('token');
         if(!authState.user && isTokenValid()) {
             const decodedToken = jwtDecode(token);
-            fetchUserData(token, decodedToken.sub);
+            // fetchUserData(token, decodedToken.sub);
         } else {
             setAuthState({
                 user: null,
                 status: 'done',
             });
         }
-
     },[]);
 
-    async function fetchUserData(token, userId) {
-        try {
-            const result = await axios.get(`http://localhost:8080/api/v1/users/${userId}`, {
-                headers: {
-                    "Content-Type": "application/json",
-                    Authorization: `Bearer ${token}`,
-                }
-            });
-            // setAuthState({
-            //     user: {...authState.user,
-            //     },
-            //     status: 'done',
-            // });
-        } catch(e) {
-            console.error(e);
-        }
-    }
+    // async function fetchUserData(token, userId) {
+    //     try {
+    //         await axios.get(`http://localhost:8080/api/v1/users/${userId}`, {
+    //             headers: {
+    //                 "Content-Type": "application/json",
+    //                 Authorization: `Bearer ${token}`,
+    //             }
+    //         });
+    //         // setAuthState({
+    //         //     user: {...authState.user,
+    //         //     },
+    //         //     status: 'done',
+    //         // });
+    //     } catch(e) {
+    //         console.error(e);
+    //     }
+    // }
 
     async function login(jwtToken, result) {
-        localStorage.setItem('token', jwtToken);
+        localStorage.setItem('token', result.data.jwt);
         const decodedToken = jwtDecode(jwtToken)
         const userId = decodedToken.sub;
-        {result.data.authorityRole === "USER" && history.push("/available_tips")||result.data.authorityRole === "ADMIN" && history.push("/link")}
         setAuthState({
                 user: {
                     username: result.data.username,
@@ -76,9 +71,10 @@ function AuthContextProvider({children}) {
                     authority: result.data.authorityRole,
                     groupName: result.data.groupName
                 },
+                status: 'done',
             }
         )
-        fetchUserData(jwtToken, userId);
+        {result.data.authorityRole === "USER" && history.push("/available_tips")||result.data.authorityRole === "ADMIN" && history.push("/link")}
     }
 
     function logout() {

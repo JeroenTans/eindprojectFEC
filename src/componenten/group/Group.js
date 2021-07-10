@@ -9,12 +9,17 @@ function Group () {
 
     const { handleSubmit, register } = useForm();
     const [group, setWholeGroup] = useState([]);
+    const [groupSucces, setGroupSucces] = useState(false);
     const {user} = useAuthContext()
 
     async function sendInfo (data) {
-
+        const groupObject = {
+            groupName: data.groupName,
+            emailAddress: user.username
+        }
         try {
-            await axios.post('http://localhost:8080/api/v1/group', data)
+            await axios.post('http://localhost:8080/api/v1/group', groupObject)
+            setGroupSucces(true);
         } catch (e) {
             console.log("Het is niet gelukt, error: " + e)
         }
@@ -30,15 +35,14 @@ function Group () {
         }
     }
 
-    async function deleteGroupMember (id){
-        console.log(id)
-        try {
-            await axios.delete(`http://localhost:8080/api/v1/group/${id}`)
-        } catch (e) {
-            console.log("Get req is niet gelukt, error: " + e)
-        }
-        window.location.reload();
-    }
+    // async function deleteGroupMember (id){
+    //     console.log(id)
+    //     try {
+    //         await axios.delete(`http://localhost:8080/api/v1/group/${id}`)
+    //     } catch (e) {
+    //         console.log("Get req is niet gelukt, error: " + e)
+    //     }
+    // }
 
     useEffect(()=>{
         fetchData()
@@ -48,24 +52,25 @@ function Group () {
             <div className="groupDisplay">
                 <form onSubmit={handleSubmit(sendInfo)}>
                     <div>
-                        <input type="text"
-                        placeholder="Groepsnaam:"
-                               {...register("groupName")}
-                        />
+                        {/*<input type="text"*/}
+                        {/*placeholder="Groepsnaam:"*/}
+                        {/*       {...register("groupName")}*/}
+                        {/*/>*/}
                     </div>
-                    <label id="groupMember" htmlFor="groeplid toevoegen">Voeg het e-mail adres toe van degene zie u aan de groep wilt toevoegen in
+                    <label id="groupMember" htmlFor="groeplid toevoegen">Voeg uw groep toe
                         <input  type="text"
                                 id="inputField"
-                                placeholder="nieuw groeplid: "
-                                {...register("emailAddress")}
+                                placeholder="Groep: "
+                                {...register("groupName")}
                                 />
                     </label>
                         <AddButton className="buttonPlus"/>
+                        {groupSucces && <p className="succes-message">De groep word toegevoegd</p>}
                 </form>
                     <div className="groupMembersDisplay">
                         <p>Groep : {user && user.groupName} | Groep leden:</p>
                             {group.map((groupMember)=>(
-                            <div className="infoBox" key={groupMember.id}>{groupMember.username}  <button onClick={(e)=>deleteGroupMember(groupMember.id)}>X</button></div>))}
+                            <div className="infoBox" key={groupMember.username}>{groupMember.username}</div>))}
                     </div>
             </div>
     )

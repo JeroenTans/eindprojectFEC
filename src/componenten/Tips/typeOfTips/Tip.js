@@ -1,6 +1,5 @@
-import React, {useContext, useEffect, useState} from "react";
+import React, {useEffect, useState} from "react";
 import PopUp from "../../popup/PopUp";
-import TipByIdContextProvider from "../../Context/TipByIdContextProvider";
 import CompleteTipFocus from "../CompleteTipFocus";
 import TipLabel from "./tipLabels.js/TipLabel";
 import "./Tip.css"
