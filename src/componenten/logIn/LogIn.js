@@ -1,22 +1,20 @@
 import React, { useState, useContext } from 'react';
 import { useForm } from 'react-hook-form';
 import './LogIn.css';
-import { NavLink } from 'react-router-dom';
-import {AuthContext} from "../Context/AuthContextProvider";
+import { NavLink, useHistory } from 'react-router-dom';
+import {useAuthContext} from "../Context/AuthContextProvider";
 import axios from "axios";
-
 
 function LogInComp () {
 
     const {handleSubmit, register} = useForm();
-    const {login} = useContext(AuthContext);
+    const {login, user, setAuthState} = useAuthContext();
+    const history = useHistory();
 
     async function sendInfo(data) {
-        console.log(data);
         try {
             const result = await axios.post('http://localhost:8080/api/v1/authenticate', data);
-            console.log(result)
-            login(result.data.jwt)
+            login(result.data.jwt, result)
         } catch (e) {
             console.error(e);
         }
@@ -53,40 +51,3 @@ function LogInComp () {
 
 }
 export default LogInComp;
-
-// <form   onSubmit={handleSubmit(sendInfo)}>
-//     <div className="buttonBoxLogIn">
-//         <NavLink    exact to="/" className="change"
-//                     id="logIn">Login</NavLink>
-//         <NavLink    to="/register" className="change"
-//                     id="register"
-//         >Registreer</NavLink>
-//     </div>
-//     <div className="email">
-//         <label>
-//             <input  className="boxLogIn"
-//                     id="emailField"
-//                     type="text"
-//                     placeholder=" ➡ e-mail adres:"
-//                     {...register("emailInput")}
-//             />
-//         </label>
-//         <label id="password">
-//             <input  className="boxLogIn"
-//                     id="passwordField"
-//                     type="password"
-//                     placeholder=" ➡ wachtwoord:"
-//                     {...register("passwordInput")}
-//             />
-//         </label>
-//         <button id="forgotP"
-//                 className="boxLogIn"
-//         >Wachtwoord vergeten?
-//         </button>
-//     </div>
-//     <div className="buttonBoxLogInTwo">
-//         <button className="boxLogIn"
-//                 type="submit"
-//                 id="logInButton">Inloggen</button>
-//     </div>
-// </form>

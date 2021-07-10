@@ -1,4 +1,21 @@
+.addAdmin {
+    height: auto;
+    width: 300px;
+    border-radius: 5px;
+    background-color: lightblue;
+    border: solid lightsteelblue;
+    color: white;
+    margin-top: 40px;
+}
 
+.succes-message{
+    color: green;
+}
+
+.userShow{
+    height: 75px;
+    overflow: auto;
+}
 
 .linkForm {
     height: 240px;
@@ -47,14 +64,26 @@
     color: green;
     background-color: hsla(52, 100%, 51%, 0.96);
     border-radius: 5px;
-    border-color: green;
-    border-style: solid;
+    border: solid green 1px;
     cursor: pointer;
-    font-size: 22.5px;
     font-size: 12.5px;
 }
 
 .linkButton:hover {
     background-color: hsla(108, 31%, 40%, 0.96);
+    color: white;
+}
+
+.addAdminInput{
+    color: white;
+    background-color: lightsteelblue;
+    border: none;
+    height: 20px;
+    width: 270px;
+    border-radius: 2px;
+    margin: 5px 0 5px 0;
+}
+
+.addAdminInput::placeholder{
     color: white;
 }

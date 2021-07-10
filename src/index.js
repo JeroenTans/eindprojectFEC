@@ -5,21 +5,14 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter as Router} from 'react-router-dom';
 import AuthContextProvider from "./componenten/Context/AuthContextProvider";
-import StandardTipContextProvider from "./componenten/Context/StandardTipContextProvider";
-import PublicTipContextProvider from "./componenten/Context/PublicTipContextProvider";
-import PrivateTipContextProvider from "./componenten/Context/PrivateTipContextProvider";
+
+
 
 ReactDOM.render(
   <React.StrictMode>
       <Router>
           <AuthContextProvider>
-              <StandardTipContextProvider>
-                  <PublicTipContextProvider>
-                      <PrivateTipContextProvider>
                             <App />
-                      </PrivateTipContextProvider>
-                  </PublicTipContextProvider>
-              </StandardTipContextProvider>
           </AuthContextProvider>
       </Router>
   </React.StrictMode>,

@@ -1,35 +1,67 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import './AdminLink.css'
-import {set, useForm} from 'react-hook-form';
+import {useForm} from 'react-hook-form';
 import axios from "axios";
+import {useHistory} from "react-router-dom";
 
 function AdminLink () {
-
-    const { handleSubmit, formState: { errors }, register } = useForm();
-    const [twoTips, setTwoTips] = useState([]);
+    const [users, setUsers]= useState([])
+    const [linkSucces, setLinkSucces] = useState(false)
+    const [adminSucces, setAdminSucces] = useState(false)
+    const { handleSubmit, register } = useForm();
 
     async function fetchData (data) {
-        console.log(data)
-
         let idOne = data.adressOne;
         let idTwo = data.adressTwo;
 
         try {
             const result = await axios.get(`http://localhost:8080/api/v1/tips/tip/${idOne}`)
             const resultTwo = await axios.get(`http://localhost:8080/api/v1/tips/tip/${idTwo}`)
-            console.log(result.data)
-            console.log(resultTwo.data)
+            const usernameTipOne = result.data.username
+            const usernameTipTwo = resultTwo.data.username
+            const postResult = await axios.post(`http://localhost:8080/api/v1/tips/addUserAndGetTipById/${usernameTipOne}/${idTwo}`)
+            const postResultTwo = await axios.post(`http://localhost:8080/api/v1/tips/addUserAndGetTipById/${usernameTipTwo}/${idOne}`)
+            if (postResult.status || postResultTwo === 200){
+                setLinkSucces(true);
+            }
         } catch (e) {
-            console.log("Get req is niet gelukt, error: " + e)
+            console.log("Get request is niet gelukt, error: " + e)
         }
     }
 
+    async function getUsers(){
+        try {
+            const result = await axios.get('http://localhost:8080/api/v1/users')
+            setUsers(result.data)
+        } catch (e) {
+            console.log("Het ophalen van de gebruikers met de USER als authority is niet gelukt.", e)
+        }
+    }
+
+    async function sendAuthority(data){
+        const username = data.usernameInput
+        const adminAuthority = "ADMIN"
+        const userAuthority = "USER"
+        try {
+            const resultDeleteAuth = await axios.delete(`http://localhost:8080/api/v1/users/${username}/authorities/${userAuthority}`)
+            const resultAuth = await axios.post(`http://localhost:8080/api/v1/users/${username}/authorities`,{
+                authority: adminAuthority
+            })
+            setAdminSucces(true)
+        }catch (e){
+            console.log("Het toevoegen van een ADMIN is niet gelukt. ", e)
+        }
+    }
+
+    useEffect(()=>{
+        getUsers()
+    },[])
 
     return (
-
+        <>
             <form className="linkForm" onSubmit={handleSubmit(fetchData)}>
                 <div className="titelLink">
-                    <p>Link hier de tips d.m.v. de id's van de tips op te geven</p>
+                    <p>Link hier de tips d.m.v. de id's van de tips op te geven.</p>
                 </div>
                 <div className="linkInput">
                     <input  type="text"
@@ -44,7 +76,24 @@ function AdminLink () {
                             />
                 </div>
                 <button className="linkButton">link de tips</button>
+                {linkSucces && <p className="succes-message">De tips worden gelinkt</p>}
             </form>
+            <form onSubmit={handleSubmit(sendAuthority)} className="addAdmin">
+                <div>Maak hier een nieuwe Admin aan</div>
+                <input  className="addAdminInput"
+                        type="text"
+                        placeholder="Username: "
+                        {...register("usernameInput")}
+                        />
+                        {/*<div>*/}
+                            <button className="linkButton">Voeg authority toe</button>
+                            {adminSucces && <p className="succes-message">De user rol word vervanger door een admin rol</p>}
+                        {/*</div>*/}
+                <div className="userShow">{users.map((user)=>(
+                    <p key={user.username}>{user.authorities[0].authority === "USER" && user.username}</p>))}
+                </div>
+            </form>
+        </>
 
 
     )
