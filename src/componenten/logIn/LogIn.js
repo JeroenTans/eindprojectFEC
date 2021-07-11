@@ -13,6 +13,7 @@ function LogInComp () {
     async function sendInfo(data) {
         try {
             const result = await axios.post('http://localhost:8080/api/v1/authenticate', data);
+            console.log("RESPONSE: ", result)
             login(result.data.jwt, result)
         } catch (e) {
             console.error(e);

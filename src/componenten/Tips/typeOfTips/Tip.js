@@ -28,7 +28,6 @@ function Tip ({tips}){
                 <div key={smallTip.id} className="completeSmallTipBox">
                     <div key={smallTip.id} id="pictureBox" className="smallTipBox">
                         <TipImage props={smallTip.id}/>
-
                     </div>
                     <div id="titelSmallTip" className="smallTipBox">
                         <div className="adressBoxSmallTip">

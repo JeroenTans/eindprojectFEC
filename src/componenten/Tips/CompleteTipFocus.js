@@ -24,7 +24,7 @@ function CompleteTipFocus ({smallTipId}) {
         }
     }
 
-    function openPopup (e) {
+    function openPopup () {
         toggleButtonPopup(true);
     }
 
@@ -56,7 +56,7 @@ function CompleteTipFocus ({smallTipId}) {
                 <button
                     className="tipBoxTwoBut"
                     id="buttonTwo"
-                    onClick={(e)=>openPopup(e)}
+                    onClick={(e)=>openPopup()}
                     >Schrijf review</button>
                 <PopUp trigger={buttonPopup} setTrigger={toggleButtonPopup}>
                     <MakeReview smallTipId={tipId}/>

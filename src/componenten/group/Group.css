@@ -30,6 +30,9 @@
     background-color: hsl(210, 41%, 90%);
 }
 
+.groupMember {
+    color: hsl(215, 40%, 19%);
+}
 
 .groupMembersDisplay::-webkit-scrollbar{
     background-color: lightblue;

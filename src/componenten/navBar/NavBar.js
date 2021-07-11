@@ -13,8 +13,8 @@ function NavBar (){
                 <ul className="navContainer">
                     <nav className="navBar">
                             <NavLink to="/available_tips" className="pages" >Overzicht</NavLink>
-                            <NavLink to="/trade" className="pages" >Ruil</NavLink>
-                            <NavLink to="/verstuurde_tips" className="pages" >Verstuurd</NavLink>
+                            <NavLink to="/trade" className="pages" >Ruil/Maak tips</NavLink>
+                            <NavLink to="/verstuurde_tips" className="pages" >Verstuurd tips</NavLink>
                             <NavLink to="/groep" className="pages" >Groep</NavLink>
                     </nav>
                 </ul>

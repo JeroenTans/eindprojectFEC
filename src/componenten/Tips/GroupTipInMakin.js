@@ -5,6 +5,7 @@ import axios from "axios";
 import {useAuthContext} from "../Context/AuthContextProvider";
 import PopUp from "../popup/PopUp";
 import Response from "../response/Response";
+import ErrorMessage from "../errorMessage/ErrorMessage";
 
 function GroupTipInMaking () {
 
@@ -55,7 +56,7 @@ function GroupTipInMaking () {
                     <input type="file"
                            {...register("picturePath", {
                                required:true
-                           })}/>{errors.picturePath && <p className="errorMessageImage">Het is verplicht een foto te uploaden.</p>}
+                           })}/>{errors.picturePath && <ErrorMessage message="Het is verplicht een image te uploaden."/>}
                 </div>
                 <div className="adres">
                     <input  type="text"
@@ -64,7 +65,7 @@ function GroupTipInMaking () {
                             placeholder="Voeg hier het adres toe:"
                             {...register("address", {
                                 required:true
-                            })}/>{errors.address && <p className="errorMessageAddress">Het is verplicht een adres op te geven.</p>}
+                            })}/>{errors.address && <ErrorMessage message="Het is verplicht een adres op te geven."/>}
                 </div>
                 <textarea   className="textDis"
                             cols="30" rows="10"
@@ -72,7 +73,7 @@ function GroupTipInMaking () {
                             {...register("textAboutTheTip", {
                                 required:true
                             })}
-                />{errors.textAboutTheTip && <p className="errorMessage">Het is verplicht alle velden in te vullen</p>}
+                />{errors.textAboutTheTip && <ErrorMessage message="Het is verplicht alle velden in te vullen"/>}
                 <button id="plusButton" >Voeg uw tip toe</button>
             </form>
         </>

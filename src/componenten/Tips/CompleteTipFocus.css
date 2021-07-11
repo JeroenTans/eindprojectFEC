@@ -38,6 +38,7 @@
 #pictureDisplay {
     grid-area: pic;
     margin-right: 0;
+    height: 285px;
 }
 
 #adressDisplay {

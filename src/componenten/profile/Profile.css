@@ -1,7 +1,7 @@
 .userInfo {
     display: flex;
     justify-content: center;
-    border: solid darkgrey;
+    border: solid  hsl(111, 100%, 50%);
     border-radius: 0 5px 5px 0;
     width: 200px;
     height: auto;

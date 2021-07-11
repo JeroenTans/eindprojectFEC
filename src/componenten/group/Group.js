@@ -4,10 +4,11 @@ import AddButton from "../button/AddButton";
 import { useForm } from "react-hook-form";
 import axios from "axios";
 import {useAuthContext} from "../Context/AuthContextProvider";
+import ErrorMessage from "../errorMessage/ErrorMessage";
 
 function Group () {
 
-    const { handleSubmit, register } = useForm();
+    const { handleSubmit, register, formState: { errors } } = useForm();
     const [group, setWholeGroup] = useState([]);
     const [groupSucces, setGroupSucces] = useState(false);
     const {user} = useAuthContext()
@@ -42,18 +43,20 @@ function Group () {
     return (
             <div className="groupDisplay">
                 <form onSubmit={handleSubmit(sendInfo)}>
-                    <label id="groupMember" htmlFor="groeplid toevoegen">Voeg uw groep toe
+                    <label className="groupMember" htmlFor="groeplid toevoegen">Voeg uw groep toe
                         <input  type="text"
                                 id="inputField"
                                 placeholder="Groep: "
-                                {...register("groupName")}
-                                />
+                                {...register("groupName", {
+                                    required: true
+                                })}
+                                />{errors.groupName && <ErrorMessage message="Wilt u een groep joinen, dan moet u een groep invullen."/>}
                     </label>
                         <AddButton className="buttonPlus"/>
                         {groupSucces && <p className="succes-message">De groep word toegevoegd</p>}
                 </form>
                     <div className="groupMembersDisplay">
-                        <p>Groep : {user && user.groupName} | Groep leden:</p>
+                        <p className="groupMember" >Groep : {user && user.groupName} | Groep leden:</p>
                             {group.map((groupMember)=>(
                             <div className="infoBox" key={groupMember.username}>{groupMember.username}</div>))}
                     </div>

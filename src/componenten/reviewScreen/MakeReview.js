@@ -2,6 +2,7 @@ import './MakeReview.css';
 import {useForm} from 'react-hook-form';
 import React, {useState} from 'react';
 import axios from "axios";
+import ErrorMessage from "../errorMessage/ErrorMessage";
 
 function MakeReview ({smallTipId}) {
 
@@ -52,7 +53,7 @@ function MakeReview ({smallTipId}) {
                                 required: true
                                 }
                             )}
-                            />{errors.comment && <p className="errorMessageReview">Dit is een verplicht veld.</p>}
+                            />{errors.comment && <ErrorMessage message="Wilt u een review achterlaten? dan moet u iets invullen."/>}
             <div className="buttonReview">
                 <button type="submit" id="plusButtonReview">Voeg uw review toe</button>
                 {reviewSucces && <p className="succes-message">Bedankt voor de review!</p>}
