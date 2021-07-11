@@ -1,25 +1,7 @@
 
-/*.explainButton {*/
-/*    min-width: 100px;*/
-/*    height: 50px;*/
-/*    color: green;*/
-/*    background-color: hsla(52, 100%, 51%, 0.96);*/
-/*    border-radius: 30px;*/
-/*    border-color: green;*/
-/*    border-style: solid;*/
-/*    cursor: pointer;*/
-/*    font-size: 22.5px;*/
-/*    margin-top: 25px;*/
-/*}*/
-
-/*.explainButton:hover {*/
-/*    background-color: hsla(108, 31%, 40%, 0.96);*/
-/*    color: white;*/
-/*}*/
-
 .explainButton {
     background-color: transparent;
     border: none;
     cursor: pointer;
-    color: white;
+    color: hsl(181, 100%, 47%);
 }

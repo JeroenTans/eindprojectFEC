@@ -13,7 +13,6 @@ function TipInMaking () {
     const [buttonPopupRead, toggleButtonPopupRead] = useState(false);
     const [isPrivateTipFe, toggleIsPrivateTipFe] = useState(false);
     const [isPublicTipFe, toggleIsPublicTipFe] = useState(true);
-    const [isStandardTipFe, toggleStandardTipFe] = useState(false);
     const {user} = useAuthContext()
 
     async function sendInfo (formData) {
@@ -40,7 +39,7 @@ function TipInMaking () {
             formData.append("publicTip", isPublicTipFe))}
         {user.authority === "ROLE_ADMIN" ? (
             formData.append("standardTip", true)):(
-            formData.append("standardTip", isStandardTipFe))}
+            formData.append("standardTip", false))}
         formData.append("groupTip", false)
         formData.append("picturePath", data.picturePath[0])
         formData.append("username", user.username)
@@ -48,12 +47,6 @@ function TipInMaking () {
         formData.append("groupName", "No Group")
 
         sendInfo(formData)
-    }
-
-    function standardFunction(e){
-        toggleIsPrivateTipFe(false)
-        toggleStandardTipFe(true)
-        toggleIsPublicTipFe(false)
     }
 
     function openPopup (e) {
@@ -89,22 +82,22 @@ function TipInMaking () {
                                         required:true
                                     })}
                                     />{errors.textAboutTheTip && <ErrorMessage message="Het is verplicht alle velden in te vullen."/>}
+                                    {user.authority === "ROLE_USER" &&
                                     <div className="checkboxTipInMakingOne">
-                                        {user.authority === "ADMIN" ?
-                                                <input  type="checkbox"
-                                                        checked={isStandardTipFe}
-                                                        onChange={(e)=>standardFunction(e)}/>:
                                         <input  type="checkbox"
                                                 checked={isPrivateTipFe}
                                                 onChange={(e)=> isPublicTipFe?toggleIsPublicTipFe(false) && toggleIsPrivateTipFe(e.target.checked):toggleIsPrivateTipFe(e.target.checked)}
-                                                />}Prive
+                                                />Prive
                                     </div>
+                                    }
+                                    {user.authority === "ROLE_USER" &&
                                     <div className="checkboxTipInMakingTwo">
                                             <input  type="checkbox"
                                                     checked={isPublicTipFe}
                                                     onChange={(e)=> isPrivateTipFe?toggleIsPrivateTipFe(false) && toggleIsPublicTipFe(e.target.checked):toggleIsPublicTipFe(e.target.checked)}
                                                     />Publiek
                                     </div>
+                                    }
                     <button id="plusButton" >Voeg uw tip toe</button>
                 </form>
         </>
