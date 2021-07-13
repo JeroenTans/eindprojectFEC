@@ -4,7 +4,7 @@ import NavBar from "../componenten/navBar/NavBar";
 import TipInMaking from "../componenten/Tips/TipInMaking";
 import Tip from "../componenten/Tips/typeOfTips/Tip";
 import Profile from "../componenten/profile/Profile";
-import {useAuthContext} from "../componenten/Context/AuthContextProvider";
+import {useAuthContext} from "../context/AuthContextProvider";
 import axios from "axios";
 
 

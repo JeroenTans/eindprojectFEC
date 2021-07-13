@@ -1,7 +1,7 @@
 import React, {Link} from "react-router-dom";
 import ReusableButton from "../button/ReusableButton";
 import "./Profile.css"
-import {useAuthContext} from "../Context/AuthContextProvider";
+import {useAuthContext} from "../../context/AuthContextProvider";
 
 
 function Profile () {

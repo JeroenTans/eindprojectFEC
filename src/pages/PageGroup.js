@@ -5,7 +5,7 @@ import Group from "../componenten/group/Group";
 import './PageGroup.css'
 import Profile from "../componenten/profile/Profile";
 import GroupTipInMakin from "../componenten/Tips/GroupTipInMakin";
-import {useAuthContext} from "../componenten/Context/AuthContextProvider";
+import {useAuthContext} from "../context/AuthContextProvider";
 import axios from "axios";
 import Tip from "../componenten/Tips/typeOfTips/Tip";
 

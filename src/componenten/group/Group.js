@@ -3,7 +3,7 @@ import './Group.css'
 import AddButton from "../button/AddButton";
 import { useForm } from "react-hook-form";
 import axios from "axios";
-import {useAuthContext} from "../Context/AuthContextProvider";
+import {useAuthContext} from "../../context/AuthContextProvider";
 import ErrorMessage from "../errorMessage/ErrorMessage";
 
 function Group () {

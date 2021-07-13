@@ -11,7 +11,7 @@ import PageAdminLink from "./pages/PageAdminLink";
 import PageAdminStandartTip from "./pages/PageAdminStandartTip";
 import RouteProtector from "./componenten/routeProtector/RouteProtector";
 import PageNotFound from "./pages/PageNotFound";
-import {useAuthContext} from "./componenten/Context/AuthContextProvider";
+import {useAuthContext} from "./context/AuthContextProvider";
 
 function App() {
     const {user} = useAuthContext()

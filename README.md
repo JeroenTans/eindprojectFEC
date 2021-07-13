@@ -33,11 +33,16 @@ De accounts zijn:
 ###Componenten
 Ik heb aan de hand van mijn prototype alles opgedeeld in componenten, deze componenten zal je stuk voor stuk in het mapje **componenten** vinden.
 In dit mapje heb ik alle componenten opgedeeld in andere mapjes zodat het overzichtelijk is. In ieder mapje zal je 1 of meerdere bestanden vinden, zowel de javascript bestanden als de css bestanden. 
+###Context
+Het volgende mapje is het context mapje, hierin kan je de auth context vinden.
 ###Images
 In het images mapje zal je de images vinden die ik heb gebruikt in de front end van deze applicatie.
 ###Pages
 In het mapje pages zal je alle pagina componenten vinden, zowel de javascript bestanden als de css bestanden. 
-###
+###App.js
+In het App.js bestand heb ik alle pagina's in de jusite volgorde gezet en om de route heen gezet, Ook zie je hier de RouteProtector terug komen, dit is een component in het componenten mapje waarin ik kijk of de token nog valid is.
+###index.js
+Hier staat de Router om het App bestand heen.
 
 ##Hoe werkt de applicatie.
 ###Stap één.
@@ -92,8 +97,12 @@ je users deleten, admin maken van users, reviews deleten, tips deleten maar natu
 gebruikers maken aan elkaar linken. Belangrijk is dat de username niet overeen komt, aangezien je de
 user die de tip heeft gemaakt niet dezelfde tip wilt terug geven. Je linkt de tips aan elkaar door in het
 middelste scherm de id's van de tips die je aan elkaar wilt linken in te voeren, hierna klik je op: link de tips.
+Links boven zie je de prive tips en rechts boven de publieke tips.
 ![alt text](https://raw.githubusercontent.com/JeroenTans/eindprojectFEC/main/src/images/adminScherm%20.png)
 
 ###Stap drie/admin
 Hier worden de standaard tips gemaakt, dit zullen tips zoals het Anne Frank huis zijn. De admin is de enige die deze tips kan maken. 
 ![alt text](https://raw.githubusercontent.com/JeroenTans/eindprojectFEC/main/src/images/adminStandaardTip.png)
+
+##Veel plezier!! 
+Bij vragen of opmerkingen kan je altijd een email sturen naar: jeroentans1@gmail.com of via een andere manier die bekend is bij jou.

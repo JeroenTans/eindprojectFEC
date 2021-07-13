@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import './TipInMaking.css';
 import {useForm} from 'react-hook-form';
 import axios from "axios";
-import {useAuthContext} from "../Context/AuthContextProvider";
+import {useAuthContext} from "../../context/AuthContextProvider";
 import PopUp from "../popup/PopUp";
 import Response from "../response/Response";
 import ErrorMessage from "../errorMessage/ErrorMessage";

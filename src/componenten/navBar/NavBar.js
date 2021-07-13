@@ -1,7 +1,7 @@
 import React from 'react';
 import './NavBar.css';
 import {NavLink} from 'react-router-dom';
-import {useAuthContext} from "../Context/AuthContextProvider";
+import {useAuthContext} from "../../context/AuthContextProvider";
 
 
 function NavBar (){

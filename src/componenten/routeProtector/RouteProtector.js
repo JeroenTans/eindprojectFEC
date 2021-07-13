@@ -1,7 +1,7 @@
 
 import {Route, Redirect} from "react-router-dom"
 import {useContext} from "react";
-import {AuthContext} from "../Context/AuthContextProvider";
+import {AuthContext} from "../../context/AuthContextProvider";
 
 function ProtectedRoute({component: Component, ...rest}) {
     const {isTokenValid} = useContext(AuthContext);

@@ -3,7 +3,7 @@ import './PageAvailableTip.css'
 import NavBar from "../componenten/navBar/NavBar";
 import Profile from "../componenten/profile/Profile";
 import axios from "axios";
-import {AuthContext} from "../componenten/Context/AuthContextProvider";
+import {AuthContext} from "../context/AuthContextProvider";
 import Tip from "../componenten/Tips/typeOfTips/Tip";
 
 function PageSenTips () {
