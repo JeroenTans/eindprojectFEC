@@ -19,4 +19,20 @@ De accounts zijn: **nova@user, nova@admin, malou@user, malou@admin, rein@user, r
 
 ##Hoe werkt de applicatie.
 
+![alt text](https://raw.githubusercontent.com/JeroenTans/eindprojectFEC/main/src/images/registreerScherm.png)
+
 ![alt text](https://raw.githubusercontent.com/JeroenTans/eindprojectFEC/main/src/images/InlogScherm.png)
+
+![alt text](https://raw.githubusercontent.com/JeroenTans/eindprojectFEC/main/src/images/OverzichtScherm.png)
+
+![alt text](https://raw.githubusercontent.com/JeroenTans/eindprojectFEC/main/src/images/maakTipsScherm.png)
+
+![alt text](https://raw.githubusercontent.com/JeroenTans/eindprojectFEC/main/src/images/verstuurdeTips.png)
+
+![alt text](https://raw.githubusercontent.com/JeroenTans/eindprojectFEC/main/src/images/groepScherm.png)
+
+![alt text](https://raw.githubusercontent.com/JeroenTans/eindprojectFEC/main/src/images/adminStandaardTip.png)
+
+![alt text](https://raw.githubusercontent.com/JeroenTans/eindprojectFEC/main/src/images/adminScherm%20.png)
+
+![alt text](https://raw.githubusercontent.com/JeroenTans/eindprojectFEC/main/src/images/adminStandaardTip.png)
