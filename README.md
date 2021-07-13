@@ -1,71 +1,20 @@
-# Getting Started with Create React App
+# Welkom bij Locals for locals!
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+##Intro
+Locals for locals is een applicatie waarin je de stad waarin jij woont kan herontdekken.
+Dit doe je door middel van de kennis van de mede gebruikers van de applicatie.
+Iedereen heeft wel een plekje in zijn/haar stad waar weinig mensen iets vanaf weten, deze applicatie geeft jullie de mogelijkheid deze plekjes met elkaar te delen of te ruilen.
+Je ruilt dus jouw geheim voor iemand anders zijn geheim.
+Voor het versturen van de tip heb je de mogelijkheid om de zichtbaarheid van deze tip vast te stellen, wil je dat de tip voor iedereen beschikbaar is kies dan publiek, zo niet privé. 
 
-## Available Scripts
+## Hoe start ik deze applicatie op
+Je kan in de installatie handleiding stap voor stap lezen hoe je de juiste programma's download. Lees dit goed door want in deze handleiding zie je ook hoe je de juiste database opent en hoe je dit instelt in je back end.
+Zodra dit allen is gebeurd en je hebt zowel de back als de front end geopend in IntelliJ en Webstorm moet je eerst de back end runnen door op het groene driehoekje rechts boven te klikken. Hierna moet je in je webstorm terminal **npm install** typen, als dit juist geinstalleerd is moet je **npm start** in de terminal typen(Zie afbeeldingen hiervan in de installatie handleiding). En voila, laten we beginnen!
 
-In the project directory, you can run:
+##Standaard accounts
+Ik ben zo vrij geweest een aantal accounts aan te maken. 
+Deze accounts zijn zo ingesteld dat ze al in gebruik zijn, zo heb je bijvoorbeeld een aantal prive tips en publieke tips er tussen staan.
+Ook zit je al in een group, je kan natuurlijk in een nieuwe groep gaan, deze bevat alleen nog geen tips. achter het @ staat of het een **user** account is of een **admin** account en het wachtwoord voor alle accounts is: **wachtwoord**.
+De accounts zijn: **nova@user, nova@admin, malou@user, malou@admin, rein@user, rein@admin**
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-"# eindprojectFEC" 
