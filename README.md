@@ -17,4 +17,6 @@ Deze accounts zijn zo ingesteld dat ze al in gebruik zijn, zo heb je bijvoorbeel
 Ook zit je al in een group, je kan natuurlijk in een nieuwe groep gaan, deze bevat alleen nog geen tips. achter het @ staat of het een **user** account is of een **admin** account en het wachtwoord voor alle accounts is: **wachtwoord**.
 De accounts zijn: **nova@user, nova@admin, malou@user, malou@admin, rein@user, rein@admin**
 
+##Hoe werkt de applicatie.
 
+![alt text](https://raw.githubusercontent.com/JeroenTans/eindprojectFEC/main/src/images/InlogScherm.png)
