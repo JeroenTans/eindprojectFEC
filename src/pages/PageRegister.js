@@ -1,5 +1,4 @@
 import React from 'react';
-import './PageRegister.css'
 import Register from "../componenten/logIn/Register";
 import globe from "../images/globeLogin.png";
 

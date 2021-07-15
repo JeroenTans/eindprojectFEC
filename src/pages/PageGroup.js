@@ -26,7 +26,7 @@ function PageGroup () {
 
     useEffect(()=>{
         fetchData()
-    },[])
+    },[groupTips])
 
     return (
         <div className="pageBackground">

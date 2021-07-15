@@ -1,7 +1,7 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
 import './LogIn.css';
-import {NavLink} from 'react-router-dom';
+import {NavLink, useHistory} from 'react-router-dom';
 import {useAuthContext} from "../../context/AuthContextProvider";
 import axios from "axios";
 
@@ -9,11 +9,13 @@ function LogInComp () {
 
     const {handleSubmit, register} = useForm();
     const {login} = useAuthContext();
+    const history = useHistory()
 
     async function sendInfo(data) {
         try {
             const result = await axios.post('http://localhost:8080/api/v1/authenticate', data);
             login(result.data.jwt, result)
+            // {result.data.authorityRole === "ROLE_USER" && history.push("/available_tips")||result.data.authorityRole === "ROLE_ADMIN" && history.push("/link")}
         } catch (e) {
             console.error(e);
         }

@@ -29,3 +29,11 @@
     padding: 3px;
     color: darkorange;
 }
+
+#receivedTipLabel {
+    border-radius: 10px;
+    font-size: 10px;
+    background-color: hsl(1, 100%, 66%);
+    padding: 3px;
+    color: hsl(1, 100%, 81%);
+}

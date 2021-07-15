@@ -45,7 +45,7 @@ function TipInMaking () {
         formData.append("username", user.username)
         formData.append("sendTip", true)
         formData.append("groupName", "No Group")
-
+        
         sendInfo(formData)
     }
 

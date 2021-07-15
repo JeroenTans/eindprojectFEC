@@ -1,9 +1,10 @@
 import React, {useState, useEffect} from "react";
 import axios from "axios";
+import grachten from '../../../images/grachten.png'
 
 function TipImage (props) {
 
-    const [blobImage, setBlobImage] = useState('');
+    const [blobImage, setBlobImage] = useState(grachten);
 
     useEffect(() => {
         async function fetchImage() {

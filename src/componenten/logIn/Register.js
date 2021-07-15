@@ -103,7 +103,6 @@ return (
                     {error && <p className="error-message">{error}</p>}
                 </div>
         </form>
-        <p>Heb je al een account? Je kunt je <Link to="/">hier</Link> inloggen.</p>
     </div>
     )
 }

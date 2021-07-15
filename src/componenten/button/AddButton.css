@@ -1,7 +1,6 @@
 
 .AddButton {
-    border-style: solid;
-    border-color: green;
+    border: solid green;
     background-color: hsla(52, 100%, 51%, 0.96);
     border-radius: 500px;
     color: green;

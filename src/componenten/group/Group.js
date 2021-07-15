@@ -13,6 +13,10 @@ function Group () {
     const [groupSucces, setGroupSucces] = useState(false);
     const {user} = useAuthContext()
 
+    // const getUsername = groupMember.username.substring(0, groupMember.username.indexOf('@'))
+    // const username = getUsername.substring(0, 1).toUpperCase() + getUsername.substring(1, getUsername.length);
+    //
+
     async function sendInfo (data) {
         const groupObject = {
             groupName: data.groupName,
@@ -58,10 +62,13 @@ function Group () {
                     <div className="groupMembersDisplay">
                         <p className="groupMember" >Groep : {user && user.groupName} | Groep leden:</p>
                             {group.map((groupMember)=>(
-                            <div className="infoBox" key={groupMember.username}>{groupMember.username}</div>))}
+                            <div className="infoBox" key={groupMember.username}>{groupMember.username.substring(0, 1).toUpperCase() + groupMember.username.substring(1, groupMember.username.indexOf('@'))}</div>))}
                     </div>
             </div>
     )
 }
+
+// const getUsername = user.email.substring(0, user.email.indexOf('@'))
+// const username = getUsername.substring(0, 1).toUpperCase() + getUsername.substring(1, getUsername.length);
 
 export default Group;

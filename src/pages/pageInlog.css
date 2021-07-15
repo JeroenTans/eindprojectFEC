@@ -3,5 +3,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: hsl(158, 100%, 24.8%);;
+    background-color: hsl(158, 100%, 24.8%);
+    height: 100vh;
 }

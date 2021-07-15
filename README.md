@@ -1,4 +1,10 @@
 # Welkom bij Locals for locals!
+De volgende onderwerpen worden behandeld:
+-   Intro
+-   Hoe start ik deze applicatie op
+-   Standaard accounts
+-   Waar staat alles
+-   Hoe werkt de applicatie
 
 ##Intro
 Locals for locals is een applicatie waarin je de stad waarin jij woont kan herontdekken.
@@ -9,10 +15,10 @@ Voor het versturen van de tip heb je de mogelijkheid om de zichtbaarheid van dez
 
 ## Hoe start ik deze applicatie op
 Je kan in de installatie handleiding stap voor stap lezen hoe je de juiste programma's download. Lees dit goed door want in deze handleiding zie je ook hoe je de juiste database opent en hoe je dit instelt in je back end.
-Zodra dit allen is gebeurd en je hebt zowel de back als de front end geopend in IntelliJ en Webstorm moet je eerst de back end runnen door op het groene driehoekje rechts boven te klikken. Hierna moet je in je webstorm terminal **npm install** typen, als dit juist geinstalleerd is moet je **npm start** in de terminal typen(Zie afbeeldingen hiervan in de installatie handleiding). 
+Zodra dit allen is gebeurd en je hebt zowel de back als de front end geopend in IntelliJ en Webstorm, moet je eerst de back end runnen door op het groene driehoekje rechts boven te klikken. Hierna moet je in je webstorm terminal **npm install** typen, als dit juist geinstalleerd is moet je **npm start** in de terminal typen(Zie afbeeldingen hiervan in de installatie handleiding). 
 Stel dat je weet hoe dit allen werkt heb ik hier een korte samenvatting:
 
--   Open een nieuwe database en noem deze: tip
+-   Open een nieuwe database (in pg admin) en noem deze: tip
 -   Open in IntelliJ het appllications.properties bestand onder de recources map en verander het wachtwoord naar het het wachtwoord wat jij hebt ingesteld bij het dowloaden van de PostgreSQL database
 -   Run de back end applicatie, deze applicatie heet: EindprojectbedcApplication
 -   Schrijf in de terminal van Webstorm **npm install**

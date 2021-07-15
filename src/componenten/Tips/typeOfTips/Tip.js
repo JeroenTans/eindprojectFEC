@@ -15,9 +15,6 @@ function Tip ({tips}){
         setTipId(smallTipId)
     }
 
-    useEffect(()=>{
-    }, [])
-
 
     return (
         <>
@@ -43,6 +40,7 @@ function Tip ({tips}){
                             {smallTip.publicTip && <TipLabel kindOfTip={"Publiek"}/>}
                             {smallTip.standardTip && <TipLabel kindOfTip={"Standaard"}/>}
                             {smallTip.groupTip && <TipLabel kindOfTip={"Groep"}/>}
+                            {smallTip.receivedTip && <TipLabel kindOfTip={"Ontvangen"}/>}
                         </div>
                     </div>
 

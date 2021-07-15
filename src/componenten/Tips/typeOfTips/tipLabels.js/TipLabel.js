@@ -6,7 +6,8 @@ function TipLabel ({kindOfTip}) {
         <label id={ kindOfTip === "Standaard" && "standardTipLabel" ||
                     kindOfTip === "Privé" && "privateTipLabel" ||
                     kindOfTip === "Publiek" && "publicTipLabel" ||
-                    kindOfTip === "Groep" && "groupTipLabel"
+                    kindOfTip === "Groep" && "groupTipLabel" ||
+                    kindOfTip === "Ontvangen" && "receivedTipLabel"
                     }>{kindOfTip}</label>
     )
 }
