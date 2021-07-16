@@ -7,10 +7,8 @@ import {uppercaseFirstLetter} from "../../helpers/upperCase";
 
 function Profile () {
 
-    //Helper functie
     const {user} = useAuthContext();
     const getUsername = user.email.substring(0, user.email.indexOf('@'))
-    // const username = getUsername.substring(0, 1).toUpperCase() + getUsername.substring(1, getUsername.length);
     const username = uppercaseFirstLetter(getUsername.substring(0, 1).toUpperCase(), getUsername.substring(1, getUsername.length))
 
     useEffect(()=>{
