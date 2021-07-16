@@ -11,7 +11,7 @@ function GroupTipInMaking () {
 
     const { handleSubmit, formState: { errors }, register } = useForm();
     const [buttonPopupRead, toggleButtonPopupRead] = useState(false);
-    const {user} = useAuthContext()
+    const {user, userGroupNameContextState} = useAuthContext()
 
     async function sendInfo (data) {
 
@@ -36,7 +36,7 @@ function GroupTipInMaking () {
         formData.append("picturePath", data.picturePath[0])
         formData.append("username", user.username)
         formData.append("sendTip", true)
-        formData.append("groupName", user.groupName)
+        formData.append("groupName", userGroupNameContextState)
 
         sendInfo(formData)
     }

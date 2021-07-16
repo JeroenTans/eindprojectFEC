@@ -12,12 +12,12 @@ import Tip from "../componenten/Tips/typeOfTips/Tip";
 function PageGroup () {
 
     const [groupTips, setGroupTips] = useState([]);
-    const {user} = useAuthContext()
+    const {userGroupNameContextState} = useAuthContext()
 
     async function fetchData () {
-        const groupName = user.groupName
+
         try {
-            const result = await axios.get(`http://localhost:8080/api/v1/tips/groupTips/${groupName}`)
+            const result = await axios.get(`http://localhost:8080/api/v1/tips/groupTips/${userGroupNameContextState}`)
             setGroupTips(result.data)
         } catch (e) {
             console.error("helaas: ", e)
