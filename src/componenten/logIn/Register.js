@@ -76,7 +76,7 @@ return (
                 </label>
                 <label className="labelRegister" htmlFor="wachtwoord">wachtwoord:
                     <input  className="inputFieldRegister"
-                            type="text"
+                            type="password"
                             placeholder="➡ type hier uw wachtwoord:"
                             value={password}
                             onChange={(e)=>setPassword(e.target.value)}
@@ -84,7 +84,7 @@ return (
                 </label>
                 <label className="labelRegister" htmlFor="wachtwoord">bevestig wachtwoord:
                     <input  className="inputFieldRegister"
-                            type="text"
+                            type="password"
                             placeholder="➡ bevestig hier uw wachtwoord:"
                             {...register("confirmPassword", {
                                 required: true,

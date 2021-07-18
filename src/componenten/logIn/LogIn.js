@@ -37,7 +37,7 @@ function LogInComp () {
                     </label>
                     <label className="labelRegister" htmlFor="wachtwoord">wachtwoord:
                         <input className="inputFieldRegister"
-                               type="text"
+                               type="password"
                                placeholder="➡ type hier uw wachtwoord:"
                                {...register("password")}
                         />
