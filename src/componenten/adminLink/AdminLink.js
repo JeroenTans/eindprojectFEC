@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react'
 import './AdminLink.css'
 import {useForm} from 'react-hook-form';
 import axios from "axios";
-import {useHistory} from "react-router-dom";
+
 
 function AdminLink () {
     const [users, setUsers]= useState([])

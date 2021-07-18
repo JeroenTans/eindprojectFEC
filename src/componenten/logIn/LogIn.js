@@ -15,7 +15,6 @@ function LogInComp () {
         try {
             const result = await axios.post('http://localhost:8080/api/v1/authenticate', data);
             login(result.data.jwt, result)
-            // {result.data.authorityRole === "ROLE_USER" && history.push("/available_tips")||result.data.authorityRole === "ROLE_ADMIN" && history.push("/link")}
         } catch (e) {
             console.error(e);
         }

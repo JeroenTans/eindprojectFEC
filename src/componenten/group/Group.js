@@ -5,6 +5,7 @@ import { useForm } from "react-hook-form";
 import axios from "axios";
 import {useAuthContext} from "../../context/AuthContextProvider";
 import ErrorMessage from "../errorMessage/ErrorMessage";
+import {uppercaseFirstLetter} from "../../helpers/upperCase";
 
 function Group () {
 
@@ -58,11 +59,10 @@ function Group () {
                     <div className="groupMembersDisplay">
                         <p className="groupMember" >Groep : {userGroupNameContextState} | Groep leden:</p>
                             {group.map((groupMember)=>(
-                            <div className="infoBox" key={groupMember.username}>{groupMember.username.substring(0, 1).toUpperCase() + groupMember.username.substring(1, groupMember.username.indexOf('@'))}</div>))}
+                            <div className="infoBox" key={groupMember.username}>{uppercaseFirstLetter(groupMember.username.substring(0, 1).toUpperCase(), groupMember.username.substring(1, groupMember.username.indexOf('@')))}</div>))}
                     </div>
             </div>
     )
 }
-
 
 export default Group;

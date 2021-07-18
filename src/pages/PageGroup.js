@@ -15,7 +15,6 @@ function PageGroup () {
     const {userGroupNameContextState} = useAuthContext()
 
     async function fetchData () {
-
         try {
             const result = await axios.get(`http://localhost:8080/api/v1/tips/groupTips/${userGroupNameContextState}`)
             setGroupTips(result.data)
@@ -33,7 +32,8 @@ function PageGroup () {
             <NavBar/>
             <div className="completeBox">
                 <div className="boxGroup">
-                    <Tip tips={groupTips}/>
+                    {groupTips[0] === undefined ? <div className="tipBoxIsEmpty"><p className="tipIsEmpty">Hier komen alle groep tips te staan</p></div>:
+                    <Tip tips={groupTips}/>}
                 </div>
                 <div className="boxGroupComp">
                         <Group

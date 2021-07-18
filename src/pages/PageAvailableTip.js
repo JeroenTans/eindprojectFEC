@@ -1,4 +1,5 @@
 import React, {useEffect, useState} from 'react';
+import {NavLink} from 'react-router-dom';
 import './PageAvailableTip.css'
 import NavBar from "../componenten/navBar/NavBar";
 import Profile from "../componenten/profile/Profile";
@@ -31,20 +32,22 @@ function PageAvailableTip () {
         fetchData()
     },[])
 
-
     return (
         <div className="pageBackground">
             <NavBar id="navBarAvailableTip" />
             <Profile className="profilePageBox"/>
             <div className="allTips">
                 <div className="tipPageBoxStandard">
-                    <Tip tips={standardTips}/>
+                    {standardTips[0] === undefined? <div className="tipBoxIsEmpty"><p className="tipIsEmpty">klik <NavLink className="stylingOfLink" to="/trade">hier</NavLink> om een tip aan te maken</p></div>:
+                    <Tip tips={standardTips}/>}
                 </div>
                 <div className="tipPageBoxPrive">
-                    <Tip tips={privateTips}/>
+                    {privateTips[0] === undefined? <div className="tipBoxIsEmpty"><p className="tipIsEmpty">klik <NavLink className="stylingOfLink" to="/trade">hier</NavLink> om een tip aan te maken</p></div>:
+                    <Tip tips={privateTips}/>}
                 </div>
                 <div className="tipPageBoxPublic">
-                    <Tip tips={publicTips}/>
+                    {publicTips[0] === undefined? <div className="tipBoxIsEmpty"><p className="tipIsEmpty">klik <NavLink className="stylingOfLink" to="/trade">hier</NavLink> om een tip aan te maken</p></div>:
+                    <Tip tips={publicTips}/>}
                 </div>
             </div>
         </div>

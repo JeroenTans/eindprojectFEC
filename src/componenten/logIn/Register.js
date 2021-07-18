@@ -26,12 +26,7 @@ function Register (){
                 residence: data.residence,
                 username: data.emailRegistration
             });
-            const resultUSER = await axios.post(`http://localhost:8080/api/v1/users/${data.emailRegistration}/authorities`, {
-                username: data.emailRegistration,
-                authority: "ROLE_USER"
-            })
             toggleRegisterSuccess(true);
-
             setTimeout(() => {
                 history.push('/');
             }, 2000);
@@ -67,7 +62,7 @@ return (
                             required: true,
                             validate: (value) => value.includes('@'),
                         })}
-                />{errors.emailRegistration && <p className="errorMessage">Het e-mail adres is verplicht en moet een "@ "</p>}
+                />{errors.emailRegistration && <p className="errorMessage">Het e-mail adres is verplicht en moet een "@" bevatten</p>}
                 </label>
                 <label className="labelRegister" htmlFor="woonplaats">woonplaats:
                     <input  className="inputFieldRegister"
@@ -99,7 +94,7 @@ return (
                 </label>
                 <div className="buttonRegisterPage">
                     <button type="submit" id="registerButton" disabled={loading}>{loading?"Versturen..":"Registreer"}</button>
-                    {registerSuccess === true &&  <p>Registeren is gelukt! Je wordt nu doorgestuurd naar de inlog pagina!</p>}
+                    {registerSuccess === true &&  <p className="succesMessageLogin">Registeren is gelukt! Je wordt nu doorgestuurd naar de inlog pagina!</p>}
                     {error && <p className="error-message">{error}</p>}
                 </div>
         </form>

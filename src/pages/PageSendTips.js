@@ -33,10 +33,12 @@ function PageSenTips () {
         <NavBar id="navBarAvailableTip" />
             <div className="allTips">
                 <div className="tipPageBoxPublic">
-                    <Tip tips={publicTips}/>
+                    {publicTips[0] === undefined ? <div className="tipBoxIsEmpty"><p className="tipIsEmpty">Hier komen jouw verstuurde publieke tips te staan</p></div>:
+                    <Tip tips={publicTips}/>}
                 </div>
                 <div className="tipPageBoxPrive">
-                    <Tip tips={privateTips}/>
+                    {privateTips[0] === undefined ? <div className="tipBoxIsEmpty"><p className="tipIsEmpty">Hier komen jouw verstuurde privé tips te staan</p></div>:
+                    <Tip tips={privateTips}/>}
                 </div>
             </div>
             <Profile className="profilePageBox"/>
