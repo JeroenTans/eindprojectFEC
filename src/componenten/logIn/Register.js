@@ -3,7 +3,7 @@ import './Register.css'
 import { useForm } from 'react-hook-form';
 import { NavLink } from "react-router-dom";
 import axios from 'axios';
-import { Link, useHistory } from 'react-router-dom';
+import {useHistory } from 'react-router-dom';
 
 
 function Register (){
