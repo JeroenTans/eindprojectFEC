@@ -21,7 +21,7 @@ function Group () {
         }
         setUserGroupNameContextState(data.groupName)
         try {
-            await axios.post('http://localhost:8080/api/v1/group', groupObject)
+            await axios.post('https://locals4locals.herokuapp.com/api/v1/group', groupObject)
             setGroupSucces(true);
         } catch (e) {
             console.error("Het is niet gelukt, error: " + e)
@@ -30,7 +30,7 @@ function Group () {
 
     async function fetchData () {
         try {
-            const result = await axios.get(`http://localhost:8080/api/v1/users/getUsersByGroupName/${userGroupNameContextState}`)
+            const result = await axios.get(`https://locals4locals.herokuapp.com/api/v1/users/getUsersByGroupName/${userGroupNameContextState}`)
             setWholeGroup(result.data)
         } catch (e) {
             console.error("Get req is niet gelukt, error: " + e)

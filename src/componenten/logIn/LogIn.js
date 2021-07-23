@@ -13,7 +13,7 @@ function LogInComp () {
 
     async function sendInfo(data) {
         try {
-            const result = await axios.post('http://localhost:8080/api/v1/authenticate', data);
+            const result = await axios.post('https://locals4locals.herokuapp.com/api/v1/authenticate', data);
             login(result.data.jwt, result)
         } catch (e) {
             console.error(e);

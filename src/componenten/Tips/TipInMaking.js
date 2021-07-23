@@ -18,7 +18,7 @@ function TipInMaking () {
     async function sendInfo (formData) {
 
         try {
-            await axios.post('http://localhost:8080/api/v1/tips/tip_upload', formData)
+            await axios.post('https://locals4locals.herokuapp.com/api/v1/tips/tip_upload', formData)
             openPopup()
         } catch (e) {
             console.log(console.error(e))

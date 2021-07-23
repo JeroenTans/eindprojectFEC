@@ -17,9 +17,9 @@ function PageAvailableTip () {
     async function fetchData () {
         try {
 
-            const resultStandardTip = await axios.get("http://localhost:8080/api/v1/tips/standardTip")
-            const resultPublicTip = await axios.get("http://localhost:8080/api/v1/tips/publicTip")
-            const resultPrivateTip = await axios.get(`http://localhost:8080/api/v1/tips/${user.username}/privateTip`)
+            const resultStandardTip = await axios.get("https://locals4locals.herokuapp.com/api/v1/tips/standardTip")
+            const resultPublicTip = await axios.get("https://locals4locals.herokuapp.com/api/v1/tips/publicTip")
+            const resultPrivateTip = await axios.get(`https://locals4locals.herokuapp.com/api/v1/tips/${user.username}/privateTip`)
             setStandardTips(resultStandardTip.data)
             setPublicTips(resultPublicTip.data)
             setPrivateTips(resultPrivateTip.data)

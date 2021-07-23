@@ -14,7 +14,7 @@ function PageTrade () {
 
     async function fetchData (username) {
         try {
-            const result =  await axios.get(`http://localhost:8080/api/v1/tips/getAllTradedTips/${username}`)
+            const result =  await axios.get(`https://locals4locals.herokuapp.com/api/v1/tips/getAllTradedTips/${username}`)
             setSendTips(result.data)
         } catch (e) {
             console.log("het is niet gelukt, error: " + e)

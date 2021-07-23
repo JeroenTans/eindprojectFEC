@@ -15,12 +15,12 @@ function AdminLink () {
         let idTwo = data.adressTwo;
 
         try {
-            const result = await axios.get(`http://localhost:8080/api/v1/tips/tip/${idOne}`)
-            const resultTwo = await axios.get(`http://localhost:8080/api/v1/tips/tip/${idTwo}`)
+            const result = await axios.get(`https://locals4locals.herokuapp.com/api/v1/tips/tip/${idOne}`)
+            const resultTwo = await axios.get(`https://locals4locals.herokuapp.com/api/v1/tips/tip/${idTwo}`)
             const usernameTipOne = result.data.username
             const usernameTipTwo = resultTwo.data.username
-            const postResult = await axios.post(`http://localhost:8080/api/v1/tips/addUserAndGetTipById/${usernameTipOne}/${idTwo}`)
-            const postResultTwo = await axios.post(`http://localhost:8080/api/v1/tips/addUserAndGetTipById/${usernameTipTwo}/${idOne}`)
+            const postResult = await axios.post(`https://locals4locals.herokuapp.com/api/v1/tips/addUserAndGetTipById/${usernameTipOne}/${idTwo}`)
+            const postResultTwo = await axios.post(`https://locals4locals.herokuapp.com/api/v1/tips/addUserAndGetTipById/${usernameTipTwo}/${idOne}`)
             if (postResult.status || postResultTwo === 200){
                 setLinkSucces(true);
             }

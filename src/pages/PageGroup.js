@@ -16,7 +16,7 @@ function PageGroup () {
 
     async function fetchData () {
         try {
-            const result = await axios.get(`http://localhost:8080/api/v1/tips/groupTips/${userGroupNameContextState}`)
+            const result = await axios.get(`https://locals4locals.herokuapp.com/api/v1/tips/groupTips/${userGroupNameContextState}`)
             setGroupTips(result.data)
         } catch (e) {
             console.error("helaas: ", e)

@@ -17,7 +17,7 @@ function CompleteTipFocus ({smallTipId}) {
 
     async function fetchData(tipId){
         try {
-            const result = await axios.get(`http://localhost:8080/api/v1/tips/tip/${tipId}`)
+            const result = await axios.get(`https://locals4locals.herokuapp.com/api/v1/tips/tip/${tipId}`)
             setTip(result.data)
         } catch (e) {
             console.error(e);

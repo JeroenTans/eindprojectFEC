@@ -20,7 +20,7 @@ function Register (){
         toggleLoading(true);
 
         try {
-            const result = await axios.post('http://localhost:8080/api/v1/users', {
+            const result = await axios.post('https://locals4locals.herokuapp.com/api/v1/users', {
                 email: data.emailRegistration,
                 password: data.confirmPassword,
                 residence: data.residence,

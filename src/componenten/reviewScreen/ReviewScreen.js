@@ -11,7 +11,7 @@ function ReviewScreen ({tipId, addressTip}) {
 
     async function fetchData (tipAmsterdamId) {
         try {
-            const result = await axios.get(`http://localhost:8080/api/v1/reviews/${tipAmsterdamId}/reviews`)
+            const result = await axios.get(`https://locals4locals.herokuapp.com/api/v1/reviews/${tipAmsterdamId}/reviews`)
             setReviews(result.data)
         } catch (e) {
             console.error("het is niet gelukt, error: " + e)

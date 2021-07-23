@@ -23,7 +23,7 @@ function MakeReview ({smallTipId}) {
 
         }
         try {
-            await axios.post('http://localhost:8080/api/v1/reviews/savereview', dataObject)
+            await axios.post('https://locals4locals.herokuapp.com/api/v1/reviews/savereview', dataObject)
             setReviewSucces(true);
         } catch (e) {
             console.error("Het plaatsen van de review is niet gelukt, error: " + e)

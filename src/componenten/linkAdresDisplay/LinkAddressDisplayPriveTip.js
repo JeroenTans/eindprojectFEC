@@ -9,8 +9,8 @@ function LinkAddressDisplayPriveTip () {
 
     async function fetchData () {
         try {
-            const result = await axios.get('http://localhost:8080/api/v1/tips/privateTip')
-            const resultTwo = await axios.get('http://localhost:8080/api/v1/users')
+            const result = await axios.get('https://locals4locals.herokuapp.com/api/v1/tips/privateTip')
+            const resultTwo = await axios.get('https://locals4locals.herokuapp.com/api/v1/users')
             setPrivateTips(result.data)
             setUsers(resultTwo.data)
         } catch (e) {
@@ -26,7 +26,7 @@ function LinkAddressDisplayPriveTip () {
         setPrivateTips(null)
         setPrivateTips(newArray)
         try {
-            await axios.delete(`http://localhost:8080/api/v1/tips/${id}`)
+            await axios.delete(`https://locals4locals.herokuapp.com/api/v1/tips/${id}`)
         } catch (e) {
             console.error("Delete req is niet gelukt, error: " + e)
         }
@@ -40,7 +40,7 @@ function LinkAddressDisplayPriveTip () {
         setUsers(null)
         setUsers(newArray)
         try {
-            await axios.delete(`http://localhost:8080/api/v1/users/${username}`)
+            await axios.delete(`https://locals4locals.herokuapp.com/api/v1/users/${username}`)
         } catch (e) {
             console.error("Delete req is niet gelukt, error: " + e)
         }
