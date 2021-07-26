@@ -31,7 +31,7 @@ function AdminLink () {
 
     async function getUsers(){
         try {
-            const result = await axios.get('http://localhost:8080/api/v1/users')
+            const result = await axios.get('https://locals4locals.herokuapp.com/api/v1/users')
             setUsers(result.data)
         } catch (e) {
             console.error("Het ophalen van de gebruikers met de USER als authority is niet gelukt.", e)
@@ -43,8 +43,8 @@ function AdminLink () {
         const adminAuthority = "ROLE_ADMIN"
         const userAuthority = "ROLE_USER"
         try {
-            const resultDeleteAuth = await axios.delete(`http://localhost:8080/api/v1/users/${username}/authorities/${userAuthority}`)
-            const resultAuth = await axios.post(`http://localhost:8080/api/v1/users/${username}/authorities`,{
+            const resultDeleteAuth = await axios.delete(`https://locals4locals.herokuapp.com/api/v1/users/${username}/authorities/${userAuthority}`)
+            const resultAuth = await axios.post(`https://locals4locals.herokuapp.com/api/v1/users/${username}/authorities`,{
                 authority: adminAuthority
             })
             setAdminSucces(true)
